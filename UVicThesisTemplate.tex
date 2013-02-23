@@ -1,0 +1,241 @@
+\documentclass[12pt,oneside]{uvicthesis}
+
+%--------------------------------------------------------------------------------------%
+%								YOUR INFORMATION										
+%--------------------------------------------------------------------------------------%
+
+\title{An example of a thesis or dissertation}
+\type{Dissertation}										% "Thesis" or "Dissertation"
+\author{Stuart Arthur Dent}
+\authordetails{	B.Sc., Unseen University, 1836\\
+				M.Sc., University of Madeup, 2233}
+\degree{Doctor of Philosophy}
+\department{Department of Mad Science}
+\date{2012}
+
+%--------------------------------------------------------------------------------------%
+%								YOUR SUPERVISORY COMMITTEE										
+%--------------------------------------------------------------------------------------%
+\panel{% This list should NOT include your external examiner.
+\panelist{Dr.\ Emmett Brown}{Co-supervisor}{Department of Mad Science}
+\panelist{Dr.\ Cuthbert Calculus}{Co-supervisor}{Department of Mad Science}
+\panelist{Dr.\ Pamela Isley}{Departmental Member}{Department of Mad Science}
+\panelist{Dr.\ Hubert J.\ Farnsworth}{Departmental Member}{Department of Mad Science}
+\panelist{Dr.\ James Moriarty}{Outside Member}{Department of Mad Mathematics}
+}
+
+%--------------------------------------------------------------------------------------%
+%								YOUR OWN PACKAGES AND CUSTOMIZATIONS
+%--------------------------------------------------------------------------------------%
+% Here's some useful packages to start out with, but feel free to delete them and replace
+% them with your own!
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{booktabs, longtable, tabu}
+\newcommand{\url}[1]{\texttt{#1}}
+
+
+%--------------------------------------------------------------------------------------%
+%								THEOREM ENVIRONMENTS
+%--------------------------------------------------------------------------------------%
+% Again, feel free to replace these with whatever is best for you!
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+
+\newtheorem*{question}{Question}
+\newtheorem*{conjecture}{Conjecture}
+
+%--------------------------------------------------------------------------------------%
+%								FRONTMATTER										
+%--------------------------------------------------------------------------------------%
+\begin{document}
+\frontmatter
+\maketitle
+\makecommittee
+
+\begin{abstract}
+	This document provides a template to help you write your thesis or dissertation at UVic. The most important part is the \texttt{uvicthesis} class, which does much of the work necessary to make your thesis conform to UVic's formatting requirements (as of 2012). As an added bonus, we've filled this template thesis with possibly useful advice, examples, and information about writing a thesis or dissertation.
+\end{abstract}
+
+\newpage\addtoToC{Table of Contents}\tableofcontents
+\newpage\addtoToC{List of Tables}\listoftables
+\newpage\addtoToC{List of Figures}\listoffigures
+
+\begin{acknowledgements}
+	\noindent I would like to thank:
+	\begin{description}
+	\item[the anonymous graduate advisor] who made the original version of this template.
+	\item[Donald Knuth, Leslie Lamport,] and everybody else involved in the development of \TeX\ and \LaTeX. Without them, our documents would all look a lot less pretty.
+	\item[the members of Bread Club,] for always being there with a baguette and a bad pun.
+	\item[my supervisors, Dr.\ Emmett Brown and Dr.\ Cuthbert Calculus,]
+		for their encouragement, patience, and advice.
+	\item[my parents,] for supporting me through thick and thin.
+	\item[the Evil League of Evil,]
+		for funding me and my graduate research with a Victor Frankenstein Graduate Scholarship.
+	\end{description}
+\end{acknowledgements}
+
+\begin{dedication}
+	\noindent This thesis is dedicated to you, dear reader,\\
+	As you are dedicated to your thesis.
+\end{dedication}
+%--------------------------------------------------------------------------------------%
+%								MAIN CONTENT										
+%--------------------------------------------------------------------------------------%
+\mainmatter
+
+\chapter{Introduction}
+\label{chapter:introduction}
+\thispagestyle{empty} % The first page of the first chapter shouldn't be numbered
+
+You're a graduate student preparing to write your thesis or dissertation. Where should you start? The goal of this document---along with its source and associated files---is to be a reasonable answer to that question.
+
+To begin, download the source file \texttt{UVicThesisTemplate.tex} and the class file \texttt{uvicthesis.cls}, making sure to put them in the same folder. The \texttt{uvicthesis} class does most of the work of making your thesis conform to UVic's style requirements (although you should always double-check, as the requirements may have changed since the class was written in 2012).
+
+I assume you have some \LaTeX\ implementation already installed on your machine. If you don't, install \TeX\ Live (\url{http://www.tug.org/texlive/}) or your favourite \TeX\  distribution.
+
+If you're ready to start writing, open up \texttt{UVicThesisTemplate.tex} in your \LaTeX\ editor of choice, delete this content, and start writing!
+
+
+\chapter{Getting started with \LaTeX}
+\section{Need an editor?}
+	
+	The cross-platform editor \TeX works is a good place to start playing around with \LaTeX. However, there are plenty of other options to choose from. Here are just a few:
+	
+\begin{table}[ht]
+\centering
+	\begin{tabu}{lll}
+	\toprule
+		Editor			& Platform		 &	Website\\\midrule
+		\TeX works		& cross-platform & \url{tug.org/texworks/}\\
+		\TeX studio		& cross-platform & \url{texstudio.sourceforge.net}\\
+		LyX				& cross-platform & \url{lyx.org}\\
+		\TeX shop		& Mac OS X		 & (part of MacTeX distribution)\\
+		\TeX nicCenter	& Windows		 & \url{texniccenter.org}\\
+		Kile			& KDE			 & \url{kile.sourceforge.net}\\
+	\bottomrule
+	\end{tabu}
+\caption{List of \LaTeX\ editors}
+\label{table:tex-editors}
+\end{table}
+
+Since \texttt{.tex} is a plaintext format, you can also edit \LaTeX\ documents with any text editor (it may just require a bit more effort to compile your source to a PDF). Several popular text editors offer extensions to make compilation easier, as well as enabling features like syntax highlighting and code folding. Table \ref{table:text-editors} lists some of these.
+
+\begin{table}[ht]
+\centering	
+	\begin{tabu}{llll}
+	\toprule
+		Editor		&	Platform		&	\LaTeX\ extension	& Website\\
+	\midrule
+		emacs		&	cross-platform	& AUC\TeX			& \url{gnu.org/software/emacs/}\\
+		vim			&	cross-platform	& \LaTeX-Suite		& \url{vim.org}\\
+		TextWrangler&	Mac OS X		& CompileTeX 		& \url{barebones.com/products}\\	
+		Notepad++	&	Windows			& (manual setup)	& \url{notepad-plus-plus.org}\\
+		Eclipse		&	cross-platform	& \TeX lipse		& \url{eclipse.org}\\
+	\bottomrule
+	\end{tabu}
+\caption{List of other programs which can be used to edit \LaTeX}
+\label{table:text-editors}
+\end{table}
+
+\section{Need help with \LaTeX?}
+	If you've never used \LaTeX\ before, there are tons of places online for you to get help. The Wikibook on \LaTeX\ (\url{http://en.wikibooks.org/wiki/LaTeX}) is an excellent resource for the beginner.
+	
+	Even experts need help with \LaTeX\ sometimes. If you're getting a weird error or can't figure out how to print some tricky document structure, you can submit a question to the \TeX\ StackExchange (\url{http://tex.stackexchange.com}) and get good answers from volunteer \TeX perts---in many cases, the same volunteer \TeX perts who wrote the package you're asking about.
+	
+	For those who want to drop some money on a physical book, you can't go wrong with The \LaTeX\ Companion~\cite{latexcompanion}.
+	
+	Finally, it's worth noting that most \LaTeX\ packages are really well documented. If you need help with, say, the \texttt{tikz} package, you can use \texttt{texdoc tikz} on the command line to open up the TikZ manual.
+	
+\section{Some essential packages}
+	Here are some packages which may be useful to use in your thesis.
+	
+\subsection{\texttt{amsmath}, \texttt{amsmath}, \texttt{amsthm}}
+	These are general packages that a lot of people call in every \LaTeX\ document they make. The first two give access to some essential macros, including \texttt{\textbackslash mathbb} for blackboard bold letters (like $\mathbb{R}$ and $\mathbb{Z}$) and the \texttt{align} environment for things like this:
+	\begin{align*}
+		1+2+\cdots+n+(n+1)	&=	(1+2+\cdots +n) + (n+1)\\
+								&=	\frac{n(n+1)}{2}+n+1\\
+								&=	\frac{n(n+1)+2(n+1)}{2}\\
+								&=	\frac{(n+1)(n+2)}{2}
+	\end{align*}
+	
+	The \texttt{amsthm} package gives you a few more options for making theorem-like environments, and provides a prewrapped \texttt{proof} environment.
+	
+\subsection{\texttt{graphicx}, \texttt{tikz}}
+	These packages are for including graphics in your document. With \texttt{graphicx} you can include an image file in your thesis using something like
+	\begin{verbatim}
+		\includegraphics[scale=0.5]{kitten.png}
+	\end{verbatim}
+	
+	The TikZ package is a more complicated way of producing figures from a LaTeX source. 
+	For example, the graph below was produced with just a few lines of code. If you are a graph theorist, there is even a tool---TikZiT (http://tikzit.sourceforge.net)---for you to easily generate the TikZ code to make excellent figures for your thesis.
+	
+	\begin{figure}[ht]
+		\centering
+		\tikzstyle{vertex}=[circle, draw=black, fill=white, inner sep=2pt]
+	
+		\begin{tikzpicture}[scale=1.25]
+			\node [style=vertex] (a) at (-1, 0) {$A$};
+			\node [style=vertex] (b) at (0, -1) {$B$};
+			\node [style=vertex] (c) at (0, 0) {$C$};
+			\node [style=vertex] (d) at (1, 0) {$D$};
+			\node [style=vertex] (e) at (2, 0) {$E$};
+			\node [style=vertex] (f) at (0, 1) {$F$};
+	
+			\draw[->] (a) to (b);
+			\draw[dashed] (b) to (e);
+			\draw (a) to (c);
+			\draw (c) to (d);
+			\draw (d) to (e);
+			\draw[->] (f) to (c);
+		\end{tikzpicture}
+		\caption{A graph drawn in TikZ}
+	\end{figure}
+
+\subsection{\texttt{booktabs}, \texttt{longtable}, \texttt{tabu}}
+	These three packages together make it easy to make beautiful tables. The most important part of \texttt{booktabs}---apart from the documentation, which contains an extended rant (worth reading) about good table presentation---are the \texttt{\textbackslash toprule}, \texttt{\textbackslash midrule}, and \texttt{\textbackslash bottomrule} macros. These are to be used instead of \texttt{\textbackslash hrule} to improve the spacing around horizontal rules in tables.
+	
+	The \texttt{longtable} package allows you to make tables which span more than one page.
+	
+	Finally, the \texttt{tabu} package does a better job of easily making tables than the \texttt{tabular} environment given by \LaTeX. The column attributes of the \texttt{tabu} environment can be of the form \texttt{X[coeff,align,type]}; the resulting table will stretch to fill up the text width so that the column widths are in the ratio given by the values of \texttt{coeff}. Adding \$ or \$\$ makes the column default to math mode.
+	
+	\begin{table}[ht]
+	\begin{tabu}{X[1,l] X[3,c,m] X[1,r,$$]} 
+		\toprule
+		Text & 
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&
+		\frac{1}{2}mv^2\\
+		\bottomrule
+	\end{tabu}
+	\caption{Example table using \texttt{tabu}}
+	\end{table}
+	
+\chapter{Organizing your thesis}
+	Although this template is all in one file, it may be a good idea to separate your thesis into several files. You can do this by ``including" each separate chapter file:
+	\begin{verbatim}
+	\include{chapters/tissue_acquisition}
+	\include{chapters/incubation_chamber_setup}
+	\include{chapters/lightning_storm_induction}
+	\include{chapters/damage_mitigation}
+	\end{verbatim}
+How you structure your writing may be different depending on your discipline---possibly even on your subfield. Fortunately, UVic publishes all theses and dissertations written by its grad students. Reading other dissertations can help you get an idea for what to do.
+
+%--------------------------------------------------------------------------------------%
+%								MAIN CONTENT										
+%--------------------------------------------------------------------------------------%
+\appendix
+\chapter{Other data}
+	An appendix is a good place to put the source code for any tools you developed for your research. A popular package to use for this is \texttt{listings}. I haven't personally used it, but it might be worth looking into.
+
+%--------------------------------------------------------------------------------------%
+%								BIBLIOGRAPHY										
+%--------------------------------------------------------------------------------------%
+\backmatter
+	\addtoToC{Bibliography}
+	\bibliographystyle{plain}
+	\bibliography{UvicThesis}
+
+\end{document}
