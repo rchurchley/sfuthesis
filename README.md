@@ -1,7 +1,7 @@
 thesis-template
 ===============
 
-You’re a graduate student preparing to write your thesis or dissertation. Where should you start? The goal of this project --- a LaTeX class and an example template --- is to be a reasonable answer to that question. The `uvicthesis` class does most of the work of your thesis conform to the University of Victoria's style requirements. If for some reason you *don't* go to UVic, the clean source code should make it easy to tweak to your specific needs. 
+You’re a graduate student preparing to write your thesis or dissertation. Where should you start? This project—a LaTeX class and an example template—is a reasonable place to begin. The `uvicthesis` class does most of the work towards making your thesis conform to the University of Victoria's style requirements. If for some reason you *don't* go to UVic, the clean source code should make it easy to tweak to your specific needs. 
 
 Installation
 ------------
