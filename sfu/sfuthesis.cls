@@ -12,9 +12,13 @@
 %   `cmbright` optionally called in Fonts
 %   `setspace` used in Line Spacing
 %   `enumitem` used for Approval Page
+%   `pdfpages` used for including Declaration of Partial Copyright Licence form
+%   `tocloft` used for making the ToC nicer
 
 \RequirePackage{setspace}
 \RequirePackage{enumitem}
+\RequirePackage{pdfpages}
+\RequirePackage{tocloft}
 
 
 %   Publication Style
@@ -84,9 +88,10 @@
 %   blockquotes, bullets, a series of numbered paragraphs, references, 
 %   footnotes, and appendices, all of which are single spaced.
 
-    \newcommand{\defaultspacing}{\onehalfspacing}
-    \newcommand{\smallspacing}{\singlespacing}
-    \defaultspacing
+\newcommand{\defaultspacing}{\onehalfspacing}
+\newcommand{\smallspacing}{\singlespacing}
+
+\defaultspacing
 
 
 %   Title Page
@@ -156,45 +161,32 @@
 %   can override the ``all rights reserved'' text with \copyrightnotice{...} 
 %
 
+%   These just define the commands to set metadata
+
 \newcommand{\thesistype}[1]{\renewcommand{\@thesistype}{#1}}
-\newcommand{\@thesistype}{\ClassError{sfuthesis}{%
-    Missing thesis type. Use \protect\thesistype{...} in the preamble.
-}{}}
-    
 \newcommand{\previousdegrees}[1]{\renewcommand{\@previousdegrees}{#1}}
-\newcommand{\@previousdegrees}{\ClassError{sfuthesis}{%
-    Missing previous degrees. Use \protect\previousdegrees{...} in the preamble.
-}{}}
-
 \newcommand{\degree}[1]{\renewcommand{\@degree}{#1}}
-\newcommand{\@degree}{\ClassError{sfuthesis}{%
-    Missing expected degree. Use \protect\degree{...} in the preamble.
-}{}}
-
 \newcommand{\discipline}[1]{\renewcommand{\@discipline}{(#1)}}
-\newcommand{\@discipline}{}
-
 \newcommand{\department}[1]{\renewcommand{\@department}{#1}}
-\newcommand{\@department}{\ClassError{sfuthesis}{%
-    Missing department, school, or program. Use \protect\department{...} in the preamble.
-}{}}
-
 \newcommand{\faculty}[1]{\renewcommand{\@faculty}{#1}}
-\newcommand{\@faculty}{\ClassError{sfuthesis}{%
-    Missing faculty. Use \protect\faculty{...} in the preamble.}{}
-}
-
 \newcommand{\semester}[1]{\renewcommand{\@semester}{#1}}
-\newcommand{\@semester}{\ClassError{sfuthesis}{%
-    Missing semester approved. Use \protect\semester{...} in the preamble.}{}
-}
-
 \newcommand{\copyrightyear}[1]{\renewcommand{\@copyrightyear}{#1}}
-\newcommand{\@copyrightyear}{\ClassError{sfuthesis}{%
-    Missing copyright year. Use \protect\copyrightyear{...} in the preamble.}{}
-}
-
 \newcommand{\copyrightnotice}[1]{\renewcommand{\@copyrightnotice}{#1}}
+
+%   These variables hold metadata and warn you if you haven't set them yet
+
+\newcommand{\@MissingMetadata}[1]{\ClassWarning{sfuthesis}{%
+    Missing #1. Set this in the preamble to fix your frontmatter.
+}}
+
+\newcommand{\@thesistype}{THESIS \@MissingMetadata{thesistype}}
+\newcommand{\@previousdegrees}{PREVIOUS DEGREES \@MissingMetadata{previousdegrees}}
+\newcommand{\@degree}{DEGREE \@MissingMetadata{degree}}
+\newcommand{\@discipline}{} % optional
+\newcommand{\@department}{DEPARTMENT \@MissingMetadata{department}}
+\newcommand{\@faculty}{FACULTY \@MissingMetadata{faculty}}
+\newcommand{\@semester}{SEMESTER \@MissingMetadata{semester}}
+\newcommand{\@copyrightyear}{YEAR \@MissingMetadata{copyrightyear}}
 \newcommand{\@copyrightnotice}{%
     \begingroup\small
     All rights reserved.\\
@@ -206,34 +198,41 @@
     \endgroup
 }
 
+\newcommand{\newlinesp@ce}{\\[0.75\baselineskip]}    % an extra big line break
 
-\newcommand{\@tpbreak}{\\[0.75\baselineskip]}    % an extra big line break
+%   Here is the actual title page
 
 \renewcommand{\maketitle}{{%
     \thispagestyle{empty}
-    \begin{center}
-                                                                    \vfill
-        {\doublespacing\Large\bfseries\@title}                      \@tpbreak\par
-        \defaultspacing
-        by                                                          \@tpbreak
-        {\bfseries\@author}                                         \@tpbreak
-        \@previousdegrees                                               
-                                                                    \vfill
-        {\@thesistype} Submitted in Partial Fulfillment             \\ 
-        of the Requirements for the Degree of                       \@tpbreak
-        \@degree                                                    \@tpbreak
-        in the                                                      \\
-        \@department                                                \\
-        \@faculty                                                       
-                                                                    \vfill
-        \copyright\ \@author\ \@copyrightyear                       \\
-        SIMON FRASER UNIVERSITY                                     \\
-        \@semester                                                  \@tpbreak
-        \smallspacing\@copyrightnotice
-    \end{center}
+                    \begin{center}
+                                                            \doublespacing
+               {\Large\bfseries\@title}                     \newlinesp@ce
+                                                        \par\defaultspacing
+                          by                                \newlinesp@ce
+
+                 {\bfseries\@author}                        \newlinesp@ce
+
+                  \@previousdegrees
+                                                            \vfill
+
+    {\@thesistype} Submitted in Partial Fulfillment         \\
+        of the Requirements for the Degree of               \newlinesp@ce
+
+                      \@degree                              \newlinesp@ce
+
+                       in the                               \\
+                    \@department                            \\
+                     \@faculty  
+                                                            \vfill
+
+        \copyright\ \@author\ \@copyrightyear               \\
+               SIMON FRASER UNIVERSITY                      \\
+                     \@semester                             \newlinesp@ce
+
+           \smallspacing\@copyrightnotice
+                    \end{center}
     \newpage
 }}
-
 
 
 %   Approval page
@@ -275,20 +274,24 @@
 %
 %   Then, after \maketitle, call \makecommittee.
 
+%   Commands to set committee
+
+\newcommand{\signatureline}{\noindent\rule{0.1pt}{0.4pt}\hrulefill\par}
 \newcommand{\chair}[2]{%
-    #1                  \\
-    #2                  \@tpbreak
+    #1                  \newline
+    #2                  \newlinesp@ce
 }
 \newcommand{\member}[2]{%
-    \rule{0.1pt}{0.4pt}\hrulefill          \\
-    \textbf{#1}         \\
-    #2                  \@tpbreak
+    \signatureline
+    \textbf{#1}         \newline
+    #2                  \newlinesp@ce
 }
-
 \newcommand{\committee}[2]{\renewcommand{\@committee}{%
     \item[\textbf{#1:}] #2
 }}
 \newcommand{\@committee}{}
+
+%   "Date defended" or "Date approved", depending on whether there was a defence
 
 \newcommand{\defended}[1]{\renewcommand{\@approvaldateline}{%
     \item[\textbf{Date Defended:}] #1
@@ -299,37 +302,85 @@
 \newcommand{\@approvaldateline}{\item[\textbf{Date Approved:}] n/a}
 
 
+%   The actual approval page
+
 \newcommand{\makecommittee}{%
-    \addtoToC{Supervisory Committee}
-    \begin{center}\textbf{APPROVAL}\end{center}
+    \addtoToC{Approval}
+                    \begin{center}
+                  \textbf{APPROVAL}
+                    \end{center}
+    
     \begin{itemize}[labelwidth=10em, leftmargin=10em, align=parleft]
-        \item[\textbf{Name:}] \@author
-        \item[\textbf{Degree:}] \@degree\ \@discipline
-        \item[\textbf{Title of Thesis:}] \textit{\@title}
-        \@committee
-        \@approvaldateline
+    
+        \item[\textbf{Name:}]               \@author
+        \item[\textbf{Degree:}]             \@degree\ \@discipline
+        \item[\textbf{Title of Thesis:}]    \textit{\@title}
+                                            \@committee
+                                                                    \vfill
+                                            \@approvaldateline
     \end{itemize}
     \newpage
 }
 
 
+%   Declaraion of Partial Copyright Licence
+%
+%   The (Declaration of) Partial Copyright Licence appears immediately after the 
+%   Approval Page in your thesis.
+%
+%   Make sure you have an up-to-date copy of the DPCL from the SFU Library, that
+%   it is named correctly, and that it's in the same folder as this class file
+%   and your thesis.
 
-%   Abstract
+\newcommand{\makecopyrightdeclaration}{%
+    \addtoToC{Partial Copyright Licence}
+    \includepdf{declaration_of_partial_copyright_licence.pdf}
+}
+
+
+%   Abstract and keywords
 %
-%   Displays the abstract page (including the supervisory committee again) and
-%   adds it to the table of contents.
+%   The abstract contains a clear statement of the essence of the thesis.
+%   The problem or questions dealt with, the methods of investigation used, and
+%   the general conclusions are stated here.
 %
+%   All versions of the abstract (PDF and abstract entered into the Thesis 
+%   Registration System) must be the same.
+%
+%   Abstract length maximums:
+%   - Master's Thesis: 150 words (the thesis registration system requires the
+%     abstract be entered as one paragraph)
+%   - Doctorate: 350 words (usually 3 paragraphs; the thesis registration system 
+%     requires the abstract be entered as one paragraph)
+%
+%   The abstract must appear after the Partial Copyright Licence and start on
+%   page iv or page v if you have pasted the Ethics Statement into your document.
+%
+%   Use plain text only (avoid using bullets, numbered paragraphs, citations,
+%   footnotes, tables, graphs, or illustrations).
+%
+%   The abstract should appear on one page.
+%
+%   Keywords appear under the abstract and must be entered into the Thesis
+%   Registration System. 
+%
+%   Keywords should be separated by semi-colons. The list of keywords is
+%   sentence-cased and does not end in a period.
+
+\newcommand{\keywords}[1]{\renewcommand{\@keywords}{#1}}
+\newcommand{\@keywords}{KEYWORDS \@MissingMetadata{keywords}}
 
 \renewenvironment{abstract}{%
-    \newpage\addtoToC{Abstract}
+    \addtoToC{Abstract}                         \ \vfill
 
-    \noindent \textbf{Supervisory Committee}
-    \tpbreak
-   % \@panel
-
-    \begin{center}\textbf{ABSTRACT}\end{center}
-    
-    }{}
+                    \begin{center}
+                  \textbf{ABSTRACT}
+                    \end{center}
+}{%
+    \newlinesp@ce
+    \noindent\textbf{Keywords:} \@keywords
+    \vfill\vfill\newpage
+}
 
 
 %   Table of Contents
@@ -340,7 +391,6 @@
 
 \newcommand{\addtoToC}[1]{\addcontentsline{toc}{chapter}{#1}}
 
-\usepackage{tocloft}
 \renewcommand{\cfttabpresnum}{Table\ }
 \renewcommand{\cfttabnumwidth}{0.75in}
 \renewcommand{\cftfigpresnum}{Figure\ }
@@ -349,30 +399,31 @@
 \setcounter{lofdepth}{2}
 
 
-%   Acknowledgements
+%   Dedication and Acknowledgements
 %
-%   Displays the acknowledgements page and adds it to the table of contents.
+%   There do not seem to be restrictions on the style of these optional pages.
+%   Feel free to change these as you see fit.
 %
+
+\newenvironment{dedication}{%
+    \addtoToC{Dedication}
+                    \begin{center}
+                 \textbf{DEDICATION}
+                    \end{center}
+    
+    }{\newpage}
 
 \newenvironment{acknowledgements}{%
     \newpage\addtoToC{Acknowledgements}
 
-    \begin{center}\textbf{ACKNOWLEDGEMENTS}\end{center}
+                    \begin{center}
+              \textbf{ACKNOWLEDGEMENTS}
+                    \end{center}
     
-    }{}
+    }{\newpage}
 
 
-%   Dedication
-%
-%   Displays the dedication page and adds it to the table of contents.
-%
 
-\newenvironment{dedication}{%
-    \newpage\addtoToC{Dedication}
-
-    \begin{center}\textbf{DEDICATION}\end{center}
-    
-    }{}
 
 
 \endinput
