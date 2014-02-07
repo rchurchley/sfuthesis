@@ -93,6 +93,8 @@
 
 \defaultspacing
 
+\newcommand{\backmatter}{\singlespacing}
+
 
 %   Title Page
 %
