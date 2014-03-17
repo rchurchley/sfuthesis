@@ -16,7 +16,7 @@
 %   `tocloft` used for making the ToC nicer
 
 \RequirePackage{setspace}
-\RequirePackage{enumitem}
+\RequirePackage[shortlabels]{enumitem}
 \RequirePackage{pdfpages}
 \RequirePackage{tocloft}
 
