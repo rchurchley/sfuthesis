@@ -10,10 +10,12 @@ The following universities are currently supported:
 - University of Victoria
 - Simon Fraser University
 
+
 System Requirements
 -------------------
 
-You will need a relatively recent version of TeX Live or MiKTeX. Other LaTeX installations will also work, although you may need to install some packages.
+You will need a relatively recent LaTeX distribution. In particular, the SFU template requires the following packages: `cmbright`, `setspace`, `tocloft`, `pdfpages`, `enumitem`, and their dependencies. If you do not have these installed, you can easily get them using the package manager that came with your distribution (`tlmgr` in TeX Live or its GUI frontend `TeX Live Utility` on OS X; `mpm` on Windows MikTeX installations).
+
 
 Installation
 ------------
@@ -25,6 +27,7 @@ Installation
 3. Delete the main content and replace it with your own.
 
 4. Compile it!
+
 
 Contributing
 ------------
