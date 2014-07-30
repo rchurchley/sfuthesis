@@ -36,7 +36,7 @@
 %   Margins
 %
 %   All content must be inside the margins to allow theses to be printed and
-%   bound. Though margins cannot be smaller, they can be larger --- however, 
+%   bound. Though margins cannot be smaller, they can be larger --- however,
 %   this is not recommended.
 %
 %   1.25" left/right and 1" top/bottom (page numbers at a minimum of .7")
@@ -73,7 +73,7 @@
 %   Font
 %
 %   Arial 11 point (pt) is the preferred font/size and is the default in the
-%   templates acknowledging that theses are commonly read online. Other 
+%   templates acknowledging that theses are commonly read online. Other
 %   cross-platform sans serif fonts for text are also acceptable; the size
 %   chosen should be the same physical size as Arial 11pt.
 %
@@ -87,7 +87,7 @@
 %   Line Spacing
 %
 %   The body of your document requires 1.5 line-spacing with the exception of
-%   blockquotes, bullets, a series of numbered paragraphs, references, 
+%   blockquotes, bullets, a series of numbered paragraphs, references,
 %   footnotes, and appendices, all of which are single spaced.
 
 \newcommand{\defaultspacing}{\onehalfspacing}
@@ -117,13 +117,13 @@
 %   - M.Sc. (Mathematics), Name of University (City or State), 20XX
 %   - B.Sc., University of Placename, 20XX
 %   - Previous degrees are abbreviated on the title page.
-%   - If from a foreign university, please consult that institution for the 
+%   - If from a foreign university, please consult that institution for the
 %     appropriate short-form degree abbreviation.
 %   - Your most recent degree comes first.
 %   - City/State/Country is only needed for universities that stipulate these in
 %     their names --- e.g. University of California (Berkeley) --- or for
 %     universities that share a name with one in another country.
-%   - Each degree must fit on one line. If necessary, remove discipline and 
+%   - Each degree must fit on one line. If necessary, remove discipline and
 %     city/state/country to make it fit. But do not abbreviate the name of the
 %     university.
 %
@@ -162,7 +162,7 @@
 %
 %   If these are set in the preamble, \maketitle will output a correctly
 %   formatted title page. If you want to use a Creative Commons license, you
-%   can override the ``all rights reserved'' text with \copyrightnotice{...} 
+%   can override the ``all rights reserved'' text with \copyrightnotice{...}
 %
 
 %   These just define the commands to set metadata
@@ -226,7 +226,7 @@
 
                        in the                               \\
                     \@department                            \\
-                     \@faculty  
+                     \@faculty
                                                             \vfill
 
         \copyright\ \@author\ \@copyrightyear               \\
@@ -254,7 +254,7 @@
 %
 %   Title
 %   - Title may be italicized, is not surrouned by quotation marks, and does
-%     not end in a period. 
+%     not end in a period.
 %
 %   Examining/Supervisory Committee
 %   - Name of each committee member
@@ -313,9 +313,9 @@
                     \begin{center}
                   \textbf{APPROVAL}
                     \end{center}
-    
+
     \begin{itemize}[labelwidth=10em, leftmargin=10em, align=parleft]
-    
+
         \item[\textbf{Name:}]               \@author
         \item[\textbf{Degree:}]             \@degree\ \@discipline
         \item[\textbf{Title of Thesis:}]    \textit{\@title}
@@ -329,7 +329,7 @@
 
 %   Declaraion of Partial Copyright Licence
 %
-%   The (Declaration of) Partial Copyright Licence appears immediately after the 
+%   The (Declaration of) Partial Copyright Licence appears immediately after the
 %   Approval Page in your thesis.
 %
 %   Make sure you have an up-to-date copy of the DPCL from the SFU Library, that
@@ -348,13 +348,13 @@
 %   The problem or questions dealt with, the methods of investigation used, and
 %   the general conclusions are stated here.
 %
-%   All versions of the abstract (PDF and abstract entered into the Thesis 
+%   All versions of the abstract (PDF and abstract entered into the Thesis
 %   Registration System) must be the same.
 %
 %   Abstract length maximums:
 %   - Master's Thesis: 150 words (the thesis registration system requires the
 %     abstract be entered as one paragraph)
-%   - Doctorate: 350 words (usually 3 paragraphs; the thesis registration system 
+%   - Doctorate: 350 words (usually 3 paragraphs; the thesis registration system
 %     requires the abstract be entered as one paragraph)
 %
 %   The abstract must appear after the Partial Copyright Licence and start on
@@ -366,7 +366,7 @@
 %   The abstract should appear on one page.
 %
 %   Keywords appear under the abstract and must be entered into the Thesis
-%   Registration System. 
+%   Registration System.
 %
 %   Keywords should be separated by semi-colons. The list of keywords is
 %   sentence-cased and does not end in a period.
@@ -414,7 +414,7 @@
                     \begin{center}
                  \textbf{DEDICATION}
                     \end{center}
-    
+
     }{\newpage}
 
 \newenvironment{acknowledgements}{%
@@ -423,7 +423,7 @@
                     \begin{center}
               \textbf{ACKNOWLEDGEMENTS}
                     \end{center}
-    
+
     }{\newpage}
 
 
