@@ -14,11 +14,13 @@
 %   `enumitem` used for Approval Page
 %   `pdfpages` used for including Declaration of Partial Copyright Licence form
 %   `tocloft` used for making the ToC nicer
+%   `appendix` to add the word "Appendix" to the Table of Contents
 
 \RequirePackage{setspace}
 \RequirePackage[shortlabels]{enumitem}
 \RequirePackage{pdfpages}
 \RequirePackage{tocloft}
+\RequirePackage[titletoc]{appendix}
 
 
 %   Publication Style
