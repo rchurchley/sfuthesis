@@ -208,6 +208,7 @@
 
 \renewcommand{\maketitle}{{%
     \thispagestyle{empty}
+                                                            \null\vfill
                     \begin{center}
                                                             \doublespacing
                {\Large\bfseries\@title}                     \newlinesp@ce
@@ -235,6 +236,7 @@
 
            \smallspacing\@copyrightnotice
                     \end{center}
+                                                            \vfill
     \newpage
 }}
 
