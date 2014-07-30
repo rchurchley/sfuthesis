@@ -1,4 +1,4 @@
-.DS_Store
+# LaTeX auxiliary files
 *.acn
 *.acr
 *.alg
@@ -21,3 +21,19 @@
 *.out
 *.synctex.gz
 *.toc
+
+# Temporary, cache, and log files
+*~
+.sass-cache
+crash.log
+tmp
+
+# Easily compiled output (ignored to streamline merging process)
+*.pdf
+output
+
+# Files storing personal workspace preferences
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
