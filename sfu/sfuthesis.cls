@@ -45,7 +45,7 @@
 %   these margins; that is that nothing goes past where the text falls
 %   naturally on other pages.
 
-\RequirePackage[top=1.25in,left=1.25in,bottom=1in,right=1in]{geometry}
+\RequirePackage[top=1.25in, left=1.25in, bottom=0.7in, right=1in, includefoot]{geometry}
 
 
 %   Pagination
