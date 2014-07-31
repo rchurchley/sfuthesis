@@ -1,20 +1,68 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sfuthesis}[2014/01/21 SFU Thesis/Dissertation Template]
+\ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
 
-\PassOptionsToClass{11pt}{report}
+
+%   Class Options
+
+\RequirePackage{etoolbox}
+
+%   Use serif font in math mode (see Font section below)
+\newtoggle{serifmath}       \togglefalse{serifmath}
+\DeclareOption{serifmath}{  \toggletrue{serifmath}}
+
+%   If serifmath is enabled, use a Helvetica clone for the body text
+\newtoggle{helvetica}       \togglefalse{helvetica}
+\DeclareOption{helvetica}{  \toggletrue{helvetica}}
+
+%   All other options are passed to the underlying report class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+
+%   Set font to 11pt (see Font section below)
+\PassOptionsToClass{11pt}{report}
+
 \ProcessOptions
 \LoadClass{report}
+
+%
+%   Font
+%
+%   Arial 11 point (pt) is the preferred font/size and is the default in the
+%   templates acknowledging that theses are commonly read online. Other
+%   cross-platform sans serif fonts for text are also acceptable; the size
+%   chosen should be the same physical size as Arial 11pt.
+%
+%   Unfortunately, very few good sans-serif math fonts exist for LaTeX.
+%   By default, sfuthesis.cls uses 11pt Computer Modern Bright.
+%   It is currently unclear whether it is acceptable to use a serif math font
+%   alongside a sans-serif body. Brave souls who want to test the strictness
+%   of the SFU library may use the `serifmath` option to disable the CMBright
+%   package. They may also choose to enable the `helvetica` option to use
+%   TeX Gyre Heros — a clone of Helvetica — as the body font.
+%
+
+\iftoggle{serifmath}{%
+    \iftoggle{helvetica}{%
+        \RequirePackage{tgheros}
+    }{
+        \RequirePackage{lmodern}
+    }
+    \renewcommand*{\familydefault}{\sfdefault}
+    \RequirePackage[T1]{fontenc}
+}{
+    \RequirePackage{cmbright}
+}
 
 
 %   External packages used by this class:
 %
-%   `cmbright` optionally called in Fonts
+%   `etoolbox` used for class options, above
 %   `setspace` used in Line Spacing
 %   `enumitem` used for Approval Page
 %   `pdfpages` used for including Declaration of Partial Copyright Licence form
 %   `tocloft` used for making the ToC nicer
 %   `appendix` to add the word "Appendix" to the Table of Contents
+%   `cmbright` and `lmodern` optionally called in Fonts, above
+
 
 \RequirePackage{setspace}
 \RequirePackage[shortlabels]{enumitem}
@@ -49,6 +97,7 @@
 
 
 %   Pagination
+%
 %   All pages with the exception of the Title Page must have page numbers.
 %   Roman numerals must appear on preliminary pages (ii. iii, iv,...) and
 %   Arabic numbers must be used for the body of text, beginning with the
@@ -68,20 +117,6 @@
     \clearpage
     \pagenumbering{arabic}
 }
-
-
-%   Font
-%
-%   Arial 11 point (pt) is the preferred font/size and is the default in the
-%   templates acknowledging that theses are commonly read online. Other
-%   cross-platform sans serif fonts for text are also acceptable; the size
-%   chosen should be the same physical size as Arial 11pt.
-%
-%   sfuthesis.cls uses the sans-serif Computer Modern Bright typeface.
-%   The size, 11pt, is set at with \PassOptionsToClass at the beginning of
-%   this file.
-
-\RequirePackage{cmbright}
 
 
 %   Line Spacing

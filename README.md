@@ -1,5 +1,4 @@
-thesis-template
-===============
+# thesis-template
 
 You’re a graduate student preparing to write your thesis or dissertation. You'd like to start writing up your amazing research results, but first there's the small matter of your university's style requirements.
 
@@ -11,14 +10,22 @@ The following universities are currently supported:
 - Simon Fraser University
 
 
-System Requirements
--------------------
+## System Requirements
 
-You will need a relatively recent LaTeX distribution. In particular, the SFU template requires the following packages: `cmbright`, `setspace`, `tocloft`, `pdfpages`, `enumitem`, and their dependencies. If you do not have these installed, you can easily get them using the package manager that came with your distribution (`tlmgr` in TeX Live or its GUI frontend `TeX Live Utility` on OS X; `mpm` on Windows MikTeX installations).
+You will need a relatively recent LaTeX distribution. In particular, the SFU template requires the following packages and their dependencies:
+
+- `etoolbox` used for class options
+- `setspace` used in line spacing
+- `enumitem` used for approval page
+- `pdfpages` used for including Declaration of Partial Copyright Licence form
+- `tocloft` used for making the ToC nicer
+- `appendix` to add the word "Appendix" to the Table of Contents
+- `cmbright`, `lmodern`, or `tgheros` fonts, depending on class options
+
+If you do not have these installed, you can easily get them using the package manager that came with your distribution (`tlmgr` in TeX Live or its GUI frontend `TeX Live Utility` on OS X; `mpm` on Windows MikTeX installations).
 
 
-Installation
-------------
+## Installation
 
 1. [Download all of the project's files][1] and move the files appropriate to your university to the (same) folder of your choice.
 
@@ -29,8 +36,7 @@ Installation
 4. Compile it!
 
 
-Contributing
-------------
+## Contributing
 
 If you find you have to make any changes to these templates, either because it doesn't compile on your system or because your university's requirements have changed, please email me at `ross@rosschurchley.com` so other people can benefit.
 
