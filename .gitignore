@@ -28,10 +28,6 @@
 crash.log
 tmp
 
-# Easily compiled output (ignored to streamline merging process)
-*.pdf
-output
-
 # Files storing personal workspace preferences
 *.sublime-project
 *.sublime-workspace
