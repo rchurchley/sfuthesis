@@ -4,10 +4,7 @@ You’re a graduate student preparing to write your thesis or dissertation. You'
 
 This project provides LaTeX classes that do most of that formatting work for you. It is intended to be easy to use and easy to maintain, so you don't have to be a TeX genius to make those small changes your supervisor asks for.
 
-The following universities are currently supported:
-
-- University of Victoria
-- Simon Fraser University
+This project is primarily aimed at graduate students at Simon Fraser University. If you go to the University of Victoria, you might want to check out a [different template](https://github.com/rchurchley/uvic-thesis) based on my master's thesis there.
 
 
 ## System Requirements
