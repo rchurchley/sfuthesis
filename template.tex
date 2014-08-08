@@ -25,7 +25,7 @@
 	\member{Dr.\ Hubert J.\ Farnsworth}{External Examiner\\Professor\\Department of Quantum Fields\\Mars University}
 }
 
-% 	Your own packages and customizations. The following packages are already defined in sfuthesis.cls:
+% Your own packages and customizations. The following packages are already defined in sfuthesis.cls:
 % `etoolbox`
 % `setspace`
 % `enumitem` (with the shortlabels option)
@@ -37,11 +37,11 @@
 \usepackage{amsmath,amssymb,amsthm}
 
 
-% 	End preamble
+% End preamble
 
 \begin{document}
 
-% 	Begin frontmatter
+% Begin frontmatter
 
 \frontmatter
 \maketitle
@@ -49,7 +49,7 @@
 \makecopyrightdeclaration%
 
 \begin{abstract}
-	You’re a graduate student preparing to write your thesis or dissertation. You'd like to start writing up your amazing research results, but first there's the small matter of your university's style requirements.
+	You're a graduate student preparing to write your thesis or dissertation. You'd like to start writing up your amazing research results, but first there's the small matter of your university's style requirements.
 
 	This document provides a template to help you write up your research into a thesis or dissertation. The most important part is the \texttt{sfuthesis} class, which does much of the work necessary to make your thesis conform to SFU's formatting requirements (as of 2014). The class (and this template) have been designed to be easy to use and easy to maintain, so you don't have to be a \LaTeX\ genius to make those small changes your supervisor asks for.
 \end{abstract}
@@ -79,19 +79,19 @@
 	\end{description}
 \end{acknowledgements}
 
-\addtoToC{Table of Contents}\tableofcontents
-\addtoToC{List of Tables}\listoftables
+\addtoToC{Table of Contents}\tableofcontents\clearpage
+\addtoToC{List of Tables}\listoftables\clearpage
 \addtoToC{List of Figures}\listoffigures
 
 
-% 	End frontmatter. Your thesis starts here!
+% End frontmatter. Your thesis starts here!
 
 \mainmatter%
 
 \chapter{Introduction}
 
 
-% 	Backmatter: the bibliography and any appendices
+% Backmatter: the bibliography and any appendices
 
 \backmatter%
 	\addtoToC{Bibliography}
