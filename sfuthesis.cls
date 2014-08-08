@@ -1,24 +1,35 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
 
-
-%   Class Options
-
 \RequirePackage{etoolbox}
 
-%   Use serif font in math mode (see Font section below)
-\newtoggle{serifmath}       \togglefalse{serifmath}
-\DeclareOption{serifmath}{  \toggletrue{serifmath}}
 
-%   If serifmath is enabled, use a Helvetica clone for the body text
-\newtoggle{helvetica}       \togglefalse{helvetica}
-\DeclareOption{helvetica}{  \toggletrue{helvetica}}
+%   Class Options
+%
+%   Users of sfuthesis.cls may choose between a sans-serif font (default),
+%   a serif font (using the `serif` option), or a mixed solution using serifs
+%   in math mode only (using the `serifmath` option).
+%
 
-%   All other options are passed to the underlying report class
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+    \newtoggle{sans}                \toggletrue{sans} % default
+    \newtoggle{serif}
+    \newtoggle{serifmath}
 
-%   Set font to 11pt (see Font section below)
-\PassOptionsToClass{11pt}{report}
+    \DeclareOption{serif}{%
+        \togglefalse{sans}
+        \toggletrue{serif}
+    }
+
+    \DeclareOption{serifmath}{%
+        \togglefalse{sans}
+        \toggletrue{serifmath}
+    }
+
+    \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+
+    %   Set font to 11pt (see Font section below)
+
+    \PassOptionsToClass{11pt}{report}
 
 \ProcessOptions
 \LoadClass{report}
@@ -33,23 +44,25 @@
 %
 %   Unfortunately, very few good sans-serif math fonts exist for LaTeX.
 %   By default, sfuthesis.cls uses 11pt Computer Modern Bright.
-%   It is currently unclear whether it is acceptable to use a serif math font
-%   alongside a sans-serif body. Brave souls who want to test the strictness
-%   of the SFU library may use the `serifmath` option to disable the CMBright
-%   package. They may also choose to enable the `helvetica` option to use
-%   TeX Gyre Heros — a clone of Helvetica — as the body font.
+%   If the user invokes the `serif` or `serifmath` options, the thesis will
+%   instead be typeset in Latin Modern / Latin Modern Sans.
 %
 
-\iftoggle{serifmath}{%
-    \iftoggle{helvetica}{%
-        \RequirePackage{tgheros}
-    }{
-        \RequirePackage{lmodern}
-    }
-    \renewcommand*{\familydefault}{\sfdefault}
-    \RequirePackage[T1]{fontenc}
-}{
+\renewcommand*{\familydefault}{\sfdefault}
+\RequirePackage[T1]{fontenc}
+
+
+\iftoggle{sans}{%
     \RequirePackage{cmbright}
+}
+
+\iftoggle{serif}{%
+    \renewcommand*{\familydefault}{\rmdefault}
+    \RequirePackage{lmodern}
+}
+
+\iftoggle{serifmath}{%
+    \RequirePackage{lmodern}
 }
 
 
@@ -395,7 +408,8 @@
 %     requires the abstract be entered as one paragraph)
 %
 %   The abstract must appear after the Partial Copyright Licence and start on
-%   page iv or page v if you have pasted the Ethics Statement into your document.
+%   page iv or page v if you have pasted the Ethics Statement into your
+%   document.
 %
 %   Use plain text only (avoid using bullets, numbered paragraphs, citations,
 %   footnotes, tables, graphs, or illustrations).
