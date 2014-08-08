@@ -17,7 +17,7 @@ You will need a relatively recent LaTeX distribution. In particular, the SFU tem
 - `pdfpages` used for including Declaration of Partial Copyright Licence form
 - `tocloft` used for making the ToC nicer
 - `appendix` to add the word "Appendix" to the Table of Contents
-- `cmbright`, `lmodern`, or `tgheros` fonts, depending on class options
+- `cmbright` or `lmodern`, depending on class options
 
 If you do not have these installed, you can easily get them using the package manager that came with your distribution (`tlmgr` in TeX Live or its GUI frontend `TeX Live Utility` on OS X; `mpm` on Windows MikTeX installations).
 
