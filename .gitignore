@@ -1,4 +1,3 @@
-# LaTeX auxiliary files
 *.acn
 *.acr
 *.alg
@@ -21,15 +20,3 @@
 *.out
 *.synctex.gz
 *.toc
-
-# Temporary, cache, and log files
-*~
-.sass-cache
-crash.log
-tmp
-
-# Files storing personal workspace preferences
-*.sublime-project
-*.sublime-workspace
-.DS_Store
-
