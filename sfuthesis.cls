@@ -1,3 +1,31 @@
+%   Copyright (C) 1989--2014 Simon Fraser University
+%
+%   Contributors:
+%       Stephen Chan        (1989)
+%       Margaret Sharon     (1996)
+%       Pepe Kubon          (1997--98)
+%       Greg Baker          (2003--06)
+%       Chris McIntosh      (2011)
+%       Ahmed Saad          (2013--14)
+%       Reynaldo Arteaga    (2014)
+%       Ross Churchley      (2014)
+%
+%   This work may be distributed and/or modified under the conditions of
+%   the LaTeX Project Public License, either version 1.3 of this license
+%   or (at your option) any later version. The latest version of this
+%   license is in:
+%
+%      http://www.latex-project.org/lppl.txt
+%
+%   and version 1.3 or later is part of all distributions of LaTeX version
+%   2005/12/01 or later.
+%
+%   This work has the LPPL maintenance status `author-maintained'.
+%
+%   This work consists of the file sfuthesis.cls.
+%
+
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
 
