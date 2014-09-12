@@ -1,8 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
 
-\RequirePackage{etoolbox}
-
 
 %   Class Options
 %
@@ -11,30 +9,33 @@
 %   in math mode only (using the `serifmath` option).
 %
 
-    \newtoggle{sans}                \toggletrue{sans} % default
-    \newtoggle{serif}
-    \newtoggle{serifmath}
+\RequirePackage{etoolbox}
 
-    \DeclareOption{serif}{%
-        \togglefalse{sans}
-        \toggletrue{serif}
-    }
+\newtoggle{sans}
+    \toggletrue{sans} % default
+\newtoggle{serif}
+\newtoggle{serifmath}
 
-    \DeclareOption{serifmath}{%
-        \togglefalse{sans}
-        \toggletrue{serifmath}
-    }
+\DeclareOption{serif}{%
+    \togglefalse{sans}
+    \toggletrue{serif}
+}
 
-    \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\DeclareOption{serifmath}{%
+    \togglefalse{sans}
+    \toggletrue{serifmath}
+}
 
-    %   Set font to 11pt (see Font section below)
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 
-    \PassOptionsToClass{11pt}{report}
+%   Set font to 11pt (see Font section below)
+
+\PassOptionsToClass{11pt}{report}
 
 \ProcessOptions
 \LoadClass{report}
 
-%
+
 %   Font
 %
 %   Arial 11 point (pt) is the preferred font/size and is the default in the
@@ -75,23 +76,13 @@
 %   `tocloft` used for making the ToC nicer
 %   `appendix` to add the word "Appendix" to the Table of Contents
 %   `cmbright` and `lmodern` optionally called in Fonts, above
-
+%
 
 \RequirePackage{setspace}
 \RequirePackage[shortlabels]{enumitem}
 \RequirePackage{pdfpages}
 \RequirePackage{tocloft}
 \RequirePackage[titletoc]{appendix}
-
-
-%   Publication Style
-%
-%   The most commonly used citation/referencing styles are APA,
-%   Chicago/Turabian, and MLA.  If you are unsure which writing style to use
-%   or the degree to which you must follow its conventions, contact your
-%   supervisor/instructor or department graduate assistant.  In some cases
-%   (such as headings, line spacing, paragraph alignment, font) deviation from
-%   your publication style is permitted.
 
 
 %   Margins
@@ -105,8 +96,15 @@
 %   Please ensure that tables, figures, and/or images do not stretch beyond
 %   these margins; that is that nothing goes past where the text falls
 %   naturally on other pages.
+%
 
-\RequirePackage[top=1.25in, left=1.25in, bottom=0.7in, right=1in, includefoot]{geometry}
+\RequirePackage[
+    top=1.25in,
+    left=1.25in,
+    bottom=0.7in,
+    right=1in,
+    includefoot   % ensure page numbers do not extend into margins
+]{geometry}
 
 
 %   Pagination
@@ -119,6 +117,7 @@
 %   Page numbers must be greater than .5" from the edge of the page.
 %   It is preferred that page numbers appear at the bottom/center of each page
 %   Page numbers may also be located bottom or top right.
+%
 
 \pagestyle{plain}
 
@@ -137,6 +136,7 @@
 %   The body of your document requires 1.5 line-spacing with the exception of
 %   blockquotes, bullets, a series of numbered paragraphs, references,
 %   footnotes, and appendices, all of which are single spaced.
+%
 
 \newcommand{\defaultspacing}{\onehalfspacing}
 \newcommand{\smallspacing}{\singlespacing}
@@ -213,7 +213,7 @@
 %   can override the ``all rights reserved'' text with \copyrightnotice{...}
 %
 
-%   These just define the commands to set metadata
+%   Define the commands to set metadata
 
 \newcommand{\thesistype}[1]{\renewcommand{\@thesistype}{#1}}
 \newcommand{\previousdegrees}[1]{\renewcommand{\@previousdegrees}{#1}}
@@ -225,7 +225,7 @@
 \newcommand{\copyrightyear}[1]{\renewcommand{\@copyrightyear}{#1}}
 \newcommand{\copyrightnotice}[1]{\renewcommand{\@copyrightnotice}{#1}}
 
-%   These variables hold metadata and warn you if you haven't set them yet
+%   Define variables to hold metadata and warn you if you haven't set them yet
 
 \newcommand{\@MissingMetadata}[1]{\ClassWarning{sfuthesis}{%
     Missing #1. Set this in the preamble to fix your frontmatter.
@@ -252,7 +252,7 @@
 
 \newcommand{\newlinesp@ce}{\\[0.75\baselineskip]}    % an extra big line break
 
-%   Here is the actual title page
+%   Automagically produce title page
 
 \renewcommand{\maketitle}{{%
     \thispagestyle{empty}
@@ -356,7 +356,7 @@
 \newcommand{\@approvaldateline}{\item[\textbf{Date Approved:}] n/a}
 
 
-%   The actual approval page
+%   Automagically generate approval page
 
 \newcommand{\makecommittee}{%
     \addtoToC{Approval}
@@ -385,6 +385,7 @@
 %   Make sure you have an up-to-date copy of the DPCL from the SFU Library, that
 %   it is named correctly, and that it's in the same folder as this class file
 %   and your thesis.
+%
 
 \newcommand{\makecopyrightdeclaration}{%
     \addtoToC{Partial Copyright Licence}
@@ -421,6 +422,7 @@
 %
 %   Keywords should be separated by semi-colons. The list of keywords is
 %   sentence-cased and does not end in a period.
+%
 
 \newcommand{\keywords}[1]{\renewcommand{\@keywords}{#1}}
 \newcommand{\@keywords}{KEYWORDS \@MissingMetadata{keywords}}
