@@ -1,6 +1,10 @@
 %   Copyright (C) 1989--2014 Simon Fraser University
 %
-%   Contributors:
+%   Contributors
+%   ============
+%   The previous thesis template, `csthesis`, was written by Stephen Chan based
+%   on Stanford's PhD thesis style.
+%
 %       Stephen Chan        (1989)
 %       Margaret Sharon     (1996)
 %       Pepe Kubon          (1997--98)
@@ -8,6 +12,9 @@
 %       Chris McIntosh      (2011)
 %       Ahmed Saad          (2013--14)
 %       Reynaldo Arteaga    (2014)
+%
+%   In 2014, the template was renamed `sfuthesis` and rewritten from the ground up.
+
 %       Ross Churchley      (2014)
 %
 %   This work may be distributed and/or modified under the conditions of
