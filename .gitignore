@@ -1,12 +1,12 @@
+### LaTeX Temp Files ###
 *.acn
 *.acr
 *.alg
 *.aux
-*.auxlock
 *.bbl
 *.blg
+*.dvi
 *.fdb_latexmk
-*.fls
 *.glg
 *.glo
 *.gls
@@ -17,6 +17,20 @@
 *.lof
 *.log
 *.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
 *.out
+*.pdfsync
+*.ps
+*.snm
 *.synctex.gz
 *.toc
+*.vrb
+*.xdy
+*.tdo
+
+### Compiled output ###
+*.pdf
