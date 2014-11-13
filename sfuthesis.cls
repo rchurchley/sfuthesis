@@ -48,8 +48,13 @@
 
 \newtoggle{sans}
     \toggletrue{sans} % default
+\newtoggle{helvetica}
 \newtoggle{serif}
 \newtoggle{serifmath}
+
+\DeclareOption{helvetica}{%
+    \toggletrue{helvetica}
+}
 
 \DeclareOption{serif}{%
     \togglefalse{sans}
