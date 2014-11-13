@@ -374,15 +374,16 @@
 
 %   Commands to set committee
 
-\newcommand{\signatureline}{\noindent\rule{0.1pt}{0.4pt}\hrulefill\par}
+\newcommand{\signatureline}{\noindent\rule{0.1pt}{0.4pt}\hrulefill\\[-0.2\baselineskip]}
 \newcommand{\chair}[2]{%
     #1                  \newline
-    #2                  \newlinesp@ce
+    #2
 }
 \newcommand{\member}[2]{%
+                        \newlinesp@ce
     \signatureline
     \textbf{#1}         \newline
-    #2                  \newlinesp@ce
+    #2
 }
 \newcommand{\committee}[2]{\renewcommand{\@committee}{%
     \item[\textbf{#1:}] #2
