@@ -97,13 +97,17 @@
     \RequirePackage{cmbright}
 }
 
+\iftoggle{serifmath}{%
+    \RequirePackage{lmodern}
+}
+
 \iftoggle{serif}{%
     \renewcommand*{\familydefault}{\rmdefault}
     \RequirePackage{lmodern}
 }
 
-\iftoggle{serifmath}{%
-    \RequirePackage{lmodern}
+\iftoggle{helvetica}{%
+    \RequirePackage{tgheros}
 }
 
 
