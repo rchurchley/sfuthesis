@@ -1,6 +1,5 @@
 \documentclass{sfuthesis}
 
-
 \title{An example of a thesis or dissertation}
 \thesistype{Dissertation}
 \author{Stuart Arthur Dent}
@@ -19,29 +18,47 @@
 
 \committee{Examining Committee}{%
 	\chair{Dr.\ Pamela Isely}{Chair\\Department of Toxic Biology}
-	\member{Dr.\ Cuthbert Calculus}{Senior Supervisor\\Professor}
-	\member{Dr.\ Emmett Brown}{Co-Supervisor\\Associate Professor\\Department of Irrational Physics}
+	\member{Dr.\ Emmett Brown}{Senior Supervisor\\Professor}
+	\member{Dr.\ Susan Calvin}{Co-Supervisor\\Associate Professor\\Department of Robopsychology}
 	\member{Dr.\ James Moriarty}{Supervisor\\Adjunct Professor}
 	\member{Dr.\ Hubert J.\ Farnsworth}{External Examiner\\Professor\\Department of Quantum Fields\\Mars University}
 }
 
-% Your own packages and customizations. The following packages are already defined in sfuthesis.cls:
-% `etoolbox`
-% `setspace`
-% `enumitem` (with the shortlabels option)
-% `pdfpages`
-% `tocloft`
-% `appendix`
-% one of `cmbright` or `lmodern` depending on class options
+%  PACKAGES AND CUSTOMIZATIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  You don't need to call the following packages, which are already called
+%  in the sfuthesis class file:
+%  - etoolbox
+%  - setspace
+%  - enumitem (with the shortlabels option)
+%  - pdfpages
+%  - tocloft
+%  - appendix
+%  - cmbright or lmodern
+%
+%  If you call one of the above packages (or one of their dependencies)
+%  with different options, you may get a "Option clash" LaTeX error.
+%  If you get this error, you can fix it by removing your copy of
+%  \usepackage and just passing the options you need by adding
+%
+%  \PassOptionsToPackage{<options>}{<package>}
+%
+%  before \documentclass{sfuthesis}.
+%
 
 \usepackage{amsmath,amssymb,amsthm}
 
 
-% End preamble
+
+
+
+%  FRONTMATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Title page, committee page, copyright declaration, abstract,
+%  dedication, acknowledgements, table of contents, etc.
+%
 
 \begin{document}
-
-% Begin frontmatter
 
 \frontmatter
 \maketitle
@@ -49,34 +66,15 @@
 \makecopyrightdeclaration%
 
 \begin{abstract}
-	You're a graduate student preparing to write your thesis or dissertation. You'd like to start writing up your amazing research results, but first there's the small matter of your university's style requirements.
-
-	This document provides a template to help you write up your research into a thesis or dissertation. The most important part is the \texttt{sfuthesis} class, which does much of the work necessary to make your thesis conform to SFU's formatting requirements (as of 2014). The class (and this template) have been designed to be easy to use and easy to maintain, so you don't have to be a \LaTeX\ genius to make those small changes your supervisor asks for.
+	This is a blank document from which you can start writing your thesis.
 \end{abstract}
 
 
-\begin{dedication}
-	\vfill
-	\begin{center}
-		\Large\itshape%
-		This thesis is dedicated to you,\\
-		as you are dedicated to your thesis.
-	\end{center}
-	\vfill
+\begin{dedication} % optional
 \end{dedication}
 
 
-\begin{acknowledgements}
-	\noindent I would like to thank:
-	\begin{description}
-	\item[Donald Knuth, Leslie Lamport,] and everybody else involved in the development of \TeX\ and \LaTeX. Without them, our documents would all look a lot less pretty.
-	\item[the members of Bread Club,] for always being there with a baguette and some crumby puns.
-	\item[my parents,] for supporting me through thick and thin.
-	\item[my supervisors, Dr.\ Cuthbert Calculus and Dr.\ Emmett Brown,]
-		for their encouragement, patience, and advice.
-	\item[the Evil League of Evil,]
-		for funding me and my graduate research with a Victor Frankenstein Graduate Scholarship.
-	\end{description}
+\begin{acknowledgements} % optional
 \end{acknowledgements}
 
 \addtoToC{Table of Contents}\tableofcontents\clearpage
@@ -84,23 +82,34 @@
 \addtoToC{List of Figures}\listoffigures
 
 
-% End frontmatter. Your thesis starts here!
+
+
+
+%  MAIN MATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Start writing your thesis --- or start \include ing chapters --- here.
+%
 
 \mainmatter%
 
 \chapter{Introduction}
 
 
-% Backmatter: the bibliography and any appendices
+
+
+
+%  BACK MATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  References and appendices. Appendices come after the bibliography and
+%  should be in the order that they are referred to in the text.
+%
 
 \backmatter%
 	\addtoToC{Bibliography}
 	\bibliographystyle{plain}
 	\bibliography{references}
 
-\begin{appendices}
-\chapter{Code}
-
-
+\begin{appendices} % optional
+	\chapter{Code}
 \end{appendices}
 \end{document}

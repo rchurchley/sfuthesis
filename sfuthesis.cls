@@ -123,7 +123,7 @@
 %
 
 \RequirePackage{setspace}
-\RequirePackage[shortlabels]{enumitem}
+\RequirePackage{enumitem}
 \RequirePackage{pdfpages}
 \RequirePackage{tocloft}
 \RequirePackage[titletoc]{appendix}
