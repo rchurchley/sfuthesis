@@ -143,10 +143,10 @@
 %
 
 \RequirePackage[
-    top=1.25in,
+    top=1in,
     left=1.25in,
     bottom=0.7in,
-    right=1in,
+    right=1.25in,
     includefoot   % ensure page numbers do not extend into margins
 ]{geometry}
 
@@ -294,7 +294,7 @@
     \endgroup
 }
 
-\newcommand{\newlinesp@ce}{\\[0.75\baselineskip]}    % an extra big line break
+\newcommand{\newlinesp@ce}{\par\vspace{0.75\baselineskip}}    % an extra big line break
 
 %   Automagically produce title page
 
