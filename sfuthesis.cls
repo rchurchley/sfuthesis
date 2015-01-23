@@ -473,6 +473,8 @@
 \newcommand{\@keywords}{KEYWORDS \@MissingMetadata{keywords}}
 
 \renewenvironment{abstract}{%
+    \setlength{\parindent}{0pt}%
+    \setlength{\parskip}{5pt}%
     \addtoToC{Abstract}                         \ \vfill
 
                     \begin{center}
