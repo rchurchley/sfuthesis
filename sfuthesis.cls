@@ -294,7 +294,7 @@
     \endgroup
 }
 
-\newcommand{\newlinesp@ce}{\vspace{0.75\baselineskip}}    % an extra big line break
+\newcommand{\newlinesp@ce}{\leavevmode\\[5pt]}    % an extra big line break
 
 %   Automagically produce title page
 
