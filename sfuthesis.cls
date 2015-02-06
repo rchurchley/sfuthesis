@@ -125,10 +125,10 @@
 %
 
 \RequirePackage[
-    top=1.25in,
+    top=1in,
     left=1.25in,
     bottom=0.7in,
-    right=1in,
+    right=1.25in,
     includefoot   % ensure page numbers do not extend into margins
 ]{geometry}
 
