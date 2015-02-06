@@ -14,8 +14,12 @@
 %       Reynaldo Arteaga    (2014)
 %
 %   In 2014, the template was renamed `sfuthesis` and rewritten from the ground up.
-
+%
 %       Ross Churchley      (2014)
+%
+%
+%   License
+%   =======
 %
 %   This work may be distributed and/or modified under the conditions of
 %   the LaTeX Project Public License, either version 1.3 of this license
@@ -31,7 +35,19 @@
 %
 %   This work consists of the file sfuthesis.cls.
 %
-
+%
+%   Dependencies
+%   ============
+%
+%   This class uses the following external packages:
+%   `etoolbox` used for class options
+%   `cmbright` or `lmodern` used for Fonts
+%   `setspace` used for Line Spacing
+%   `enumitem` used for Approval Page
+%   `pdfpages` used for including Declaration of Partial Copyright Licence form
+%   `tocloft` used for making the ToC nicer
+%   `appendix` to add the word "Appendix" to the Table of Contents
+%
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
