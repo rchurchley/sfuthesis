@@ -56,16 +56,16 @@
 
 %   Class Options --- Fonts
 %
-%   Users of sfuthesis.cls may choose between a serif font (default) and
-%   a sans-serif font (using the `sans` option). Other font choices may
+%   Users of sfuthesis.cls may choose between a sans-serif font (default) and
+%   a serif font (using the `serif` option). Other font choices may
 %   be acceptable to the SFU library, and can be set in the user's preamble.
 %
 
 \RequirePackage{etoolbox}
-\newtoggle{sans}
+\newtoggle{serif}
 
-\DeclareOption{sans}{
-    \toggletrue{sans}
+\DeclareOption{serif}{
+    \toggletrue{serif}
 }
 
 \PassOptionsToClass{11pt}{report}
@@ -91,10 +91,10 @@
 %   The fontenc package ensures proper hyphenation of accented words.
 %
 
-\iftoggle{sans}{%
-  \RequirePackage{cmbright}
+\iftoggle{serif}{%
+    \RequirePackage{lmodern}
 }{% else
-  \RequirePackage{lmodern}
+    \RequirePackage{cmbright}
 }
 
 \RequirePackage[T1]{fontenc}
