@@ -42,6 +42,7 @@
 %   This class uses the following external packages:
 %   `etoolbox` used for class options
 %   `cmbright` or `lmodern` used for Fonts
+%   `geometry` used for Margins
 %   `setspace` used for Line Spacing
 %   `enumitem` used for Approval Page
 %   `pdfpages` used for including Declaration of Partial Copyright Licence form
@@ -119,15 +120,8 @@
 
 %   Margins
 %
-%   All content must be inside the margins to allow theses to be printed and
-%   bound. Though margins cannot be smaller, they can be larger --- however,
-%   this is not recommended.
-%
-%   1.25" left/right and 1" top/bottom (page numbers at a minimum of .7")
-%
-%   Please ensure that tables, figures, and/or images do not stretch beyond
-%   these margins; that is that nothing goes past where the text falls
-%   naturally on other pages.
+%   Set the margins to 1.25" on the left and right, 1" on the top, and
+%   0.7" from the bottom to the page numbers.
 %
 
 \RequirePackage[
@@ -141,14 +135,9 @@
 
 %   Pagination
 %
-%   All pages with the exception of the Title Page must have page numbers.
-%   Roman numerals must appear on preliminary pages (ii. iii, iv,...) and
-%   Arabic numbers must be used for the body of text, beginning with the
-%   introduction through to the end of the document (1, 2, 3,...).
-%
-%   Page numbers must be greater than .5" from the edge of the page.
-%   It is preferred that page numbers appear at the bottom/center of each page
-%   Page numbers may also be located bottom or top right.
+%   Provides commands to set page numbers in roman numerals for preliminary pages
+%   (frontmatter) and arabic numbers for all other content (mainmatter)
+%   \pagestyle{plain} sets page numbers in the bottom center.
 %
 
 \pagestyle{plain}
@@ -165,17 +154,18 @@
 
 %   Line Spacing
 %
-%   The body of your document requires 1.5 line-spacing with the exception of
-%   blockquotes, bullets, a series of numbered paragraphs, references,
-%   footnotes, and appendices, all of which are single spaced.
+%   Sets 1.5 line spacing for the document body and provides commands to set
+%   single-spacing for the references-bibliography-appendices "backmatter".
+%   These commands do not affect spacing inside figures, tables, and other
+%   floats, which remain single-spaced.
 %
 
+\RequirePackage{setspace}
 \newcommand{\defaultspacing}{\onehalfspacing}
 \newcommand{\smallspacing}{\singlespacing}
 
 \defaultspacing
-
-\newcommand{\backmatter}{\singlespacing}
+\newcommand{\backmatter}{\smallspacing}
 
 
 %   Title Page
