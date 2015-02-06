@@ -37,78 +37,50 @@
 \ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
 
 
-%   Class Options
+%   Class Options --- Fonts
 %
-%   Users of sfuthesis.cls may choose between a sans-serif font (default),
-%   a serif font (using the `serif` option), or a mixed solution using serifs
-%   in math mode only (using the `serifmath` option).
+%   Users of sfuthesis.cls may choose between a serif font (default) and
+%   a sans-serif font (using the `sans` option). Other font choices may
+%   be acceptable to the SFU library, and can be set in the user's preamble.
 %
 
 \RequirePackage{etoolbox}
-
 \newtoggle{sans}
-    \toggletrue{sans} % default
-\newtoggle{helvetica}
-\newtoggle{serif}
-\newtoggle{serifmath}
 
-\DeclareOption{helvetica}{%
-    \toggletrue{helvetica}
+\DeclareOption{sans}{
+    \toggletrue{sans}
 }
-
-\DeclareOption{serif}{%
-    \togglefalse{sans}
-    \toggletrue{serif}
-}
-
-\DeclareOption{serifmath}{%
-    \togglefalse{sans}
-    \toggletrue{serifmath}
-}
-
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
-
-%   Set font to 11pt (see Font section below)
 
 \PassOptionsToClass{11pt}{report}
+
+
+%   Base Class
+%
+%   sfuthesis.cls is based on the standard `report` document class.
+%   For more information (including standard class options), see
+%   http://texdoc.net/texmf-dist/doc/latex/base/classes.pdf
+%   or type `texdoc report` on the command line.
+%
+
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 
 \ProcessOptions
 \LoadClass{report}
 
 
-%   Font
+%   Fonts
 %
-%   Arial 11 point (pt) is the preferred font/size and is the default in the
-%   templates acknowledging that theses are commonly read online. Other
-%   cross-platform sans serif fonts for text are also acceptable; the size
-%   chosen should be the same physical size as Arial 11pt.
+%   Sets the typeface based on the class options (see above).
+%   The fontenc package ensures proper hyphenation of accented words.
 %
-%   Unfortunately, very few good sans-serif math fonts exist for LaTeX.
-%   By default, sfuthesis.cls uses 11pt Computer Modern Bright.
-%   If the user invokes the `serif` or `serifmath` options, the thesis will
-%   instead be typeset in Latin Modern / Latin Modern Sans.
-%
-
-\renewcommand*{\familydefault}{\sfdefault}
-\RequirePackage[T1]{fontenc}
-
 
 \iftoggle{sans}{%
-    \RequirePackage{cmbright}
+  \RequirePackage{cmbright}
+}{% else
+  \RequirePackage{lmodern}
 }
 
-\iftoggle{serifmath}{%
-    \RequirePackage{lmodern}
-}
-
-\iftoggle{serif}{%
-    \renewcommand*{\familydefault}{\rmdefault}
-    \RequirePackage{lmodern}
-}
-
-\iftoggle{helvetica}{%
-    \RequirePackage{tgheros}
-}
+\RequirePackage[T1]{fontenc}
 
 
 %   External packages used by this class:
