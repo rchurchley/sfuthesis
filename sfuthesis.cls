@@ -91,10 +91,13 @@
 %   The fontenc package ensures proper hyphenation of accented words.
 %
 
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+
 \iftoggle{serif}{%
-    \RequirePackage{lmodern}
+    \renewcommand*\familydefault{\rmdefault}
 }{% else
-    \RequirePackage{cmbright}
+    \renewcommand*\familydefault{\sfdefault}
 }
 
 \RequirePackage[T1]{fontenc}
