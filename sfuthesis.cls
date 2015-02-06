@@ -168,90 +168,39 @@
 \newcommand{\backmatter}{\smallspacing}
 
 
+%   Provides an internal command to generate extra space between elements on
+%   the title and approval page.
+%
+
+\newcommand{\newlinesp@ce}{\leavevmode\\[5pt]}
+
+
 %   Title Page
 %
-%   The Title Page spans only one page and requires no page number on the page.
-%   Ensure there is space between all the elements on the Title Page.
+%   Generates a correctly-formatted title page, provided the following
+%   information is given in the preamble:
 %
-%   The title page requires the following elements.
-%
-%   Title
-%   - The title of the thesis needs to be the same on all documents.
-%   - Avoid using quotations marks around the title. When necessary, single- or
-%     double- quotation marks within a title are permitted.
-%   - Do not include a period after the title.
-%   - Avoid using acronyms in the title when possible.
-%
-%   Your name and previous degrees
-%   - Firstname Lastname
-%   - M.Sc. (Mathematics), Name of University (City or State), 20XX
-%   - B.Sc., University of Placename, 20XX
-%   - Previous degrees are abbreviated on the title page.
-%   - If from a foreign university, please consult that institution for the
-%     appropriate short-form degree abbreviation.
-%   - Your most recent degree comes first.
-%   - City/State/Country is only needed for universities that stipulate these in
-%     their names --- e.g. University of California (Berkeley) --- or for
-%     universities that share a name with one in another country.
-%   - Each degree must fit on one line. If necessary, remove discipline and
-%     city/state/country to make it fit. But do not abbreviate the name of the
-%     university.
-%
-%   In Partial Fulfillment...
-%   - This element appears on 3 lines.
-%   - Use correct thesis type: see http://www.lib.sfu.ca/faqs/thesis-dissertation-extended-essays-research-project-capstone
-%   - Use full name of degree, e.g. Master of Arts, Doctor of Philosophy.
-%
-%   Department/School/Program and Faculty
-%   - This element appears on three lines.
-%   - State the department/school/Program on one line and the Faculty on another
-%   - Check the SFU website to find the correct names
-%
-%   Copyright, semester, and year
-%   - Use 1.5 spacing
-%   - "Semester" refers to the semester in which you hand your thesis to the
-%     library, not the semester in which you defended.
-%
-%   Rights statement
-%   - Single-spaced, 10pt font size.
-%   - The "all rights reserved" text is specified by the library's template.
-%     You may instead choose to use an appropriate Creative Commons license.
-%     If you do, you still need to fill out a Partial Copyright License form.
-%
-%
-%   To satisfy these requirements, `sfuthesis.cls` requires the following
-%   information:
-%
+%   \title{...}
+%   \author{...}
 %   \previousdegrees{...}
 %   \thesistype{...}
 %   \degree{...}
+%   \discipline{...} (optional)
 %   \department{...}
 %   \faculty{...}
-%   \date{...}
+%   \semester{...}
 %   \copyrightyear{...}
 %
-%   If these are set in the preamble, \maketitle will output a correctly
-%   formatted title page. If you want to use a Creative Commons license, you
-%   can override the ``all rights reserved'' text with \copyrightnotice{...}
+%   The ``all rights reserved'' text may also be overrided with
+%   \copyrightnotice{...}
 %
 
-%   Define the commands to set metadata
-
-\newcommand{\thesistype}[1]{\renewcommand{\@thesistype}{#1}}
-\newcommand{\previousdegrees}[1]{\renewcommand{\@previousdegrees}{#1}}
-\newcommand{\degree}[1]{\renewcommand{\@degree}{#1}}
-\newcommand{\discipline}[1]{\renewcommand{\@discipline}{(#1)}}
-\newcommand{\department}[1]{\renewcommand{\@department}{#1}}
-\newcommand{\faculty}[1]{\renewcommand{\@faculty}{#1}}
-\newcommand{\semester}[1]{\renewcommand{\@semester}{#1}}
-\newcommand{\copyrightyear}[1]{\renewcommand{\@copyrightyear}{#1}}
-\newcommand{\copyrightnotice}[1]{\renewcommand{\@copyrightnotice}{#1}}
-
-%   Define variables to hold metadata and warn you if you haven't set them yet
-
-\newcommand{\@MissingMetadata}[1]{\ClassWarning{sfuthesis}{%
-    Missing #1. Set this in the preamble to fix your frontmatter.
-}}
+%   Implementation: create a new "variable" for each of the above metadata,
+%   initially storing placeholder text and an instruction to throw a warning
+%   if the user hasn't provided the correct information.
+%   Then define commands to set the corresponding variable when called.
+%   Finally, redefine \maketitle to set the title page as desired.
+%
 
 \newcommand{\@thesistype}{THESIS \@MissingMetadata{thesistype}}
 \newcommand{\@previousdegrees}{PREVIOUS DEGREES \@MissingMetadata{previousdegrees}}
@@ -272,9 +221,19 @@
     \endgroup
 }
 
-\newcommand{\newlinesp@ce}{\leavevmode\\[5pt]}    % an extra big line break
+\newcommand{\@MissingMetadata}[1]{\ClassWarning{sfuthesis}{%
+    Missing #1. Set this in the preamble to fix your frontmatter.
+}}
 
-%   Automagically produce title page
+\newcommand{\previousdegrees}[1]{\renewcommand{\@previousdegrees}{#1}}
+\newcommand{\thesistype}[1]{\renewcommand{\@thesistype}{#1}}
+\newcommand{\degree}[1]{\renewcommand{\@degree}{#1}}
+\newcommand{\discipline}[1]{\renewcommand{\@discipline}{(#1)}}
+\newcommand{\department}[1]{\renewcommand{\@department}{#1}}
+\newcommand{\faculty}[1]{\renewcommand{\@faculty}{#1}}
+\newcommand{\semester}[1]{\renewcommand{\@semester}{#1}}
+\newcommand{\copyrightyear}[1]{\renewcommand{\@copyrightyear}{#1}}
+\newcommand{\copyrightnotice}[1]{\renewcommand{\@copyrightnotice}{#1}}
 
 \renewcommand{\maketitle}{{%
     \thispagestyle{empty}
