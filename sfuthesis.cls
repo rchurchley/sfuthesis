@@ -110,7 +110,7 @@
 }
 
 
-\RequirePackage{enumitem}
+
 \RequirePackage{pdfpages}
 \RequirePackage{tocloft}
 \RequirePackage[titletoc]{appendix}
@@ -287,6 +287,7 @@
 %   (see class options), the committee and date is labeled differently.
 %
 
+\RequirePackage{enumitem}
 \newcommand{\@committee}{}
 \newcommand{\committee}[1]{\renewcommand{\@committee}{%
     \item[\textbf{\@committeetype}] #1
