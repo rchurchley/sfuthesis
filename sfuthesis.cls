@@ -355,33 +355,10 @@
 
 %   Abstract and keywords
 %
-%   The abstract contains a clear statement of the essence of the thesis.
-%   The problem or questions dealt with, the methods of investigation used, and
-%   the general conclusions are stated here.
-%
-%   All versions of the abstract (PDF and abstract entered into the Thesis
-%   Registration System) must be the same.
-%
-%   Abstract length maximums:
-%   - Master's Thesis: 150 words (the thesis registration system requires the
-%     abstract be entered as one paragraph)
-%   - Doctorate: 350 words (usually 3 paragraphs; the thesis registration system
-%     requires the abstract be entered as one paragraph)
-%
-%   The abstract must appear after the Partial Copyright Licence and start on
-%   page iv or page v if you have pasted the Ethics Statement into your
-%   document.
-%
-%   Use plain text only (avoid using bullets, numbered paragraphs, citations,
-%   footnotes, tables, graphs, or illustrations).
-%
-%   The abstract should appear on one page.
-%
-%   Keywords appear under the abstract and must be entered into the Thesis
-%   Registration System.
-%
-%   Keywords should be separated by semi-colons. The list of keywords is
-%   sentence-cased and does not end in a period.
+%   Redefines the abstract environment to set it and the keywords on its own
+%   page. While the abstract should appear in the main document after
+%   \makecopyrightdeclaration, the keywords should be defined with \keyword{...}
+%   in the preamble.
 %
 
 \newcommand{\keywords}[1]{\renewcommand{\@keywords}{#1}}
@@ -390,7 +367,8 @@
 \renewenvironment{abstract}{%
     \setlength{\parindent}{0pt}%
     \setlength{\parskip}{5pt}%
-    \addtoToC{Abstract}                         \ \vfill
+    \addtoToC{Abstract}
+    \null\vfill
 
                     \begin{center}
                   \textbf{ABSTRACT}
@@ -426,23 +404,20 @@
 
 \newenvironment{dedication}{%
     \addtoToC{Dedication}
+    \null\vfill
                     \begin{center}
                  \textbf{DEDICATION}
                     \end{center}
-
+    \vfill
     }{\newpage}
 
 \newenvironment{acknowledgements}{%
     \newpage\addtoToC{Acknowledgements}
-
+    \null\vfill
                     \begin{center}
               \textbf{ACKNOWLEDGEMENTS}
                     \end{center}
-
+    \vfill
     }{\newpage}
-
-
-
-
 
 \endinput
