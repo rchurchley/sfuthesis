@@ -111,7 +111,7 @@
 
 
 
-\RequirePackage{pdfpages}
+
 \RequirePackage{tocloft}
 \RequirePackage[titletoc]{appendix}
 
@@ -343,14 +343,10 @@
 
 %   Declaraion of Partial Copyright Licence
 %
-%   The (Declaration of) Partial Copyright Licence appears immediately after the
-%   Approval Page in your thesis.
-%
-%   Make sure you have an up-to-date copy of the DPCL from the SFU Library, that
-%   it is named correctly, and that it's in the same folder as this class file
-%   and your thesis.
+%   Provides a command to add the PCL to the preamble.
 %
 
+\RequirePackage{pdfpages}
 \newcommand{\makecopyrightdeclaration}{%
     \addtoToC{Partial Copyright Licence}
     \includepdf{declaration_of_partial_copyright_licence.pdf}
