@@ -257,7 +257,7 @@
                      \@faculty
                                                             \vfill
 
-        \copyright\ \@author\ \@copyrightyear               \\
+        \textcopyright\ \@author\ \@copyrightyear               \\
                SIMON FRASER UNIVERSITY                      \\
                      \@semester                             \newlinesp@ce
 
