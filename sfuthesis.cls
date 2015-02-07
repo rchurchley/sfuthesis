@@ -54,18 +54,27 @@
 \ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
 
 
-%   Class Options --- Fonts
+%   Class Options
 %
 %   Users of sfuthesis.cls may choose between a sans-serif font (default) and
 %   a serif font (using the `serif` option). Other font choices may
 %   be acceptable to the SFU library, and can be set in the user's preamble.
 %
+%   The library requires a slightly different approval page format if the
+%   thesis is accepted without a defence taking place. If this applies to you,
+%   use the `undefended` class option to format the approval page correctly.
+%
 
 \RequirePackage{etoolbox}
 \newtoggle{serif}
+\newtoggle{undefended}
 
 \DeclareOption{serif}{
     \toggletrue{serif}
+}
+
+\DeclareOption{undefended}{
+    \toggletrue{undefended}
 }
 
 \PassOptionsToClass{11pt}{report}
@@ -261,76 +270,58 @@
 
 %   Approval page
 %
-%   Page ii is the Approval Page. It should be unsigned in your thesis, with a
-%   signed copy uploaded separately into the Thesis Registration System. See
-%   http://www.lib.sfu.ca/help/writing/thesis/format/approval-page
-%   for more details.
+%   Generates a correctly formatted approval page, provided a commitee is given
+%   in the preamble as follows:
 %
-%   The Approval Page contains the following elements:
-%
-%   Name
-%
-%   Degree (Discipline)
-%
-%   Title
-%   - Title may be italicized, is not surrouned by quotation marks, and does
-%     not end in a period.
-%
-%   Examining/Supervisory Committee
-%   - Name of each committee member
-%   - Position on committee
-%   - Position in department
-%   - Department, if different from your own
-%   - University, if different from your own
-%   - All information should be accurate as of the date approved
-%
-%   Date defended/approved
-%   - Use "Date defended" if defended, and "Date approved" otherwise
-%
-%
-%   To display the Approval Page, fill out your committee using
-%
-%   \committee{External/Supervisory Committee}{%
+%   \committee{
 %       \chair{Name}{Chair}
 %       \member{Name}{Senior Supervisor \\ Title}
 %       \member{Name}{Role on Committee \\ Title \\ Affiliation}
 %   }
 %
-%   Then, after \maketitle, call \makecommittee.
+%   To display the committee, invoke \makecommittee.
+%
+%
+%   Implementation: Have \@committee store the committee, \committee set it,
+%   and \chair and \member format its contents. If the thesis is undefended
+%   (see class options), the committee and date is labeled differently.
+%
 
-%   Commands to set committee
-
-\newcommand{\signatureline}{\noindent\rule{0.1pt}{0.4pt}\hrulefill\\[-0.2\baselineskip]}
-\newcommand{\chair}[2]{%
-    #1                  \newline
-    #2
-}
-\newcommand{\member}[2]{%
-                        \newlinesp@ce
-    \signatureline
-    \textbf{#1}         \newline
-    #2
-}
-\newcommand{\committee}[2]{\renewcommand{\@committee}{%
-    \item[\textbf{#1:}] #2
-}}
 \newcommand{\@committee}{}
-
-%   "Date defended" or "Date approved", depending on whether there was a defence
-
-\newcommand{\defended}[1]{\renewcommand{\@approvaldateline}{%
-    \item[\textbf{Date Defended:}] #1
+\newcommand{\committee}[1]{\renewcommand{\@committee}{%
+    \item[\textbf{\@committeetype}] #1
 }}
-\newcommand{\approved}[1]{\renewcommand{\@approvaldateline}{%
-    \item[\textbf{Date Approved:}] #1
-}}
-\newcommand{\@approvaldateline}{\item[\textbf{Date Approved:}] n/a}
 
+\newcommand{\chair}[2]{%
+    #1                          \newline
+    #2
+}
 
-%   Automagically generate approval page
+\newcommand{\member}[2]{\newlinesp@ce
+    \noindent\null\hrulefill    \newline  % signature line
+    \textbf{#1}                 \newline
+    #2
+}
+
+\newcommand{\@committeetype}{%
+    \iftoggle{undefended}{%
+        Supervisory Committee
+    }{% else
+        Examining Committee
+    }
+}
+
+\newcommand{\@approvaldateline}{%
+    \iftoggle{undefended}{%
+        \item[\textbf{Date Approved:}] \@date
+    }{% else
+        \item[\textbf{Date Defended:}] \@date
+    }
+}
 
 \newcommand{\makecommittee}{%
     \addtoToC{Approval}
+    \smallspacing
                     \begin{center}
                   \textbf{APPROVAL}
                     \end{center}
@@ -345,6 +336,7 @@
                                             \@approvaldateline
     \end{itemize}
     \newpage
+    \defaultspacing
 }
 
 
