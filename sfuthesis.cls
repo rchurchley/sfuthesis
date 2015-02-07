@@ -376,7 +376,7 @@
 }{%
     \newlinesp@ce
     \noindent\textbf{Keywords:} \@keywords
-    \vfill\vfill\newpage
+    \vfill\null\newpage
 }
 
 
@@ -406,8 +406,7 @@
                     \begin{center}
                  \textbf{DEDICATION}
                     \end{center}
-    \vfill
-    }{\newpage}
+    }{\vfill\null\newpage}
 
 \newenvironment{acknowledgements}{%
     \newpage\addtoToC{Acknowledgements}
@@ -415,7 +414,6 @@
                     \begin{center}
               \textbf{ACKNOWLEDGEMENTS}
                     \end{center}
-    \vfill
-    }{\newpage}
+    }{\vfill\null\newpage}
 
 \endinput
