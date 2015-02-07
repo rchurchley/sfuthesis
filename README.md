@@ -45,4 +45,14 @@ If you're into git, then you can also contribute your own fixes and enhancements
 3. Commit and push the topic branch.
 4. Make a pull request.
 
+
+## Changelog
+
+**6 Feb 2015:** Many bugfixes and improvements, but also a few compatibility-breaking changes:
+
+- All font class options except for `serif` are removed. Users may now safely change fonts to their hearts' content in their own preamble.
+- `\committee` now only takes one argument. Users who need to change the committee type from "Examining Committee" to "Supervisory Committee" may now use the `undefended` class option.
+- `\defended` and `\approved` are removed. Users should now set the date of defence or approval with `\date` and use the `undefended` class option if applicable.
+- Users are now required to download their own copy of the Declaration of Partial Copyright License form, in case it changes in the future.
+
 [1]: https://github.com/rchurchley/thesis-template/archive/master.zip
