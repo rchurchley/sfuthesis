@@ -9,15 +9,16 @@ This project is primarily aimed at graduate students at Simon Fraser University.
 
 ## System Requirements
 
-You will need a relatively recent LaTeX distribution. In particular, the SFU template requires the following packages and their dependencies:
+You will need a relatively recent LaTeX distribution. In particular, the SFU template depends on the following (standard) packages:
 
-- `etoolbox` used for class options
-- `setspace` used in line spacing
-- `enumitem` used for approval page
-- `pdfpages` used for including Declaration of Partial Copyright Licence form
-- `tocloft` used for making the ToC nicer
+- `etoolbox` for class options
+- `lmodern` and `fontenc` for extended fonts
+- `geometry` to set margins
+- `setspace` for line spacing
+- `enumitem` used on the approval page, but also potentially useful for you
+- `pdfpages` to include Declaration of Partial Copyright Licence form
+- `tocloft` to make the ToC nicer
 - `appendix` to add the word "Appendix" to the Table of Contents
-- `cmbright` or `lmodern`, depending on class options
 
 If you do not have these installed, you can easily get them using the package manager that came with your distribution (`tlmgr` in TeX Live or its GUI frontend `TeX Live Utility` on OS X; `mpm` on Windows MikTeX installations).
 
@@ -35,7 +36,7 @@ If you do not have these installed, you can easily get them using the package ma
 
 ## Contributing
 
-If you find you have to make any changes to these templates, either because it doesn't compile on your system or because your university's requirements have changed, please email me at `ross@rosschurchley.com` so other people can benefit.
+If you find you have to make any changes to these templates, either because it doesn't compile on your system or because your university's requirements have changed, please email me at `rchurchl@sfu.ca` so other people can benefit.
 
 If you're into git, then you can also contribute your own fixes and enhancements by doing the following:
 
