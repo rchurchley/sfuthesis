@@ -289,9 +289,7 @@
 
 \RequirePackage{enumitem}
 \newcommand{\@committee}{}
-\newcommand{\committee}[1]{\renewcommand{\@committee}{%
-    \item[\textbf{\@committeetype}] #1
-}}
+\newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
 \newcommand{\chair}[2]{%
     #1                          \newline
@@ -304,20 +302,12 @@
     #2
 }
 
-\newcommand{\@committeetype}{%
-    \iftoggle{undefended}{%
-        Supervisory Committee
-    }{% else
-        Examining Committee
-    }
+\newcommand{\@committeelabel}{%
+    \iftoggle{undefended}{Supervisory Committee}{Examining Committee}%
 }
 
-\newcommand{\@approvaldateline}{%
-    \iftoggle{undefended}{%
-        \item[\textbf{Date Approved:}] \@date
-    }{% else
-        \item[\textbf{Date Defended:}] \@date
-    }
+\newcommand{\@datelabel}{%
+    \iftoggle{undefended}{Date Approved}{Date Defended}%
 }
 
 \newcommand{\makecommittee}{%
@@ -332,9 +322,9 @@
         \item[\textbf{Name:}]               \@author
         \item[\textbf{Degree:}]             \@degree\ \@discipline
         \item[\textbf{Title of Thesis:}]    \textit{\@title}
-                                            \@committee
-                                                                    \vfill
-                                            \@approvaldateline
+        \item[\textbf{\@committeelabel:}]   \@committee
+                                            \vfill
+        \item[\textbf{\@datelabel:}]        \@date
     \end{itemize}
     \newpage
     \defaultspacing
