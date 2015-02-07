@@ -100,21 +100,7 @@
     \renewcommand*\familydefault{\sfdefault}
 }
 
-\RequirePackage[T1]{fontenc}
 
-
-%   External packages used by this class:
-%
-%   `etoolbox` used for class options, above
-%   `setspace` used in Line Spacing
-%   `enumitem` used for Approval Page
-%   `pdfpages` used for including Declaration of Partial Copyright Licence form
-%   `tocloft` used for making the ToC nicer
-%   `appendix` to add the word "Appendix" to the Table of Contents
-%   `cmbright` and `lmodern` optionally called in Fonts, above
-%
-
-\RequirePackage{setspace}
 \RequirePackage{enumitem}
 \RequirePackage{pdfpages}
 \RequirePackage{tocloft}
