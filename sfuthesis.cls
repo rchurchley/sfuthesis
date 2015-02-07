@@ -393,8 +393,6 @@
 \renewcommand{\cftfigpresnum}{Figure\ }
 \renewcommand{\cftfignumwidth}{0.90in}
 
-\setcounter{lofdepth}{2}
-
 
 %   Dedication and Acknowledgements
 %
