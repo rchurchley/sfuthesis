@@ -41,7 +41,7 @@
 %
 %   This class uses the following external packages:
 %   `etoolbox` used for class options
-%   `cmbright` or `lmodern` used for Fonts
+%   `lmodern` used for Fonts
 %   `geometry` used for Margins
 %   `setspace` used for Line Spacing
 %   `enumitem` used for Approval Page
