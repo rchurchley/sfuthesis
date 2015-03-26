@@ -70,26 +70,32 @@
 
 \RequirePackage{etoolbox}
 \newtoggle{undefended}
+\newtoggle{bound}
 
 \DeclareOption{undefended}{
     \toggletrue{undefended}
 }
 
-\PassOptionsToClass{11pt}{report}
+\DeclareOption{twoside}{
+    \toggletrue{bound}
+    \PassOptionsToClass{twoside}{book}
+}
+
+\PassOptionsToClass{11pt}{book}
 
 
 %  BASE CLASSONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   sfuthesis.cls is based on the standard `report` document class.
+%   sfuthesis.cls is based on the standard `book` document class.
 %   For more information (including standard class options), see
 %   http://texdoc.net/texmf-dist/doc/latex/base/classes.pdf
-%   or type `texdoc report` on the command line.
+%   or type `texdoc book` on the command line.
 %
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 
 \ProcessOptions
-\LoadClass{report}
+\LoadClass{book}
 
 
 %  FONTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,15 +112,20 @@
 %
 %   Set the margins to 1.25" on the left and right, 1" on the top, and
 %   0.7" from the bottom to the page numbers.
+%   Invoking the `twoside` option will bypass this and allow margins be
+%   set by the underlying book class.
 %
 
-\RequirePackage[
-    top=1in,
-    left=1.25in,
-    bottom=0.7in,
-    right=1.25in,
-    includefoot   % ensure page numbers do not extend into margins
-]{geometry}
+\RequirePackage{geometry}
+\nottoggle{bound}{%
+    \newgeometry{
+        top=1in,
+        left=1.25in,
+        bottom=0.7in,
+        right=1.25in,
+        includefoot   % ensure page numbers do not extend into margins
+    }
+}
 
 
 %  PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,12 +137,11 @@
 
 \pagestyle{plain}
 
-\newcommand{\frontmatter}{%
+\apptocmd{\frontmatter}{%
     \pagenumbering{roman}
 }
 
-\newcommand{\mainmatter}{%
-    \clearpage
+\apptocmd{\mainmatter}{%
     \pagenumbering{arabic}
 }
 
@@ -139,7 +149,7 @@
 %  LINE SPACING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Sets 1.5 line spacing for the document body and provides commands to set
-%   single-spacing for the references-bibliography-appendices "backmatter".
+%   single-spacing for the "backmatter" (references, bibliography, appendices).
 %   These commands do not affect spacing inside figures, tables, and other
 %   floats, which remain single-spaced.
 %
@@ -149,7 +159,7 @@
 \newcommand{\smallspacing}{\singlespacing}
 
 \defaultspacing
-\newcommand{\backmatter}{\smallspacing}
+\apptocmd{\backmatter}{\smallspacing}
 
 
 %  TITLE PAGE %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -354,7 +364,7 @@
 \newcommand{\keywords}[1]{\renewcommand{\@keywords}{#1}}
 \newcommand{\@keywords}{KEYWORDS \@MissingMetadata{keywords}}
 
-\renewenvironment{abstract}{%
+\newenvironment{abstract}{%
     \setlength{\parindent}{0pt}%
     \setlength{\parskip}{5pt}%
     \addtoToC{Abstract}
