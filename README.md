@@ -4,7 +4,7 @@ You’re a graduate student preparing to write your thesis or dissertation. You'
 
 This project provides LaTeX classes that do most of that formatting work for you. It is intended to be easy to use and easy to maintain, so you don't have to be a TeX genius to make those small changes your supervisor asks for.
 
-This project is primarily aimed at graduate students at Simon Fraser University. If you go to the University of Victoria, you might want to check out a [different template](https://github.com/rchurchley/uvic-thesis) based on my master's thesis there.
+This project is primarily aimed at graduate students at Simon Fraser University. If you go to the University of Victoria, you might want to check out a [different template][uvic] based on my master's thesis there.
 
 
 ## System Requirements
@@ -24,7 +24,7 @@ If you do not have these installed, you can easily get them using the package ma
 
 ## Installation
 
-1. [Download all of the project's files][1] and move the files appropriate to your university to the (same) folder of your choice.
+1. [Download all of the project's files][download] and move the files appropriate to your university to the (same) folder of your choice.
 
 2. Rename `template.tex` to something more suitable.
 
@@ -49,5 +49,6 @@ If you have a GitHub account, you can [open an issue][newissue] to report a bug 
 - `\defended` and `\approved` are removed. Users should now set the date of defence or approval with `\date` and use the `undefended` class option if applicable.
 - Users are now required to download their own copy of the Declaration of Partial Copyright License form, in case it changes in the future.
 
-[1]: https://github.com/rchurchley/thesis-template/archive/master.zip
+[uvic]: https://github.com/rchurchley/uvic-thesis
+[download]: https://github.com/rchurchley/thesis-template/archive/master.zip
 [newissue]: https://github.com/rchurchley/thesis-template/issues/new
