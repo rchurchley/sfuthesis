@@ -26,11 +26,13 @@ If you do not have these installed, you can easily get them using the package ma
 
 1. [Download all of the project's files][download] and move the files appropriate to your university to the (same) folder of your choice.
 
-2. Rename `template.tex` to something more suitable.
+2. Rename `template.tex` to something more suitable, like `thesis.tex`. Delete the placeholder information and replace it with your own.
 
-3. Delete the main content and replace it with your own.
+3. Compile it with your favourite [LaTeX editor][editors] or from the command line using [`latexmk`][latexmk]:
 
-4. Compile it!
+```
+latexmk -pdf thesis.tex
+```
 
 
 ## Contributing
@@ -51,4 +53,6 @@ If you have a GitHub account, you can [open an issue][newissue] to report a bug 
 
 [uvic]: https://github.com/rchurchley/uvic-thesis
 [download]: https://github.com/rchurchley/thesis-template/archive/master.zip
+[editors]: http://en.wikipedia.org/wiki/Comparison_of_TeX_editors
 [newissue]: https://github.com/rchurchley/thesis-template/issues/new
+[latexmk]: http://ctan.math.ca/tex-archive/support/latexmk/latexmk.pdf
