@@ -37,12 +37,7 @@ If you do not have these installed, you can easily get them using the package ma
 
 If you find you have to make any changes to these templates, either because it doesn't compile on your system or because your university's requirements have changed, please email me at `rchurchl@sfu.ca` so other people can benefit.
 
-If you're into git, then you can also contribute your own fixes and enhancements by doing the following:
-
-1. Fork the plugin repository.
-2. Hack on a separate topic branch created from the latest master.
-3. Commit and push the topic branch.
-4. Make a pull request.
+If you have a GitHub account, you can [open an issue][newissue] to report a bug or suggest an enhancement.
 
 
 ## Changelog
@@ -55,3 +50,4 @@ If you're into git, then you can also contribute your own fixes and enhancements
 - Users are now required to download their own copy of the Declaration of Partial Copyright License form, in case it changes in the future.
 
 [1]: https://github.com/rchurchley/thesis-template/archive/master.zip
+[newissue]: https://github.com/rchurchley/thesis-template/issues/new
