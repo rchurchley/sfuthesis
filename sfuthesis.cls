@@ -10,12 +10,15 @@
 %       Pepe Kubon          (1997--98)
 %       Greg Baker          (2003--06)
 %       Chris McIntosh      (2011)
-%       Ahmed Saad          (2013--14)
+%       Bradley Coleman     (2012)
+%       Juan Galvez         (2012)
+%       Firuz Demir         (2013)
+%       Ahmed Saad          (2013)
 %       Reynaldo Arteaga    (2014)
 %
-%   In 2014, the template was renamed `sfuthesis` and rewritten from the ground up.
+%   In 2014--15, the template was renamed `sfuthesis` and entirely rewritten.
 %
-%       Ross Churchley      (2014)
+%       Ross Churchley      (2015)
 %
 %
 %   License
