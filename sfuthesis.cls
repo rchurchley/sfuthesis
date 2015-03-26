@@ -176,10 +176,10 @@
     \thispagestyle{empty}
                                                             \null\vfill
                     \begin{center}
-               {\huge\bfseries\@title}                      \\[5pt]
-                          by                                \\[5pt]
+               {\huge\bfseries\@title}                      \\[12pt]
+                          by                                \\[12pt]
 
-              {\Large\bfseries\@author}                     \\[5pt]
+              {\Large\bfseries\@author}                     \\[12pt]
 
                   \@previousdegrees
                                                             \vfill
