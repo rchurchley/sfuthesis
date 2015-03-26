@@ -102,14 +102,6 @@
 \RequirePackage[T1]{fontenc}
 
 
-
-
-
-
-\RequirePackage{tocloft}
-\RequirePackage[titletoc]{appendix}
-
-
 %   Margins
 %
 %   Set the margins to 1.25" on the left and right, 1" on the top, and
@@ -369,6 +361,10 @@
 %   Fixes some display issues for the table of contents.
 %   Provides a command to add sections like the bibliography to the ToC.
 %
+
+
+\RequirePackage{tocloft}
+\RequirePackage[titletoc]{appendix}
 
 \newcommand{\addtoToC}[1]{\addcontentsline{toc}{chapter}{#1}}
 
