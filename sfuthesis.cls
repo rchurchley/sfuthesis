@@ -179,6 +179,40 @@
 %   \copyrightnotice{...}
 %
 
+\renewcommand{\maketitle}{{%
+    \thispagestyle{empty}
+                                                            \null\vfill
+                    \begin{center}
+                                                            \doublespacing
+               {\Large\bfseries\@title}                     \newlinesp@ce
+                                                        \par\defaultspacing
+                          by                                \newlinesp@ce
+
+                 {\bfseries\@author}                        \newlinesp@ce
+
+                  \@previousdegrees
+                                                            \vfill
+
+    {\@thesistype} Submitted in Partial Fulfillment         \\
+        of the Requirements for the Degree of               \newlinesp@ce
+
+                      \@degree                              \newlinesp@ce
+
+                       in the                               \\
+                    \@department                            \\
+                     \@faculty
+                                                            \vfill
+
+        \textcopyright\ \@author\ \@copyrightyear               \\
+               SIMON FRASER UNIVERSITY                      \\
+                     \@semester                             \newlinesp@ce
+
+           \smallspacing\@copyrightnotice
+                    \end{center}
+                                                            \vfill
+    \newpage
+}}
+
 %   The implementation creates a new "variable" for each metadata needed,
 %   initially storing placeholder text and an instruction to throw a warning
 %   if the user hasn't provided the correct information.
@@ -217,39 +251,6 @@
 \newcommand{\copyrightyear}[1]{\renewcommand{\@copyrightyear}{#1}}
 \newcommand{\copyrightnotice}[1]{\renewcommand{\@copyrightnotice}{#1}}
 
-\renewcommand{\maketitle}{{%
-    \thispagestyle{empty}
-                                                            \null\vfill
-                    \begin{center}
-                                                            \doublespacing
-               {\Large\bfseries\@title}                     \newlinesp@ce
-                                                        \par\defaultspacing
-                          by                                \newlinesp@ce
-
-                 {\bfseries\@author}                        \newlinesp@ce
-
-                  \@previousdegrees
-                                                            \vfill
-
-    {\@thesistype} Submitted in Partial Fulfillment         \\
-        of the Requirements for the Degree of               \newlinesp@ce
-
-                      \@degree                              \newlinesp@ce
-
-                       in the                               \\
-                    \@department                            \\
-                     \@faculty
-                                                            \vfill
-
-        \textcopyright\ \@author\ \@copyrightyear               \\
-               SIMON FRASER UNIVERSITY                      \\
-                     \@semester                             \newlinesp@ce
-
-           \smallspacing\@copyrightnotice
-                    \end{center}
-                                                            \vfill
-    \newpage
-}}
 
 
 %  APPROVAL PAGE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -265,6 +266,25 @@
 %
 %   To display the committee, invoke \makecommittee.
 %
+
+\newcommand{\makecommittee}{%
+    \addtoToC{Approval}
+    \smallspacing
+                    \begin{center}
+                  \textbf{APPROVAL}
+                    \end{center}
+
+    \approvall@bel{\textbf{Name:}}   \approvalv@lue{\@author}
+    \approvall@bel{\textbf{Degree:}} \approvalv@lue{\@degree\ \@discipline}
+    \approvall@bel{\textbf{Title:}}  \approvalv@lue{\textit{\@title}}
+    \approvall@bel{\textbf{\@committeelabel:}}
+    \@committee
+        \vfill
+    \approvall@bel{\textbf{\@datelabel:}}        \@date
+    \newpage
+    \defaultspacing
+}
+
 %
 %   Implementation: Have \@committee store the committee, \committee set it,
 %   and \chair and \member format its contents. If the thesis is undefended
@@ -308,23 +328,7 @@
     \newlinesp@ce
 }
 
-\newcommand{\makecommittee}{%
-    \addtoToC{Approval}
-    \smallspacing
-                    \begin{center}
-                  \textbf{APPROVAL}
-                    \end{center}
 
-    \approvall@bel{\textbf{Name:}}   \approvalv@lue{\@author}
-    \approvall@bel{\textbf{Degree:}} \approvalv@lue{\@degree\ \@discipline}
-    \approvall@bel{\textbf{Title:}}  \approvalv@lue{\textit{\@title}}
-    \approvall@bel{\textbf{\@committeelabel:}}
-    \@committee
-        \vfill
-    \approvall@bel{\textbf{\@datelabel:}}        \@date
-    \newpage
-    \defaultspacing
-}
 
 
 %  DECLARATION OF PARTIAL COPYRIGHT LICENCE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
