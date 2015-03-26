@@ -196,7 +196,7 @@
                      {\bfseries
         \textcopyright\ \@author\ \@copyrightyear           \\
                SIMON FRASER UNIVERSITY                      \\
-                     \@semester}                            \\[5pt]
+                     \@semester}                            \vfill
 
            \smallspacing\@copyrightnotice
                     \end{center}
@@ -329,8 +329,6 @@
     \end{minipage}
     \\[5pt]
 }
-
-
 
 
 %  DECLARATION OF PARTIAL COPYRIGHT LICENCE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
