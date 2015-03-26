@@ -15,7 +15,6 @@ You will need a relatively recent LaTeX distribution. In particular, the SFU tem
 - `lmodern` and `fontenc` for extended fonts
 - `geometry` to set margins
 - `setspace` for line spacing
-- `enumitem` used on the approval page, but also potentially useful for you
 - `pdfpages` to include Declaration of Partial Copyright Licence form
 - `tocloft` to make the ToC nicer
 - `appendix` to add the word "Appendix" to the Table of Contents
