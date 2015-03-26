@@ -152,13 +152,6 @@
 \newcommand{\backmatter}{\smallspacing}
 
 
-%   Provides an internal command to generate extra space between elements on
-%   the title and approval page.
-%
-
-\newcommand{\newlinesp@ce}{\leavevmode\\[5pt]}
-
-
 %  TITLE PAGE %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Generates a correctly-formatted title page, provided the following
@@ -183,29 +176,26 @@
     \thispagestyle{empty}
                                                             \null\vfill
                     \begin{center}
-                                                            \doublespacing
-               {\Large\bfseries\@title}                     \newlinesp@ce
-                                                        \par\defaultspacing
-                          by                                \newlinesp@ce
+               {\Large\bfseries\@title}                     \\[5pt]
+                          by                                \\[5pt]
 
-                 {\bfseries\@author}                        \newlinesp@ce
+                 {\bfseries\@author}                        \\[5pt]
 
                   \@previousdegrees
                                                             \vfill
 
     {\@thesistype} Submitted in Partial Fulfillment         \\
-        of the Requirements for the Degree of               \newlinesp@ce
-
-                      \@degree                              \newlinesp@ce
+        of the Requirements for the Degree of               \\
+                      \@degree                              \\[12pt]
 
                        in the                               \\
                     \@department                            \\
                      \@faculty
                                                             \vfill
 
-        \textcopyright\ \@author\ \@copyrightyear               \\
+        \textcopyright\ \@author\ \@copyrightyear           \\
                SIMON FRASER UNIVERSITY                      \\
-                     \@semester                             \newlinesp@ce
+                     \@semester                             \\[5pt]
 
            \smallspacing\@copyrightnotice
                     \end{center}
@@ -330,7 +320,7 @@
     \begin{minipage}[t]{0.7\textwidth}
         #1
     \end{minipage}
-    \newlinesp@ce
+    \\[5pt]
 }
 
 
@@ -369,7 +359,7 @@
                   \textbf{ABSTRACT}
                     \end{center}
 }{%
-    \newlinesp@ce
+    \leavevmode\\[5pt]
     \noindent\textbf{Keywords:} \@keywords
     \vfill\null\newpage
 }
