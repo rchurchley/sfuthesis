@@ -208,6 +208,8 @@
 %   initially storing placeholder text and an instruction to throw a warning
 %   if the user hasn't provided the correct information.
 %   It then defines commands to set the corresponding variable when called.
+%   The copyright notice is set in a minipage to provide an extra margin of
+%   0.5" on either side.
 
 \newcommand{\@thesistype}{THESIS \@MissingMetadata{thesistype}}
 \newcommand{\@previousdegrees}{PREVIOUS DEGREES \@MissingMetadata{previousdegrees}}
@@ -218,14 +220,11 @@
 \newcommand{\@semester}{SEMESTER \@MissingMetadata{semester}}
 \newcommand{\@copyrightyear}{YEAR \@MissingMetadata{copyrightyear}}
 \newcommand{\@copyrightnotice}{%
-    \begingroup\small
-    All rights reserved.\\
-    However, in accordance with the \textit{Copyright Act of Canada}, this work may be\\
-    reproduced without authorization under the conditions for ``Fair Dealing.''\\
-    Therefore, limited reproduction of this work for the purposes of private study,\\
-    research, criticism, review and news reporting is likely to be in accordance\\
-    with the law, particularly if cited appropriately.
-    \endgroup
+    \begin{minipage}{\dimexpr\textwidth-1in\relax}
+        \small\centering
+        All rights reserved.\\
+        However, in accordance with the \textit{Copyright Act of Canada}, this work may be reproduced without authorization under the conditions for ``Fair Dealing.'' Therefore, limited reproduction of this work for the purposes of private study, research, criticism, review and news reporting is likely to be in accordance with the law, particularly if cited appropriately.
+    \end{minipage}
 }
 
 \newcommand{\@MissingMetadata}[1]{\ClassWarning{sfuthesis}{%
@@ -240,7 +239,14 @@
 \newcommand{\faculty}[1]{\renewcommand{\@faculty}{#1}}
 \newcommand{\semester}[1]{\renewcommand{\@semester}{#1}}
 \newcommand{\copyrightyear}[1]{\renewcommand{\@copyrightyear}{#1}}
-\newcommand{\copyrightnotice}[1]{\renewcommand{\@copyrightnotice}{#1}}
+\newcommand{\copyrightnotice}[1]{%
+    \renewcommand{\@copyrightnotice}{%
+        \begin{minipage}{\dimexpr\textwidth-1in\relax}
+            \small\centering
+            #1
+        \end{minipage}
+    }
+}
 
 
 
