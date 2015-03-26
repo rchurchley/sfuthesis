@@ -271,7 +271,6 @@
 %   (see class options), the committee and date is labeled differently.
 %
 
-\RequirePackage{enumitem}
 \newcommand{\@committee}{}
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
@@ -296,6 +295,19 @@
     \iftoggle{undefended}{Date Approved}{Date Defended}%
 }
 
+\newcommand{\approvall@bel}[1]{\noindent
+    \begin{minipage}[t]{0.3\textwidth}
+        #1
+    \end{minipage}
+}
+
+\newcommand{\approvalv@lue}[1]{%
+    \begin{minipage}[t]{0.7\textwidth}
+        #1
+    \end{minipage}
+    \newlinesp@ce
+}
+
 \newcommand{\makecommittee}{%
     \addtoToC{Approval}
     \smallspacing
@@ -303,15 +315,13 @@
                   \textbf{APPROVAL}
                     \end{center}
 
-    \begin{itemize}[labelwidth=10em, leftmargin=10em, align=parleft]
-
-        \item[\textbf{Name:}]               \@author
-        \item[\textbf{Degree:}]             \@degree\ \@discipline
-        \item[\textbf{Title of Thesis:}]    \textit{\@title}
-        \item[\textbf{\@committeelabel:}]   \@committee
-                                            \vfill
-        \item[\textbf{\@datelabel:}]        \@date
-    \end{itemize}
+    \approvall@bel{\textbf{Name:}}   \approvalv@lue{\@author}
+    \approvall@bel{\textbf{Degree:}} \approvalv@lue{\@degree\ \@discipline}
+    \approvall@bel{\textbf{Title:}}  \approvalv@lue{\textit{\@title}}
+    \approvall@bel{\textbf{\@committeelabel:}}
+    \@committee
+        \vfill
+    \approvall@bel{\textbf{\@datelabel:}}        \@date
     \newpage
     \defaultspacing
 }
