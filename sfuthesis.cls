@@ -176,10 +176,10 @@
     \thispagestyle{empty}
                                                             \null\vfill
                     \begin{center}
-               {\Large\bfseries\@title}                     \\[5pt]
+               {\huge\bfseries\@title}                      \\[5pt]
                           by                                \\[5pt]
 
-                 {\bfseries\@author}                        \\[5pt]
+              {\Large\bfseries\@author}                     \\[5pt]
 
                   \@previousdegrees
                                                             \vfill
@@ -193,9 +193,10 @@
                      \@faculty
                                                             \vfill
 
+                     {\bfseries
         \textcopyright\ \@author\ \@copyrightyear           \\
                SIMON FRASER UNIVERSITY                      \\
-                     \@semester                             \\[5pt]
+                     \@semester}                            \\[5pt]
 
            \smallspacing\@copyrightnotice
                     \end{center}
