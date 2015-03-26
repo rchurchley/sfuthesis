@@ -57,7 +57,7 @@
 \ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
 
 
-%   Class Options
+%  CLASS OPTIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Users of sfuthesis.cls may choose between a sans-serif font (default) and
 %   a serif font (using the `serif` option). Other font choices may
@@ -78,7 +78,7 @@
 \PassOptionsToClass{11pt}{report}
 
 
-%   Base Class
+%  BASE CLASSONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   sfuthesis.cls is based on the standard `report` document class.
 %   For more information (including standard class options), see
@@ -92,7 +92,7 @@
 \LoadClass{report}
 
 
-%   Fonts
+%  FONTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Sets the typeface based on the class options (see above).
 %   The fontenc package ensures proper hyphenation of accented words.
@@ -102,7 +102,7 @@
 \RequirePackage[T1]{fontenc}
 
 
-%   Margins
+%  MARGINS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Set the margins to 1.25" on the left and right, 1" on the top, and
 %   0.7" from the bottom to the page numbers.
@@ -117,10 +117,10 @@
 ]{geometry}
 
 
-%   Pagination
+%  PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Provides commands to set page numbers in roman numerals for preliminary pages
-%   (frontmatter) and arabic numbers for all other content (mainmatter)
+%   Provides commands to set page numbers in roman numerals for preliminary
+%   pages (frontmatter) and arabic numbers for all other content (mainmatter)
 %   \pagestyle{plain} sets page numbers in the bottom center.
 %
 
@@ -136,7 +136,7 @@
 }
 
 
-%   Line Spacing
+%  LINE SPACING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Sets 1.5 line spacing for the document body and provides commands to set
 %   single-spacing for the references-bibliography-appendices "backmatter".
@@ -159,7 +159,7 @@
 \newcommand{\newlinesp@ce}{\leavevmode\\[5pt]}
 
 
-%   Title Page
+%  TITLE PAGE %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Generates a correctly-formatted title page, provided the following
 %   information is given in the preamble:
@@ -179,12 +179,10 @@
 %   \copyrightnotice{...}
 %
 
-%   Implementation: create a new "variable" for each of the above metadata,
+%   The implementation creates a new "variable" for each metadata needed,
 %   initially storing placeholder text and an instruction to throw a warning
 %   if the user hasn't provided the correct information.
-%   Then define commands to set the corresponding variable when called.
-%   Finally, redefine \maketitle to set the title page as desired.
-%
+%   It then defines commands to set the corresponding variable when called.
 
 \newcommand{\@thesistype}{THESIS \@MissingMetadata{thesistype}}
 \newcommand{\@previousdegrees}{PREVIOUS DEGREES \@MissingMetadata{previousdegrees}}
@@ -254,7 +252,7 @@
 }}
 
 
-%   Approval page
+%  APPROVAL PAGE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Generates a correctly formatted approval page, provided a commitee is given
 %   in the preamble as follows:
@@ -289,10 +287,12 @@
 }
 
 \newcommand{\@committeelabel}{%
+    % "Supervisory" or "Examining" committee depends on whether a defence occurs
     \iftoggle{undefended}{Supervisory Committee}{Examining Committee}%
 }
 
 \newcommand{\@datelabel}{%
+    % "Date defended" or "Date approved" depends on whether a defence occurs
     \iftoggle{undefended}{Date Approved}{Date Defended}%
 }
 
@@ -317,7 +317,7 @@
 }
 
 
-%   Declaraion of Partial Copyright Licence
+%  DECLARATION OF PARTIAL COPYRIGHT LICENCE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Provides a command to add the PCL to the preamble.
 %
@@ -329,7 +329,7 @@
 }
 
 
-%   Abstract and keywords
+%  ABSTRACT AND KEYWORDS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Redefines the abstract environment to set it and the keywords on its own
 %   page. While the abstract should appear in the main document after
@@ -356,7 +356,7 @@
 }
 
 
-%   Table of Contents
+%  TABLE OF CONTENTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Fixes some display issues for the table of contents.
 %   Provides a command to add sections like the bibliography to the ToC.
@@ -374,10 +374,9 @@
 \renewcommand{\cftfignumwidth}{0.90in}
 
 
-%   Dedication and Acknowledgements
+%  DEDICATION AND ACKNOWLEDGEMENTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   There do not seem to be restrictions on the style of these optional pages.
-%   Feel free to change these as you see fit.
+%   Provides environments for optional dedication and acknowledgements pages
 %
 
 \newenvironment{dedication}{%
