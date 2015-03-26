@@ -274,13 +274,13 @@
                   \textbf{APPROVAL}
                     \end{center}
 
-    \approvall@bel{\textbf{Name:}}   \approvalv@lue{\@author}
-    \approvall@bel{\textbf{Degree:}} \approvalv@lue{\@degree\ \@discipline}
-    \approvall@bel{\textbf{Title:}}  \approvalv@lue{\textit{\@title}}
+    \approvall@bel{\textbf{Name:}}        \approvalv@lue{\@author}
+    \approvall@bel{\textbf{Degree:}}      \approvalv@lue{\@degree\ \@discipline}
+    \approvall@bel{\textbf{Title:}}       \approvalv@lue{\textit{\@title}}
     \approvall@bel{\textbf{\@committeelabel:}}
     \@committee
         \vfill
-    \approvall@bel{\textbf{\@datelabel:}}        \@date
+    \approvall@bel{\textbf{\@datelabel:}} \approvalv@lue{\@date}
     \newpage
     \defaultspacing
 }
@@ -294,15 +294,20 @@
 \newcommand{\@committee}{}
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
-\newcommand{\chair}[2]{%
-    #1                          \newline
-    #2
+\newcommand{\chair}[2]{
+    \begin{minipage}[t]{0.7\textwidth}
+        \textbf{#1} (chair) \newline
+        #2
+    \end{minipage}
+    \hrulefill \\[12pt]
 }
 
-\newcommand{\member}[2]{\newlinesp@ce
-    \noindent\null\hrulefill    \newline  % signature line
-    \textbf{#1}                 \newline
-    #2
+\newcommand{\member}[2]{
+    \begin{minipage}[b]{0.4\textwidth}
+        \textbf{#1} \newline
+        #2
+    \end{minipage}
+    \hrulefill \\[12pt]
 }
 
 \newcommand{\@committeelabel}{%
