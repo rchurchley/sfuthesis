@@ -69,12 +69,7 @@
 %
 
 \RequirePackage{etoolbox}
-\newtoggle{serif}
 \newtoggle{undefended}
-
-\DeclareOption{serif}{
-    \toggletrue{serif}
-}
 
 \DeclareOption{undefended}{
     \toggletrue{undefended}
@@ -106,11 +101,7 @@
 \RequirePackage{lmodern}
 \RequirePackage[T1]{fontenc}
 
-\iftoggle{serif}{%
-    \renewcommand*\familydefault{\rmdefault}
-}{% else
-    \renewcommand*\familydefault{\sfdefault}
-}
+
 
 
 
