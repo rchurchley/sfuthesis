@@ -159,7 +159,7 @@
 \newcommand{\smallspacing}{\singlespacing}
 
 \defaultspacing
-\apptocmd{\backmatter}{\smallspacing}
+\renewcommand{\backmatter}{\smallspacing}
 
 
 %  TITLE PAGE %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
