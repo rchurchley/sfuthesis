@@ -423,4 +423,16 @@
                     \end{center}
     }{\vfill\null\newpage}
 
+
+%  APPENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Sets style of appendices.
+%   If the user loads hyperref, makes sure that autorefs to an appendix display
+%   correctly.
+%
+
+\AtBeginDocument{%
+    \@ifpackageloaded{hyperref}{\newcommand*{\Appendixautorefname}{Appendix}}{}
+}
+
 \endinput
