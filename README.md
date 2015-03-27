@@ -15,6 +15,7 @@ You will need a relatively recent LaTeX distribution. In particular, the SFU tem
 - `etoolbox` for class options
 - `geometry` to set margins
 - `lmodern` and `fontenc` for extended fonts
+- `nowidow` to prevent nearly-empty pages
 - `pdfpages` to include Declaration of Partial Copyright Licence form
 - `setspace` for line spacing
 - `tocloft` to make the ToC nicer

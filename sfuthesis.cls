@@ -111,10 +111,11 @@
 
 %  MARGINS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Set the margins to 1.25" on the left and right, 1" on the top, and
-%   0.7" from the bottom to the page numbers.
-%   Invoking the `twoside` option will bypass this and allow margins be
-%   set by the underlying book class.
+%   Sets the margins to 1.25" on the left and right, 1" on the top, and
+%   0.7" from the bottom to the page numbers. Invoking the `twoside` option
+%   will bypass this and allow margins be set by the underlying book class.
+%   Prevents LaTeX's page-breaking algorithm from interrupting paragraphs or
+%   creating nearly-empty pages.
 %
 
 \RequirePackage{geometry}
@@ -127,6 +128,8 @@
         includefoot   % ensure page numbers do not extend into margins
     }
 }
+
+\RequirePackage[all]{nowidow}
 
 
 %  PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
