@@ -426,10 +426,15 @@
 
 %  APPENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Sets style of appendices.
+%   Sets appendix paragraph style to remove indents and add space between them.
 %   If the user loads hyperref, makes sure that autorefs to an appendix display
 %   correctly.
 %
+
+\BeforeBeginEnvironment{appendices}{
+    \parskip=0.5\baselineskip \advance\parskip by 0pt plus 2pt
+    \parindent=\z@
+}
 
 \AtBeginDocument{%
     \@ifpackageloaded{hyperref}{\newcommand*{\Appendixautorefname}{Appendix}}{}
