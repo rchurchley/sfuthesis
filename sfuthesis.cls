@@ -43,14 +43,15 @@
 %   ============
 %
 %   This class uses the following external packages:
-%   `etoolbox` used for class options
-%   `lmodern` used for Fonts
-%   `geometry` used for Margins
-%   `setspace` used for Line Spacing
-%   `enumitem` used for Approval Page
-%   `pdfpages` used for including Declaration of Partial Copyright Licence form
-%   `tocloft` used for making the ToC nicer
+%
 %   `appendix` to add the word "Appendix" to the Table of Contents
+%   `etoolbox` used for class options
+%   `fontenc` used to improve accented character output
+%   `geometry` used for Margins
+%   `lmodern` used for Fonts
+%   `pdfpages` used for including Declaration of Partial Copyright Licence form
+%   `setspace` used for Line Spacing
+%   `tocloft` used for making the ToC nicer
 %
 
 \NeedsTeXFormat{LaTeX2e}

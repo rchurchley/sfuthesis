@@ -11,13 +11,13 @@ This project is primarily aimed at graduate students at Simon Fraser University.
 
 You will need a relatively recent LaTeX distribution. In particular, the SFU template depends on the following (standard) packages:
 
-- `etoolbox` for class options
-- `lmodern` and `fontenc` for extended fonts
-- `geometry` to set margins
-- `setspace` for line spacing
-- `pdfpages` to include Declaration of Partial Copyright Licence form
-- `tocloft` to make the ToC nicer
 - `appendix` to add the word "Appendix" to the Table of Contents
+- `etoolbox` for class options
+- `geometry` to set margins
+- `lmodern` and `fontenc` for extended fonts
+- `pdfpages` to include Declaration of Partial Copyright Licence form
+- `setspace` for line spacing
+- `tocloft` to make the ToC nicer
 
 If you do not have these installed, you can easily get them using the package manager that came with your distribution (`tlmgr` in TeX Live or its GUI frontend `TeX Live Utility` on OS X; `mpm` on Windows MikTeX installations).
 
