@@ -73,13 +73,14 @@
 \newtoggle{undefended}
 \newtoggle{bound}
 
-\DeclareOption{undefended}{
-    \toggletrue{undefended}
-}
+\DeclareOption{undefended}{\toggletrue{undefended}}
+\DeclareOption{bound}{\toggletrue{bound}}
+\DeclareOption{twoside}{\toggletrue{bound}}
 
-\DeclareOption{twoside}{
-    \toggletrue{bound}
+\iftoggle{bound}{
     \PassOptionsToClass{twoside}{book}
+}{%else
+    \PassOptionsToClass{oneside}{book}
 }
 
 \PassOptionsToClass{11pt}{book}
