@@ -307,11 +307,12 @@
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
 \newcommand{\chair}[2]{
-    \begin{minipage}[t]{0.7\textwidth}
+    \hfill
+    \begin{minipage}[t]{0.6\textwidth}
         \textbf{#1} (chair) \newline
         #2
     \end{minipage}
-    \hrulefill \\[12pt]
+    \\[12pt]
 }
 
 \newcommand{\member}[2]{
@@ -339,7 +340,8 @@
 }
 
 \newcommand{\approvalv@lue}[1]{%
-    \begin{minipage}[t]{0.7\textwidth}
+    \hfill
+    \begin{minipage}[t]{0.6\textwidth}
         #1
     \end{minipage}
     \\[5pt]
