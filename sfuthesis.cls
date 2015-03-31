@@ -307,7 +307,6 @@
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
 \newcommand{\chair}[2]{
-    \hfill
     \begin{minipage}[t]{0.6\textwidth}
         \textbf{#1} (chair) \newline
         #2
@@ -337,13 +336,13 @@
 }
 
 \newcommand{\approvall@bel}[1]{\noindent
-    \begin{minipage}[t]{0.3\textwidth}
+    \begin{minipage}[t]{0.35\textwidth}
         #1
     \end{minipage}
+    \hfill
 }
 
 \newcommand{\approvalv@lue}[1]{%
-    \hfill
     \begin{minipage}[t]{0.6\textwidth}
         #1
     \end{minipage}
