@@ -291,7 +291,7 @@
     \approvall@bel{\textbf{Title:}}       \approvalv@lue{\textit{\@title}}
     \approvall@bel{\textbf{\@committeelabel:}}
     \@committee
-        \vfill
+    \vfill\vfill
     \approvall@bel{\textbf{\@datelabel:}} \approvalv@lue{\@date}
     \newpage
     \defaultspacing
@@ -312,15 +312,18 @@
         \textbf{#1} (chair) \newline
         #2
     \end{minipage}
-    \\[12pt]
+    \newline
+    \vfill
 }
 
 \newcommand{\member}[2]{
-    \begin{minipage}[b]{0.4\textwidth}
+    \noindent\begin{minipage}[b]{0.4\textwidth}
         \textbf{#1} \newline
         #2
     \end{minipage}
-    \hrulefill \\[12pt]
+    \hrulefill
+    \newline
+    \vfill
 }
 
 \newcommand{\@committeelabel}{%
