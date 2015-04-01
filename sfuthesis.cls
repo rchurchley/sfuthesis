@@ -306,7 +306,7 @@
 \newcommand{\@committee}{}
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
-\newcommand{\chair}[2]{
+\newcommand{\chair}[2]{%
     \begin{minipage}[t]{0.6\textwidth}
         \textbf{#1} (chair) \newline
         #2
