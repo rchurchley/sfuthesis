@@ -316,11 +316,12 @@
 }
 
 \newcommand{\member}[2]{
-    \noindent\begin{minipage}[b]{0.4\textwidth}
+    \noindent\begin{minipage}[b]{0.39\textwidth}
         \textbf{#1} \newline
         #2
     \end{minipage}
-    \hrulefill
+    \hfill
+    \rule{0.6\textwidth}{0.4pt}
     \newline
     \vfill
 }
@@ -336,7 +337,7 @@
 }
 
 \newcommand{\approvall@bel}[1]{\noindent
-    \begin{minipage}[t]{0.35\textwidth}
+    \begin{minipage}[t]{0.39\textwidth}
         #1
     \end{minipage}
     \hfill
