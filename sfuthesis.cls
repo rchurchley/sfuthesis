@@ -310,8 +310,7 @@
     \begin{minipage}[t]{0.6\textwidth}
         \textbf{#1} (chair) \newline
         #2
-    \end{minipage}
-    \newline
+    \end{minipage}%
     \vfill
 }
 
@@ -319,10 +318,8 @@
     \noindent\begin{minipage}[b]{0.39\textwidth}
         \textbf{#1} \newline
         #2
-    \end{minipage}
-    \hfill
-    \rule{0.6\textwidth}{0.4pt}
-    \newline
+    \end{minipage}%
+    \rule{0.6\textwidth}{0.4pt}%
     \vfill
 }
 
@@ -336,18 +333,19 @@
     \iftoggle{undefended}{Date Approved}{Date Defended}%
 }
 
-\newcommand{\approvall@bel}[1]{\noindent
-    \begin{minipage}[t]{0.39\textwidth}
+\newcommand{\approvall@bel}[1]{%
+    \noindent%
+    \begin{minipage}[t]{0.4\textwidth}%
         #1
-    \end{minipage}
-    \hfill
+    \end{minipage}%
+    \ignorespaces%
 }
 
 \newcommand{\approvalv@lue}[1]{%
-    \begin{minipage}[t]{0.6\textwidth}
+    \begin{minipage}[t]{0.6\textwidth}%
         #1
-    \end{minipage}
-    \\[5pt]
+    \end{minipage}%
+    \medskip\par
 }
 
 
