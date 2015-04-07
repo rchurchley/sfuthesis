@@ -307,15 +307,16 @@
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
 \newcommand{\chair}[2]{%
-    \begin{minipage}[t]{0.6\textwidth}
+    \begin{minipage}[t]{0.6\textwidth}%
         \textbf{#1} (chair) \newline
         #2
     \end{minipage}%
     \vfill
 }
 
-\newcommand{\member}[2]{
-    \noindent\begin{minipage}[b]{0.39\textwidth}
+\newcommand{\member}[2]{%
+    \noindent%
+    \begin{minipage}[b]{0.4\textwidth}%
         \textbf{#1} \newline
         #2
     \end{minipage}%
