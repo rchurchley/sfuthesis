@@ -49,7 +49,6 @@
 %   `fontenc` used to improve accented character output
 %   `geometry` used for Margins
 %   `lmodern` used for Fonts
-%   `pdfpages` used for including Declaration of Partial Copyright Licence form
 %   `setspace` used for Line Spacing
 %   `tocloft` used for making the ToC nicer
 %
@@ -347,18 +346,6 @@
         #1
     \end{minipage}%
     \medskip\par
-}
-
-
-%  DECLARATION OF PARTIAL COPYRIGHT LICENCE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%   Provides a command to add the PCL to the preamble.
-%
-
-\RequirePackage{pdfpages}
-\newcommand{\makecopyrightdeclaration}{%
-    \addtoToC{Partial Copyright Licence}
-    \includepdf{declaration_of_partial_copyright_licence.pdf}
 }
 
 
