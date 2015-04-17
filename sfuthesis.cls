@@ -86,7 +86,7 @@
 \PassOptionsToClass{11pt}{book}
 
 
-%  BASE CLASSONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  BASE CLASS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   sfuthesis.cls is based on the standard `book` document class.
 %   For more information (including standard class options), see
