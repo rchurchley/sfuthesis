@@ -166,6 +166,20 @@
 \defaultspacing
 \renewcommand{\backmatter}{\smallspacing}
 
+%   Sets single-spacing for chapter, section, and subsection titles, which are
+%   not automatically excluded by setspace. For technical reasons, the patching
+%   process effectively moves section/subsection titles down, so we need to
+%   compensate for this by reducing the space before them.
+%
+%   These patches are specific to the `book` class. If `sfuthesis` moves to a
+%   different base class, this code may need to be changed.
+
+\patchcmd{\@makechapterhead}{\normalfont}{\normalfont\singlespacing}{}{}
+\patchcmd{\section}{\normalfont}{\normalfont\singlespacing}{}{}
+\patchcmd{\subsection}{\normalfont}{\normalfont\singlespacing}{}{}
+\patchcmd{\section}{-3.5ex}{-1.5ex}{}{}
+\patchcmd{\subsection}{-3.25ex}{-1.25ex}{}{}
+
 
 %  TITLE PAGE %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
