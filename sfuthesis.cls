@@ -419,8 +419,6 @@
 %  APPENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Sets appendix paragraph style to remove indents and add space between them.
-%   If the user loads hyperref, makes sure that autorefs to an appendix display
-%   correctly.
 %
 
 \BeforeBeginEnvironment{appendices}{
@@ -428,8 +426,19 @@
     \parindent=\z@
 }
 
+
+%  HYPERREF SETUP  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   If the user loads hyperref, make sure that links to (e.g.) frontmatter
+%   sections point to the correct page and that autoreferences to appendices
+%   display correctly.
+%
+
 \AtBeginDocument{%
-    \@ifpackageloaded{hyperref}{\newcommand*{\Appendixautorefname}{Appendix}}{}
+    \@ifpackageloaded{hyperref}{%
+        \pretocmd{\addtoToC}{\phantomsection{}}{}
+        \newcommand*{\Appendixautorefname}{Appendix}
+    }{}
 }
 
 \endinput
