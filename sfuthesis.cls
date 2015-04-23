@@ -436,8 +436,8 @@
 
 \AtBeginDocument{%
     \@ifpackageloaded{hyperref}{%
-        \pretocmd{\addtoToC}{\phantomsection{}}{}
-        \newcommand*{\Appendixautorefname}{Appendix}
+        \pretocmd{\addtoToC}{\phantomsection{}}{}{}
+        \newcommand{\Appendixautorefname}{Appendix}
     }{}
 }
 
