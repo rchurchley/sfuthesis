@@ -279,12 +279,9 @@
 %
 
 \newcommand{\makecommittee}{%
-    \addtoToC{Approval}
-    \smallspacing
-                    \begin{center}
-                  \textbf{APPROVAL}
-                    \end{center}
-
+    \addtoToC{Approval}%
+    \chapter*{Approval}%
+    \smallspacing%
     \approvall@bel{\textbf{Name:}}        \approvalv@lue{\@author}
     \approvall@bel{\textbf{Degree:}}      \approvalv@lue{\@degree\ \@discipline}
     \approvall@bel{\textbf{Title:}}       \approvalv@lue{\textit{\@title}}
@@ -361,18 +358,14 @@
 \newcommand{\@keywords}{KEYWORDS \@MissingMetadata{keywords}}
 
 \newenvironment{abstract}{%
+    \addtoToC{Abstract}%
+    \chapter*{Abstract}%
     \setlength{\parindent}{0pt}%
     \setlength{\parskip}{5pt}%
-    \addtoToC{Abstract}
-    \null\vfill
-
-                    \begin{center}
-                  \textbf{ABSTRACT}
-                    \end{center}
 }{%
     \leavevmode\\[5pt]
     \noindent\textbf{Keywords:} \@keywords
-    \vfill\null\newpage
+    \newpage
 }
 
 
@@ -402,19 +395,13 @@
 
 \newenvironment{dedication}{%
     \addtoToC{Dedication}
-    \null\vfill
-                    \begin{center}
-                 \textbf{DEDICATION}
-                    \end{center}
-    }{\vfill\null\newpage}
+    \chapter*{Dedication}
+    }{\newpage}
 
 \newenvironment{acknowledgements}{%
-    \newpage\addtoToC{Acknowledgements}
-    \null\vfill
-                    \begin{center}
-              \textbf{ACKNOWLEDGEMENTS}
-                    \end{center}
-    }{\vfill\null\newpage}
+    \addtoToC{Acknowledgements}
+    \chapter*{Acknowledgements}
+    }{\newpage}
 
 
 %  APPENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
