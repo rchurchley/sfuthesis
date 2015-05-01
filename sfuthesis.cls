@@ -21,6 +21,34 @@
 %       Ross Churchley      (2015)
 %
 %
+%   Note to future contributors
+%   ===========================
+%
+%   When writing this class, we incorporated many lessons learned from the long
+%   history of the previous template. We hope to preserve some of those lessons
+%   here to explain some of our choices and to help inform your contributions.
+%
+%   - This class, unlike most LaTeX bundles, is not distributed as a .dtx file.
+%     The previous template was, for a time, but as of 2014 the .dtx file was
+%     several years out of date. As future contributions to this class will
+%     likely come from users who have directly modified this class file to suit
+%     their needs, we have decided not to bother with the overhead of managing
+%     the .dtx.
+%
+%   - The old template contained a considerable amount of vestigial plain TeX;
+%     later contributors preferred to append to the template, understandably
+%     not wanting to mess with decades-old unfamiliar code. This class has been
+%     written with readability in mind: we use indentation, spacing, verbose
+%     macro names, and comments to document our code. Where possible, we
+%     prefer using LaTeX and etoolbox macros over plain TeX.
+%
+%   - This class also includes basic standard packages like `geometry` and
+%     `setspace` to improve its readability and maintainability. (Almost fifty
+%     lines of the old template could be replaced by these two RequirePackages!)
+%     But we have endeavored to keep the dependencies to a minimum in order to
+%     reduce potential incompatabilities with user-loaded packages.
+%
+%
 %   License
 %   =======
 %
