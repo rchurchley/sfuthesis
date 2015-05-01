@@ -80,6 +80,7 @@
 %   `fontenc` used to improve accented character output
 %   `geometry` used for Margins
 %   `lmodern` used for Fonts
+%   `nowidow` used under Margins to prevent nearly-empty pages
 %   `setspace` used for Line Spacing
 %   `tocloft` used for making the ToC nicer
 %
