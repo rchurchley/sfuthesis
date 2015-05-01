@@ -14,7 +14,7 @@
 \semester{Summer 2015}
 \date{25 May 2015}
 
-\keywords{Thesis template; Simon Fraser University; time travel}
+\keywords{Thesis template; Simon Fraser University; time travel paradoxes}
 
 \committee{%
 	\chair{Dr.\ Pamela Isely}{Professor}
@@ -24,28 +24,29 @@
 	\member{Dr.\ Hubert J.\ Farnsworth}{External Examiner\\Professor\\Department of Quantum Fields\\Mars University}
 }
 
-%  PACKAGES AND CUSTOMIZATIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   PACKAGES AND CUSTOMIZATIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  You don't need to call the following packages, which are already called
-%  in the sfuthesis class file:
+%   Add any packages or custom commands you need for your thesis here.
+%   You don't need to call the following packages, which are already called in
+%   the sfuthesis class file:
 %
-%  - appendix
-%  - etoolbox
-%  - fontenc
-%  - geometry
-%  - lmodern
-%  - nowidow
-%  - setspace
-%  - tocloft
+%   - appendix
+%   - etoolbox
+%   - fontenc
+%   - geometry
+%   - lmodern
+%   - nowidow
+%   - setspace
+%   - tocloft
 %
-%  If you call one of the above packages (or one of their dependencies)
-%  with options, you may get a "Option clash" LaTeX error.
-%  If you get this error, you can fix it by removing your copy of
-%  \usepackage and passing the options you need by adding
+%   If you call one of the above packages (or one of their dependencies) with
+%   options, you may get a "Option clash" LaTeX error. If you get this error,
+%   you can fix it by removing your copy of \usepackage and passing the options
+%   you need by adding
 %
-%  \PassOptionsToPackage{<options>}{<package>}
+%       \PassOptionsToPackage{<options>}{<package>}
 %
-%  before \documentclass{sfuthesis}.
+%   before \documentclass{sfuthesis}.
 %
 
 \usepackage{amsmath,amssymb,amsthm}
@@ -56,10 +57,12 @@
 
 
 
-%  FRONTMATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%   FRONTMATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  Title page, committee page, copyright declaration, abstract,
-%  dedication, acknowledgements, table of contents, etc.
+%   Title page, committee page, copyright declaration, abstract,
+%   dedication, acknowledgements, table of contents, etc.
 %
 
 \begin{document}
@@ -88,9 +91,9 @@
 
 
 
-%  MAIN MATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   MAIN MATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  Start writing your thesis --- or start \include ing chapters --- here.
+%   Start writing your thesis --- or start \include ing chapters --- here.
 %
 
 \mainmatter%
@@ -101,10 +104,16 @@
 
 
 
-%  BACK MATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   BACK MATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  References and appendices. Appendices come after the bibliography and
-%  should be in the order that they are referred to in the text.
+%   References and appendices. Appendices come after the bibliography and
+%   should be in the order that they are referred to in the text.
+%
+%   If you include figures, etc. in an appendix, be sure to use
+%
+%       \caption[]{...}
+%
+%   to make sure they are not listed in the List of Figures.
 %
 
 \backmatter%

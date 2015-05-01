@@ -65,7 +65,7 @@
 %
 %   - This class also includes basic standard packages like `geometry` and
 %     `setspace` to improve its readability and maintainability. (Almost fifty
-%     lines of the old template could be replaced by these two RequirePackages!)
+%     lines of the old template could be replaced by two RequirePackages!)
 %     But we have endeavored to keep the dependencies to a minimum in order to
 %     reduce potential incompatabilities with user-loaded packages.
 %
@@ -89,7 +89,7 @@
 \ProvidesClass{sfuthesis}[2015/05/01 v2.0.0 SFU Thesis/Dissertation Template]
 
 
-%  CLASS OPTIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   CLASS OPTIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   The library requires a slightly different approval page format if the
 %   thesis is accepted without a defence taking place. If this applies to you,
@@ -118,7 +118,7 @@
 \PassOptionsToClass{11pt}{book}
 
 
-%  BASE CLASS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   BASE CLASS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   sfuthesis.cls is based on the standard `book` document class.
 %   For more information (including standard class options), see
@@ -132,7 +132,7 @@
 \LoadClass{book}
 
 
-%  FONTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   FONTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Use the Latin Modern implementation of Computer Modern, for better support
 %   of diacritics and non-English glyphs, including correct PDF search.
@@ -143,7 +143,7 @@
 \RequirePackage[T1]{fontenc}
 
 
-%  MARGINS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   MARGINS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Sets the margins to 1.25" on the left and right, 1" on the top, and
 %   0.7" from the bottom to the page numbers. Invoking the `twoside` option
@@ -162,7 +162,7 @@
 }
 
 
-%  PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Provides commands to set page numbers in roman numerals for preliminary
 %   pages (frontmatter) and arabic numbers for all other content (mainmatter).
@@ -180,7 +180,7 @@
 }
 
 
-%  LINE SPACING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   LINE SPACING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Sets 1.5 line spacing for the document body and provides a command to set
 %   single-spacing for the "backmatter" (references, bibliography, appendices).
@@ -196,7 +196,7 @@
 \renewcommand{\backmatter}{\smallspacing}
 
 
-%  WIDOWS AND ORPHANS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   WIDOWS AND ORPHANS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Prevents LaTeX's page-breaking algorithm from interrupting paragraphs or
 %   creating nearly-empty pages.
@@ -205,7 +205,7 @@
 \RequirePackage[all]{nowidow}
 
 
-%  TITLE PAGE %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   TITLE PAGE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Generates a correctly-formatted title page, provided the following
 %   information is given in the preamble:
@@ -303,7 +303,7 @@
 
 
 
-%  APPROVAL PAGE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   APPROVAL PAGE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Generates a correctly formatted approval page, provided a commitee is given
 %   in the preamble as follows:
@@ -321,9 +321,9 @@
     \addtoToC{Approval}%
     \chapter*{Approval}%
     \smallspacing%
-    \@approvallabel{\textbf{Name:}}        \@approvalvalue{\@author}
-    \@approvallabel{\textbf{Degree:}}      \@approvalvalue{\@degree\ \@discipline}
-    \@approvallabel{\textbf{Title:}}       \@approvalvalue{\textit{\@title}}
+    \@approvallabel{\textbf{Name:}}     \@approvalvalue{\@author}
+    \@approvallabel{\textbf{Degree:}}   \@approvalvalue{\@degree\ \@discipline}
+    \@approvallabel{\textbf{Title:}}    \@approvalvalue{\textit{\@title}}
     \@approvallabel{\textbf{\@committeelabel:}}
     \@committee
     \vfill\vfill
@@ -360,12 +360,12 @@
 }
 
 \newcommand{\@committeelabel}{%
-    % "Supervisory" or "Examining" committee depends on whether a defence occurs
+    % "Supervisory" or "Examining" committee depends on defence occuring
     \iftoggle{undefended}{Supervisory Committee}{Examining Committee}%
 }
 
 \newcommand{\@datelabel}{%
-    % "Date defended" or "Date approved" depends on whether a defence occurs
+    % "Date defended" or "Date approved" depends on a defence occuring
     \iftoggle{undefended}{Date Approved}{Date Defended}%
 }
 
@@ -385,7 +385,7 @@
 }
 
 
-%  ABSTRACT AND KEYWORDS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   ABSTRACT AND KEYWORDS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Redefines the abstract environment to set it on its own page together with
 %   the keywords. While the abstract should appear in the main document after
@@ -408,7 +408,7 @@
 }
 
 
-%  TABLE OF CONTENTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   TABLE OF CONTENTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Fixes some display issues for the table of contents.
 %   Provides a command to add sections like the bibliography to the ToC.
@@ -427,7 +427,7 @@
 \renewcommand{\cftfignumwidth}{0.90in}
 
 
-%  DEDICATION AND ACKNOWLEDGEMENTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   DEDICATION AND ACKNOWLEDGEMENTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Provides environments for optional dedication and acknowledgements pages.
 %
@@ -443,7 +443,7 @@
     }{\newpage}
 
 
-%  APPENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   APPENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Sets appendix paragraph style to remove indents and add space between them.
 %
@@ -454,7 +454,7 @@
 }
 
 
-%  HYPERREF SETUP  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   HYPERREF SETUP  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   If the user loads hyperref, make sure that links to (e.g.) frontmatter
 %   sections point to the correct page and that autoreferences to appendices
