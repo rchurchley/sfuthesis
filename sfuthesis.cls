@@ -91,13 +91,14 @@
 
 %  CLASS OPTIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Users of sfuthesis.cls may choose between a sans-serif font (default) and
-%   a serif font (using the `serif` option). Other font choices may
-%   be acceptable to the SFU library, and can be set in the user's preamble.
-%
 %   The library requires a slightly different approval page format if the
 %   thesis is accepted without a defence taking place. If this applies to you,
 %   use the `undefended` class option to format the approval page correctly.
+%
+%   The SFU Library has moved to digital-only thesis submission and no longer
+%   requires print copies of theses be submitted. However, if you do want to
+%   print your thesis, you can use the `bound` or `twoside` option to set
+%   margins for book binding.
 %
 
 \RequirePackage{etoolbox}
