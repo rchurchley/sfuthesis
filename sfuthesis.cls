@@ -1,7 +1,27 @@
-%   Copyright (C) 1989--2014 Simon Fraser University
+%   Copyright (C) 1989--2014 Ross Churchley
+%
+%   License
+%   =======
+%
+%   This work may be distributed and/or modified under the conditions of
+%   the LaTeX Project Public License, either version 1.3 of this license
+%   or (at your option) any later version. The latest version of this
+%   license is in:
+%
+%      http://www.latex-project.org/lppl.txt
+%
+%   and version 1.3 or later is part of all distributions of LaTeX version
+%   2005/12/01 or later.
+%
+%   This work consists of the file sfuthesis.cls and template.tex.
+%
+%   This work has the LPPL maintenance status `maintained'. The Current
+%   Maintainer is Ross Churchley.
+%
 %
 %   Contributors
 %   ============
+%
 %   The previous thesis template, `csthesis`, was written by Stephen Chan based
 %   on Stanford's PhD thesis style.
 %
@@ -16,7 +36,8 @@
 %       Ahmed Saad          (2013)
 %       Reynaldo Arteaga    (2014)
 %
-%   In 2014--15, the template was renamed `sfuthesis` and entirely rewritten.
+%   In 2014--15, the old template was retired and replaced by a new class,
+%   `sfuthesis`, written by Ross Churchley.
 %
 %       Ross Churchley      (2015)
 %
@@ -47,24 +68,6 @@
 %     lines of the old template could be replaced by these two RequirePackages!)
 %     But we have endeavored to keep the dependencies to a minimum in order to
 %     reduce potential incompatabilities with user-loaded packages.
-%
-%
-%   License
-%   =======
-%
-%   This work may be distributed and/or modified under the conditions of
-%   the LaTeX Project Public License, either version 1.3 of this license
-%   or (at your option) any later version. The latest version of this
-%   license is in:
-%
-%      http://www.latex-project.org/lppl.txt
-%
-%   and version 1.3 or later is part of all distributions of LaTeX version
-%   2005/12/01 or later.
-%
-%   This work has the LPPL maintenance status `author-maintained'.
-%
-%   This work consists of the file sfuthesis.cls.
 %
 %
 %   Dependencies
