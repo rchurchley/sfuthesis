@@ -86,7 +86,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sfuthesis}[2014/07/30 SFU Thesis/Dissertation Template]
+\ProvidesClass{sfuthesis}[2015/05/01 v2.0.0 SFU Thesis/Dissertation Template]
 
 
 %  CLASS OPTIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
