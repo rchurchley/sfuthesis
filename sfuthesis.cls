@@ -80,7 +80,7 @@
 %   `fontenc` used to improve accented character output
 %   `geometry` used for Margins
 %   `lmodern` used for Fonts
-%   `nowidow` used under Margins to prevent nearly-empty pages
+%   `nowidow` used to prevent nearly-empty pages
 %   `setspace` used for Line Spacing
 %   `tocloft` used for making the ToC nicer
 %
@@ -134,7 +134,8 @@
 
 %  FONTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Sets the typeface based on the class options (see above).
+%   Use the Latin Modern implementation of Computer Modern, for better support
+%   of diacritics and non-English glyphs, including correct PDF search.
 %   The fontenc package ensures proper hyphenation of accented words.
 %
 
@@ -147,8 +148,6 @@
 %   Sets the margins to 1.25" on the left and right, 1" on the top, and
 %   0.7" from the bottom to the page numbers. Invoking the `twoside` option
 %   will bypass this and allow margins be set by the underlying book class.
-%   Prevents LaTeX's page-breaking algorithm from interrupting paragraphs or
-%   creating nearly-empty pages.
 %
 
 \RequirePackage{geometry}
@@ -162,13 +161,11 @@
     }
 }
 
-\RequirePackage[all]{nowidow}
-
 
 %  PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Provides commands to set page numbers in roman numerals for preliminary
-%   pages (frontmatter) and arabic numbers for all other content (mainmatter)
+%   pages (frontmatter) and arabic numbers for all other content (mainmatter).
 %   \pagestyle{plain} sets page numbers in the bottom center.
 %
 
@@ -185,7 +182,7 @@
 
 %  LINE SPACING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Sets 1.5 line spacing for the document body and provides commands to set
+%   Sets 1.5 line spacing for the document body and provides a command to set
 %   single-spacing for the "backmatter" (references, bibliography, appendices).
 %   These commands do not affect spacing inside figures, tables, and other
 %   floats, which remain single-spaced.
@@ -197,6 +194,15 @@
 
 \defaultspacing
 \renewcommand{\backmatter}{\smallspacing}
+
+
+%  WIDOWS AND ORPHANS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Prevents LaTeX's page-breaking algorithm from interrupting paragraphs or
+%   creating nearly-empty pages.
+%
+
+\RequirePackage[all]{nowidow}
 
 
 %  TITLE PAGE %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -253,8 +259,8 @@
 
 %   The implementation creates a new "variable" for each metadata needed,
 %   initially storing placeholder text and an instruction to throw a warning
-%   if the user hasn't provided the correct information.
-%   It then defines commands to set the corresponding variable when called.
+%   if the user hasn't provided the correct information. We then define the
+%   user-facing commands to set the corresponding variables when called.
 %   The copyright notice is set in a minipage to provide an extra margin of
 %   0.5" on either side.
 
@@ -381,9 +387,9 @@
 
 %  ABSTRACT AND KEYWORDS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Redefines the abstract environment to set it and the keywords on its own
-%   page. While the abstract should appear in the main document after
-%   \makecopyrightdeclaration, the keywords should be defined with \keyword{...}
+%   Redefines the abstract environment to set it on its own page together with
+%   the keywords. While the abstract should appear in the main document after
+%   \makecopyrightdeclaration, keywords should be defined with \keyword{...}
 %   in the preamble.
 %
 
@@ -411,9 +417,9 @@
 
 \RequirePackage{tocloft}
 \RequirePackage[titletoc]{appendix}
+\renewcommand{\contentsname}{Table of Contents}
 
 \newcommand{\addtoToC}[1]{\addcontentsline{toc}{chapter}{#1}}
-\renewcommand{\contentsname}{Table of Contents}
 
 \renewcommand{\cfttabpresnum}{Table\ }
 \renewcommand{\cfttabnumwidth}{0.75in}
@@ -423,7 +429,7 @@
 
 %  DEDICATION AND ACKNOWLEDGEMENTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Provides environments for optional dedication and acknowledgements pages
+%   Provides environments for optional dedication and acknowledgements pages.
 %
 
 \newenvironment{dedication}{%
