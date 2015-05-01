@@ -321,13 +321,13 @@
     \addtoToC{Approval}%
     \chapter*{Approval}%
     \smallspacing%
-    \approvall@bel{\textbf{Name:}}        \approvalv@lue{\@author}
-    \approvall@bel{\textbf{Degree:}}      \approvalv@lue{\@degree\ \@discipline}
-    \approvall@bel{\textbf{Title:}}       \approvalv@lue{\textit{\@title}}
-    \approvall@bel{\textbf{\@committeelabel:}}
+    \@approvallabel{\textbf{Name:}}        \@approvalvalue{\@author}
+    \@approvallabel{\textbf{Degree:}}      \@approvalvalue{\@degree\ \@discipline}
+    \@approvallabel{\textbf{Title:}}       \@approvalvalue{\textit{\@title}}
+    \@approvallabel{\textbf{\@committeelabel:}}
     \@committee
     \vfill\vfill
-    \approvall@bel{\textbf{\@datelabel:}} \approvalv@lue{\@date}
+    \@approvallabel{\textbf{\@datelabel:}} \@approvalvalue{\@date}
     \newpage
     \defaultspacing
 }
@@ -338,7 +338,7 @@
 %   (see class options), the committee and date is labeled differently.
 %
 
-\newcommand{\@committee}{}
+\newcommand{\@committee}{\@MissingMetadata{committee}}
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
 \newcommand{\chair}[2]{%
@@ -369,7 +369,7 @@
     \iftoggle{undefended}{Date Approved}{Date Defended}%
 }
 
-\newcommand{\approvall@bel}[1]{%
+\newcommand{\@approvallabel}[1]{%
     \noindent%
     \begin{minipage}[t]{0.4\textwidth}%
         #1
@@ -377,7 +377,7 @@
     \ignorespaces%
 }
 
-\newcommand{\approvalv@lue}[1]{%
+\newcommand{\@approvalvalue}[1]{%
     \begin{minipage}[t]{0.6\textwidth}%
         #1
     \end{minipage}%
