@@ -446,6 +446,8 @@
 %   APPENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Sets appendix paragraph style to remove indents and add space between them.
+%   This code is copied from the `parskip` package included in standard LaTeX
+%   distributions.
 %
 
 \BeforeBeginEnvironment{appendices}{
