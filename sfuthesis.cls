@@ -1,4 +1,4 @@
-%   Copyright (C) 1989--2014 Ross Churchley
+%   Copyright (C) 2014--2015 Ross Churchley
 %
 %   License
 %   =======
@@ -36,7 +36,7 @@
 %       Ahmed Saad          (2013)
 %       Reynaldo Arteaga    (2014)
 %
-%   In 2014--15, the old template was retired and replaced by a new class,
+%   In 2015, the old template was retired and replaced by a new class,
 %   `sfuthesis`, written by Ross Churchley.
 %
 %       Ross Churchley      (2015)
