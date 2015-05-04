@@ -162,6 +162,22 @@
 }
 
 
+%   LINE SPACING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Sets 1.5 line spacing for the document body and provides a command to set
+%   single-spacing for the "backmatter" (references, bibliography, appendices).
+%   These commands do not affect spacing inside figures, tables, and other
+%   floats, which remain single-spaced.
+%
+
+\RequirePackage{setspace}
+\newcommand{\defaultspacing}{\onehalfspacing}
+\newcommand{\smallspacing}{\singlespacing}
+
+\defaultspacing
+\renewcommand{\backmatter}{\smallspacing}
+
+
 %   PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Provides commands to set page numbers in roman numerals for preliminary
@@ -178,22 +194,6 @@
 \apptocmd{\mainmatter}{%
     \pagenumbering{arabic}
 }
-
-
-%   LINE SPACING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%   Sets 1.5 line spacing for the document body and provides a command to set
-%   single-spacing for the "backmatter" (references, bibliography, appendices).
-%   These commands do not affect spacing inside figures, tables, and other
-%   floats, which remain single-spaced.
-%
-
-\RequirePackage{setspace}
-\newcommand{\defaultspacing}{\onehalfspacing}
-\newcommand{\smallspacing}{\singlespacing}
-
-\defaultspacing
-\renewcommand{\backmatter}{\smallspacing}
 
 
 %   WIDOWS AND ORPHANS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -332,11 +332,9 @@
     \defaultspacing
 }
 
-%
 %   Implementation: Have \@committee store the committee, \committee set it,
 %   and \chair and \member format its contents. If the thesis is undefended
 %   (see class options), the committee and date is labeled differently.
-%
 
 \newcommand{\@committee}{\@MissingMetadata{committee}}
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
@@ -413,7 +411,6 @@
 %   Fixes some display issues for the table of contents.
 %   Provides a command to add sections like the bibliography to the ToC.
 %
-
 
 \RequirePackage{tocloft}
 \RequirePackage[titletoc]{appendix}
