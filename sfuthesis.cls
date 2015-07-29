@@ -341,7 +341,7 @@
 
 \newcommand{\chair}[2]{%
     \begin{minipage}[t]{0.1\textwidth}%
-        \textbf{chair:}
+        \textbf{Chair:}
     \end{minipage}%
     \begin{minipage}[t]{0.5\textwidth}%
     	\textbf{#1} \newline
