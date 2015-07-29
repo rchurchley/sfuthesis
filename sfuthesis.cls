@@ -340,9 +340,12 @@
 \newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
 
 \newcommand{\chair}[2]{%
-    \begin{minipage}[t]{0.6\textwidth}%
-        \textbf{#1} (chair) \newline
-        #2
+    \begin{minipage}[t]{0.1\textwidth}%
+        \textbf{Chair:}
+    \end{minipage}%
+    \begin{minipage}[t]{0.5\textwidth}%
+    	\textbf{#1} \newline
+    	#2
     \end{minipage}%
     \vfill
 }
@@ -353,7 +356,8 @@
         \textbf{#1} \newline
         #2
     \end{minipage}%
-    \rule{0.6\textwidth}{0.4pt}%
+    \hspace{0.1\textwidth}%
+    \rule{0.5\textwidth}{0.4pt}%
     \vfill
 }
 
@@ -369,14 +373,15 @@
 
 \newcommand{\@approvallabel}[1]{%
     \noindent%
-    \begin{minipage}[t]{0.4\textwidth}%
+    \begin{minipage}[t]{0.35\textwidth}%
         #1
     \end{minipage}%
     \ignorespaces%
 }
 
 \newcommand{\@approvalvalue}[1]{%
-    \begin{minipage}[t]{0.6\textwidth}%
+    \begin{minipage}[t]{0.65\textwidth}%
+    	\raggedright%
         #1
     \end{minipage}%
     \medskip\par
