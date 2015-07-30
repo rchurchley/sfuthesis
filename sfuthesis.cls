@@ -341,11 +341,12 @@
 
 \newcommand{\chair}[2]{%
     \begin{minipage}[t]{0.1\textwidth}%
-        Chair:
+        \textbf{Chair:}
     \end{minipage}%
     \begin{minipage}[t]{0.55\textwidth}%
-    	#1 \newline
-    	#2
+        \raggedright
+        #1 \newline
+        #2
     \end{minipage}%
     \vfill
 }
@@ -353,6 +354,7 @@
 \newcommand{\member}[2]{%
     \noindent%
     \begin{minipage}[b]{0.5\textwidth}%
+        \raggedright
         \textbf{#1} \newline
         #2
     \end{minipage}%
@@ -373,6 +375,7 @@
 \newcommand{\@approvallabel}[1]{%
     \noindent%
     \begin{minipage}[t]{0.35\textwidth}%
+        \raggedright
         #1
     \end{minipage}%
     \ignorespaces%
@@ -380,7 +383,7 @@
 
 \newcommand{\@approvalvalue}[1]{%
     \begin{minipage}[t]{0.65\textwidth}%
-    	\raggedright%
+        \raggedright%
         #1
     \end{minipage}%
     \medskip\par
