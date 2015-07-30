@@ -150,7 +150,7 @@
 %   will bypass this and allow margins be set by the underlying book class.
 %
 
-\RequirePackage{geometry}
+\RequirePackage{geometry}[2010/09/12]
 \nottoggle{bound}{%
     \newgeometry{
         top=1in,
