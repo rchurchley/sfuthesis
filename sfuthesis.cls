@@ -341,10 +341,10 @@
 
 \newcommand{\chair}[2]{%
     \begin{minipage}[t]{0.1\textwidth}%
-        \textbf{Chair:}
+        Chair:
     \end{minipage}%
     \begin{minipage}[t]{0.55\textwidth}%
-    	\textbf{#1} \newline
+    	#1 \newline
     	#2
     \end{minipage}%
     \vfill
