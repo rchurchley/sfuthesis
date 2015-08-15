@@ -229,7 +229,7 @@
     \thispagestyle{empty}
                                                             \null\vfill
                     \begin{center}
-               {\huge\bfseries\@title}                      \\[12pt]
+               {\huge\bfseries\@title\par}                  \vspace{1em}
                           by                                \\[12pt]
 
               {\Large\bfseries\@author}                     \\[12pt]
