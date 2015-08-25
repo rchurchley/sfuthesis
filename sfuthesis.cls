@@ -230,16 +230,17 @@
                                                             \null\vfill
                     \begin{center}
                {\huge\bfseries\@title\par}                  \vspace{1em}
-                          by                                \\[12pt]
 
-              {\Large\bfseries\@author}                     \\[12pt]
+                          by                                \vspace{1em}
+
+              {\Large\bfseries\@author}                     \vspace{1em}
 
                   \@previousdegrees
                                                             \vfill
 
     {\@thesistype} Submitted in Partial Fulfillment         \\
         of the Requirements for the Degree of               \\
-                      \@degree                              \\[12pt]
+                      \@degree                              \vspace{1em}
 
                        in the                               \\
                     \@department                            \\
