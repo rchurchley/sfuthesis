@@ -322,15 +322,39 @@
     \addtoToC{Approval}%
     \chapter*{Approval}%
     \smallspacing%
-    \@approvallabel{\textbf{Name:}}     \@approvalvalue{\@author}
-    \@approvallabel{\textbf{Degree:}}   \@approvalvalue{\@degree\ \@discipline}
-    \@approvallabel{\textbf{Title:}}    \@approvalvalue{\textit{\@title}}
-    \@approvallabel{\textbf{\@committeelabel:}}
+    \@approvallabel{Name:}     \@approvalvalue{\@author}
+    \@approvallabel{Degree:}   \@approvalvalue{\@degree\ \@discipline}
+    \@approvallabel{Title:}    \@approvalvalue{\textit{\@title}}
+    \@approvallabel{\@committeelabel:}
     \@committee
     \vfill\vfill
     \@approvallabel{\textbf{\@datelabel:}} \@approvalvalue{\@date}
     \newpage
     \defaultspacing
+}
+
+%   The Word template uses tab stops to produce a table-like approval page.
+%   We reproduce this behaviour in LaTeX with fixed-width minipages.
+%   A bit of fiddling is needed to maintain consistent spacing when an
+%   \@approvalvalue minipage contains more than one line: for details, see
+%   http://tex.stackexchange.com/questions/34971/
+
+\newcommand{\@approvallabel}[1]{%
+    \noindent%
+    \begin{minipage}[t]{0.35\textwidth}%
+        \raggedright
+        \textbf{#1}
+    \end{minipage}%
+    \ignorespaces%
+}
+
+\newcommand{\@approvalvalue}[1]{%
+    \begin{minipage}[t]{0.65\textwidth}%
+        \raggedright%
+        \textbf{#1}
+        \par\xdef\tpd{\the\prevdepth}
+    \end{minipage}
+    \medskip\par\prevdepth\tpd
 }
 
 %   Implementation: Have \@committee store the committee, \committee set it,
@@ -373,22 +397,6 @@
     \iftoggle{undefended}{Date Approved}{Date Defended}%
 }
 
-\newcommand{\@approvallabel}[1]{%
-    \noindent%
-    \begin{minipage}[t]{0.35\textwidth}%
-        \raggedright
-        #1
-    \end{minipage}%
-    \ignorespaces%
-}
-
-\newcommand{\@approvalvalue}[1]{%
-    \begin{minipage}[t]{0.65\textwidth}%
-        \raggedright%
-        #1
-    \end{minipage}%
-    \medskip\par
-}
 
 
 %   ABSTRACT AND KEYWORDS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
