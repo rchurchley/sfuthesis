@@ -238,8 +238,8 @@
                   \@previousdegrees
                                                             \vfill
 
-    {\@thesistype} Submitted in Partial Fulfillment         \\
-        of the Requirements for the Degree of               \\
+    {\@thesistype} Submitted in Partial Fulfillment of the  \\
+              Requirements for the Degree of                \\
                       \@degree                              \vspace{1em}
 
                        in the                               \\
