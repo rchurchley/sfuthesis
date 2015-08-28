@@ -377,13 +377,12 @@
 }
 
 \newcommand{\member}[2]{%
-    \noindent%
-    \begin{minipage}[b]{0.5\textwidth}%
+    \begin{minipage}[b]{0.45\textwidth}%
         \raggedright
         \textbf{#1} \newline
         #2
     \end{minipage}%
-    \rule{0.5\textwidth}{0.4pt}%
+    \hrulefill\par
     \vfill
 }
 
