@@ -386,13 +386,14 @@
     \vfill
 }
 
+%   Theses in some degree programs do not require a defence. In these cases,
+%   the "Examining Committee" and "Date defended" labels need to be changed.
+
 \newcommand{\@committeelabel}{%
-    % "Supervisory" or "Examining" committee depends on defence occuring
     \iftoggle{undefended}{Supervisory Committee}{Examining Committee}%
 }
 
 \newcommand{\@datelabel}{%
-    % "Date defended" or "Date approved" depends on a defence occuring
     \iftoggle{undefended}{Date Approved}{Date Defended}%
 }
 
