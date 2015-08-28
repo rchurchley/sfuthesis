@@ -328,7 +328,8 @@
     \@approvallabel{\@committeelabel:}
     \@committee
     \vfill\vfill
-    \@approvallabel{\textbf{\@datelabel:}} \@approvalvalue{\@date}
+    \@approvallabel{\@datelabel:}
+                                \underline{\makebox[0.65\textwidth][l]{\@date}}
     \newpage
     \defaultspacing
 }
