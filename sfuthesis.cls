@@ -175,7 +175,7 @@
 \newcommand{\smallspacing}{\singlespacing}
 
 \defaultspacing
-\renewcommand{\backmatter}{\smallspacing}
+\renewcommand{\backmatter}{\smallspacing\clearpage}
 
 
 %   PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
