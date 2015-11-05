@@ -277,7 +277,7 @@
     \begin{minipage}{\dimexpr\textwidth-1in\relax}
         \small\centering
         All rights reserved.\\
-        However, in accordance with the \textit{Copyright Act of Canada}, this work may be reproduced without authorization under the conditions for ``Fair Dealing.'' Therefore, limited reproduction of this work for the purposes of private study, research, criticism, review and news reporting is likely to be in accordance with the law, particularly if cited appropriately.
+        However, in accordance with the \textit{Copyright Act of Canada}, this work may be reproduced without authorization under the conditions for ``Fair Dealing.'' Therefore, limited reproduction of this work for the purposes of private study, research, education, satire, parody, criticism, review and news reporting is likely to be in accordance with the law, particularly if cited appropriately.
     \end{minipage}
 }
 
