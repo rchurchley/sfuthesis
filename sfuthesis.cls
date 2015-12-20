@@ -447,13 +447,13 @@
 %
 
 \newenvironment{dedication}{%
-    \addtoToC{Dedication}
     \chapter*{Dedication}
+    \addtoToC{Dedication}
     }{\newpage}
 
 \newenvironment{acknowledgements}{%
-    \addtoToC{Acknowledgements}
     \chapter*{Acknowledgements}
+    \addtoToC{Acknowledgements}
     }{\newpage}
 
 
