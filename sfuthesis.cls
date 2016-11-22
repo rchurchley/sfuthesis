@@ -178,6 +178,17 @@
 \renewcommand{\backmatter}{\smallspacing\clearpage}
 
 
+%   FOOTNOTES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Remove the dividing line between body text and footnotes, replacing it with
+%   extra space. This is not formally part of the Library requirements, but
+%   makes our footnotes consistent with the preferred style in the official
+%   Word thesis template.
+%
+
+\def\footnoterule{\vspace{\baselineskip}}
+
+
 %   PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Provides commands to set page numbers in roman numerals for preliminary
