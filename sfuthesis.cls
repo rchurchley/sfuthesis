@@ -287,8 +287,7 @@
 \newcommand{\@copyrightnotice}{%
     \begin{minipage}{\dimexpr\textwidth-1in\relax}
         \small\centering
-        All rights reserved.\\
-        However, in accordance with the \textit{Copyright Act of Canada}, this work may be reproduced without authorization under the conditions for ``Fair Dealing.'' Therefore, limited reproduction of this work for the purposes of private study, research, education, satire, parody, criticism, review and news reporting is likely to be in accordance with the law, particularly if cited appropriately.
+        Copyright in this work rests with the author. Please ensure that any reproduction or re-use is done in accordance with the relevant national copyright legislation.
     \end{minipage}
 }
 
