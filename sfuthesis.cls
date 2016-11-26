@@ -332,14 +332,11 @@
     \addtoToC{Approval}%
     \chapter*{Approval}%
     \smallspacing%
-    \@approvallabel{Name:}     \@approvalvalue{\@author}
-    \@approvallabel{Degree:}   \@approvalvalue{\@degree\ \@discipline}
-    \@approvallabel{Title:}    \@approvalvalue{\textit{\@title}}
-    \@approvallabel{\@committeelabel:}
-    \@committee
-    \vfill\vfill
-    \@approvallabel{\@datelabel:}
-                                \underline{\makebox[0.65\textwidth][l]{\@date}}
+    \@approvallabel{Name:}              \@approvalvalue{\@author}
+    \@approvallabel{Degree:}            \@approvalvalue{\@degree\ \@discipline}
+    \@approvallabel{Title:}             \@approvalvalue{\@title}
+    \@approvallabel{\@committeelabel:}  \@approvalvalue{\@committee}
+    \@approvallabel{\@datelabel:}       \@approvalvalue{\@date}
     \newpage
     \defaultspacing
 }
@@ -366,10 +363,11 @@
 \newcommand{\@approvalvalue}[1]{%
     \begin{minipage}[t]{0.65\textwidth}%
         \raggedright%
-        \textbf{#1}
+        \bfseries%
+        #1
         \par\xdef\tpd{\the\prevdepth}
     \end{minipage}
-    \medskip\par\prevdepth\tpd
+    \bigskip\par\prevdepth\tpd
 }
 
 %   Implementation: Have \@committee store the committee, \committee set it,
@@ -377,28 +375,25 @@
 %   (see class options), the committee and date is labeled differently.
 
 \newcommand{\@committee}{\@MissingMetadata{committee}}
-\newcommand{\committee}[1]{\renewcommand{\@committee}{#1}}
+\newcommand{\committee}[1]{\renewcommand{\@committee}{\mdseries#1}}
 
 \newcommand{\chair}[2]{%
-    \begin{minipage}[t]{0.1\textwidth}%
+    \begin{minipage}[t]{0.2\textwidth}%
         \textbf{Chair:}
     \end{minipage}%
-    \begin{minipage}[t]{0.55\textwidth}%
+    \begin{minipage}[t]{0.8\textwidth}%
         \raggedright
         #1 \newline
         #2
     \end{minipage}%
-    \vfill
+    \bigskip\par
 }
 
 \newcommand{\member}[2]{%
-    \begin{minipage}[b]{0.45\textwidth}%
-        \raggedright
-        \textbf{#1} \newline
-        #2
-    \end{minipage}%
-    \hrulefill\par
-    \vfill
+    \raggedright
+    \textbf{#1} \newline
+    #2
+    \medskip\par
 }
 
 %   Theses in some degree programs do not require a defence. In these cases,
