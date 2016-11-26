@@ -346,6 +346,10 @@
 
 %   The Word template uses tab stops to produce a table-like approval page.
 %   We reproduce this behaviour in LaTeX with fixed-width minipages.
+%   (It would be much easier to do this using a description list modified with
+%    the enumitem package. However, this would cause more trouble than it
+%    saved: prematurely including the enumitem package here creates a compile
+%    error if the user includes the same package with different options.)
 %   A bit of fiddling is needed to maintain consistent spacing when an
 %   \@approvalvalue minipage contains more than one line: for details, see
 %   http://tex.stackexchange.com/questions/34971/
