@@ -183,11 +183,14 @@
 %   Remove the dividing line between body text and footnotes, replacing it with
 %   extra space. This is not formally part of the Library requirements, but
 %   makes our footnotes consistent with the preferred style in the official
-%   Word thesis template.
+%   Word thesis template. We then add a full line space between footnotes on
+%   the same page; this is also not an official requirement but was suggested
+%   as a reasonable default by the Library's Thesis Assistant and the
+%   footnote-heavy Chicago style.
 %
 
 \def\footnoterule{\vspace{\baselineskip}}
-
+\setlength{\footnotesep}{\baselineskip}
 
 %   PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
