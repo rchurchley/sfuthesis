@@ -40,10 +40,22 @@ latexmk -pdf thesis.tex
 ```
 
 
-## Class options
+## Usage
 
 The library requires a slightly different approval page format if the thesis is accepted without a defence taking place.
 If this applies to you, use the `undefended` class option to format the approval page correctly.
+
+If your research requires an Ethics Statement, you will need to [download a PDF copy of the statement][ethics] and include it immediately after the approval page.
+
+```latex
+\usepackage{pdfpages}
+
+...
+
+\addtoToC{Ethics Statement}%
+\includepdf[pagecommand={\thispagestyle{plain}}]{ethicsstatement.pdf}%
+\clearpage
+```
 
 The SFU Library has moved to digital-only thesis submission and no longer requires print copies of theses be submitted. However, if you do want to print your thesis, you can use the `bound` or `twoside` options to set margins for book binding.
 
@@ -61,3 +73,4 @@ If you find you have to do so in order to make your thesis compile or to fix a d
 [editors]: http://en.wikipedia.org/wiki/Comparison_of_TeX_editors
 [newissue]: https://github.com/rchurchley/sfuthesis/issues/new
 [latexmk]: http://ctan.math.ca/tex-archive/support/latexmk/latexmk.pdf
+[ethics]: http://www.lib.sfu.ca/help/publish/thesis/regulations#ethics-statement
