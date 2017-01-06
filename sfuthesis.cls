@@ -381,10 +381,10 @@
 \newcommand{\committee}[1]{\renewcommand{\@committee}{\mdseries#1}}
 
 \newcommand{\chair}[2]{%
-    \begin{minipage}[t]{0.2\textwidth}%
+    \begin{minipage}[t]{0.15\textwidth}%
         \textbf{Chair:}
     \end{minipage}%
-    \begin{minipage}[t]{0.8\textwidth}%
+    \begin{minipage}[t]{0.85\textwidth}%
         \raggedright
         #1 \newline
         #2
