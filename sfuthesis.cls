@@ -381,22 +381,22 @@
 \newcommand{\committee}[1]{\renewcommand{\@committee}{\mdseries#1}}
 
 \newcommand{\chair}[2]{%
-    \begin{minipage}[t]{0.15\textwidth}%
-        \textbf{Chair:}
-    \end{minipage}%
-    \begin{minipage}[t]{0.85\textwidth}%
+    \textbf{Chair:}\quad
+    \begin{minipage}[t]{0.8\textwidth}%
         \raggedright
         #1 \newline
         #2
     \end{minipage}%
-    \bigskip\par
+    \par%
+    \vspace{1.5\baselineskip}%
 }
 
 \newcommand{\member}[2]{%
     \raggedright
     \textbf{#1} \newline
-    #2
-    \medskip\par
+    #2%
+    \par%
+    \vspace{\baselineskip}%
 }
 
 %   Theses in some degree programs do not require a defence. In these cases,
