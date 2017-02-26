@@ -95,7 +95,7 @@ The SFU Library has moved to digital-only thesis submission and no longer requir
 The `sfuthesis` class is written such that it should not be necessary to edit `sfuthesis.cls` itself.
 If you find you have to do so in order to make your thesis compile or to fix a display bug, please let me know by:
 
-- emailing `rchurchl@sfu.ca`, or
+- emailing `ross@rosschurchley.com`, or
 - [filing an issue][newissue] if you have a GitHub account, or
 - issuing a pull request if you have a GitHub account and a bugfix.
 
