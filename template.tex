@@ -1,4 +1,30 @@
+%   DOCUMENT CLASS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Use the `sfuthesis` class to format your thesis. If your program does not
+%   require a thesis defence, use the class option `undefended` like so:
+%
+%     \documentclass[undefended]{sfuthesis}
+%
+%   To generate a signature page for your defence, use the `sfuapproval` class
+%   instead, by replacing the below line with
+%
+%     \documentclass{sfuapproval}
+%
+%   For more information about thesis formatting requirements, go to
+%
+%     http://www.lib.sfu.ca/help/publish/thesis
+%
+%   or ask a thesis advisor at the SFU Research Commons.
+%
+
 \documentclass{sfuthesis}
+
+
+
+%   DOCUMENT METADATA  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Fill in the following information for the title page and approval page.
+%
 
 \title{An example of a thesis or dissertation on the subject of your degree}
 \thesistype{Dissertation}
@@ -59,18 +85,17 @@
 %   (3) graphicx allows you to add images with \includegraphics{filename}.
 %   (4) hyperref turns your citations and cross-references into clickable
 %       links, and adds metadata to the compiled PDF.
+%   (5) pdfpages lets you import pages of external PDFs using the command
+%       \includepdf{filename}. You will need to do this if your research
+%       requires an Ethics Statement.
+%
 
 \usepackage{amsmath}                            % (1)
 \usepackage{amssymb}                            % (1)
 \usepackage{amsthm}                             % (2)
 \usepackage{graphicx}                           % (3)
 \usepackage[pdfborder={0 0 0}]{hyperref}        % (4)
-
-
-% pdfpages lets you import pages of external PDFs with \includepdf{filename}.
-% You will need to do this if your research requires an Ethics Statement.
-%
-% \usepackage{pdfpages}
+% \usepackage{pdfpages}                         % (5)
 
 
 
@@ -80,6 +105,9 @@
 %
 %   Title page, committee page, copyright declaration, abstract,
 %   dedication, acknowledgements, table of contents, etc.
+%
+%   If your research requires an Ethics Statement, download one from the
+%   SFU library website and uncomment the appropriate lines below.
 %
 
 \begin{document}

@@ -9,6 +9,7 @@ Before you submit your thesis, please make sure to **double-check all style requ
 There are several standards (e.g. abstract word limits) that LaTeX cannot automatically arrange for you, and you are ultimately responsible for making sure that your thesis conforms to the regulations set out by the library.
 
 
+
 ## System requirements
 
 To use the SFU LaTeX thesis class, you will need a relatively recent LaTeX distribution. (For information on how to install one, see the [LaTeX Project website](http://latex-project.org/ftp.html).)
@@ -27,7 +28,7 @@ If you do not already have these installed, you can easily get them using the pa
 
 ## Installation
 
-1. Download the project files to your computer. 
+1. Download the project files to your computer.
 
 2. Rename `template.tex` to something more suitable, like `thesis.tex`. Delete the placeholder information and replace it with your own.
 
@@ -42,8 +43,36 @@ latexmk -pdf thesis.tex
 
 ## Usage
 
+To get started writing your thesis, just follow the installation instructions above and replace the sample content in `template.tex` with your own!
+
+
+### Generating an approval page
+
+When you have finished your thesis, you will need to provide your department's graduate secretary with an approval page for your committee to sign at your defence.
+To generate this page, recompile your thesis after replacing the line
+
+```latex
+\documentclass{sfuthesis}
+```
+
+with
+
+```latex
+\documentclass{sfuapproval}
+```
+
+
+### Undefended theses
+
 The library requires a slightly different approval page format if the thesis is accepted without a defence taking place.
 If this applies to you, use the `undefended` class option to format the approval page correctly.
+
+```latex
+\documentclass[undefended]{sfuthesis}
+```
+
+
+### Including an Ethics Statement
 
 If your research requires an Ethics Statement, you will need to [download a PDF copy of the statement][ethics] and include it immediately after the approval page.
 
@@ -58,6 +87,7 @@ If your research requires an Ethics Statement, you will need to [download a PDF 
 ```
 
 The SFU Library has moved to digital-only thesis submission and no longer requires print copies of theses be submitted. However, if you do want to print your thesis, you can use the `bound` or `twoside` options to set margins for book binding.
+
 
 
 ## Contributing
