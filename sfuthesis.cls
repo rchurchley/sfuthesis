@@ -187,7 +187,8 @@
 %   footnote-heavy Chicago style.
 %
 
-\def\footnoterule{\vspace{\baselineskip}}
+\def\footnoterule{\relax}
+\setlength{\skip\footins}{\baselineskip}
 \setlength{\footnotesep}{\baselineskip}
 
 %   PAGINATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
