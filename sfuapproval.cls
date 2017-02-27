@@ -38,7 +38,7 @@
     \smallspacing%
     \@approvallabel{Name:}          \@approvalvalue{\@author}
     \@approvallabel{Degree:}        \@approvalvalue{\@degree\ \@discipline}
-    \@approvallabel{Title:}         \@approvalvalue{\textit{\@title}}
+    \@approvallabel{Title:}         \@approvalvalue{\@title}
     \@approvallabel{\@committeelabel:}
     \@committee
     \@approvallabel{\@datelabel:}   \@approvalvalue{\@date}
