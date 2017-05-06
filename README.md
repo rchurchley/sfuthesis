@@ -5,7 +5,7 @@ The LaTeX class file `sfuthesis.cls` sets your document to follow the SFU Librar
 
 As of Summer 2015, the SFU Library has approved the 2.0.0 release of `sfuthesis` to replace the old thesis templates used from 1989 through 2014.
 
-Before you submit your thesis, please make sure to **double-check all style requirements** on the [SFU Library website](http://www.lib.sfu.ca/help/writing/thesis).
+Before you submit your thesis, please make sure to **double-check all style requirements** on the [SFU Library website](http://www.lib.sfu.ca/help/publish/thesis).
 There are several standards (e.g. abstract word limits) that LaTeX cannot automatically arrange for you, and you are ultimately responsible for making sure that your thesis conforms to the regulations set out by the library.
 
 
