@@ -113,10 +113,14 @@
 %
 %   (1) Use a single word space between sentences. If you disable this, you
 %       will have to manually control spacing around abbreviations.
-%
+%   (2) Correct the capitalization of "Chapter" and "Section" if you use the
+%       \autoref macro from the `hyperref` package.
 %
 
 \frenchspacing                                    % (1)
+\renewcommand*{\chapterautorefname}{Chapter}      % (2)
+\renewcommand*{\sectionautorefname}{Section}      % (2)
+\renewcommand*{\subsectionautorefname}{Section}   % (2)
 % ...
 % ...
 % ...
