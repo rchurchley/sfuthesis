@@ -115,12 +115,16 @@
 %       will have to manually control spacing around abbreviations.
 %   (2) Correct the capitalization of "Chapter" and "Section" if you use the
 %       \autoref macro from the `hyperref` package.
+%   (3) The LaTeX thesis template defaults to one-and-a-half line spacing. If
+%       your supervisor prefers double-spacing, you can redefine the
+%       \defaultspacing command.
 %
 
 \frenchspacing                                    % (1)
 \renewcommand*{\chapterautorefname}{Chapter}      % (2)
 \renewcommand*{\sectionautorefname}{Section}      % (2)
 \renewcommand*{\subsectionautorefname}{Section}   % (2)
+% \renewcommand{\defaultspacing}{\doublespacing}  % (3)
 % ...
 % ...
 % ...

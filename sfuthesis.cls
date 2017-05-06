@@ -171,9 +171,26 @@
 \RequirePackage{setspace}
 \newcommand{\defaultspacing}{\onehalfspacing}
 \newcommand{\smallspacing}{\singlespacing}
+\renewcommand{\backmatter}{%
+  \renewcommand{\defaultspacing}{\smallspacing}%
+  \clearpage%
+}
 
 \defaultspacing
-\renewcommand{\backmatter}{\smallspacing\clearpage}
+
+%   Set single-spacing for chapter and section titles. If you use a package
+%   (e.g. titlesec) that redefines the chapter- and section-printing macros,
+%   you will have to adjust the spacing yourself.
+%
+
+\pretocmd{\@chapter}{\begingroup\smallspacing}{}{}
+\apptocmd{\@chapter}{\endgroup}{}{}
+\pretocmd{\@schapter}{\begingroup\smallspacing}{}{}
+\apptocmd{\@schapter}{\endgroup}{}{}
+\pretocmd{\@sect}{\begingroup\smallspacing}{}{}
+\apptocmd{\@sect}{\endgroup}{}{}
+\pretocmd{\@ssect}{\begingroup\smallspacing}{}{}
+\apptocmd{\@ssect}{\endgroup}{}{}
 
 
 %   FOOTNOTES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
