@@ -184,11 +184,26 @@
 %
 
 \pretocmd{\@chapter}{\begingroup\smallspacing}{}{}
-\apptocmd{\@chapter}{\endgroup}{}{}
+\apptocmd{\@chapter}{%
+    \endgroup
+    \if@mainmatter
+        \addtocounter{chapter}{-1}%
+        \refstepcounter{chapter}%
+    \fi
+}{}{}
+
 \pretocmd{\@schapter}{\begingroup\smallspacing}{}{}
 \apptocmd{\@schapter}{\endgroup}{}{}
+
 \pretocmd{\@sect}{\begingroup\smallspacing}{}{}
-\apptocmd{\@sect}{\endgroup}{}{}
+\apptocmd{\@sect}{%
+    \endgroup
+    \if@mainmatter
+        \addtocounter{section}{-1}%
+        \refstepcounter{section}%
+    \fi
+}{}{}
+
 \pretocmd{\@ssect}{\begingroup\smallspacing}{}{}
 \apptocmd{\@ssect}{\endgroup}{}{}
 
