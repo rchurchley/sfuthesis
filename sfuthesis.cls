@@ -162,15 +162,30 @@
 
 %   LINE SPACING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Sets 1.5 line spacing for the document body and provides a command to set
-%   single-spacing for the "backmatter" (references, bibliography, appendices).
-%   These commands do not affect spacing inside figures, tables, and other
-%   floats, which remain single-spaced.
+%   (1) Sets 1.5 line spacing for the document body, excluding figures, tables,
+%   and other floats, which remain single-spaced.
+%
+%   (2) Provides a command to set single-spacing for chapter and section titles
+%       as well as the whole "backmatter" (references, bibliography, and any
+%       appendices). It would make more sense if we defined \smallspacing to be
+%       just \singlespacing, but it's a bit quirky; the setspace package source
+%       code has:
+%
+%           \newcommand{\singlespacing}{%
+%               \setstretch {\setspace@singlespace}%  normally 1
+%               \vskip \baselineskip  % Correction for coming into singlespace
+%           }
+%
+%       In our use case, we most commonly go in and out of single-spacing in
+%       chapter and section titles, and the extra \vskip\baselineskip is
+%       extremely noticible (as it's based on font size). We avoid this problem
+%       by defining \smallspacing as the portion of \singlespacing we actually
+%       need.
 %
 
 \RequirePackage{setspace}
-\newcommand{\defaultspacing}{\onehalfspacing}
-\newcommand{\smallspacing}{\singlespacing}
+\newcommand{\defaultspacing}{\onehalfspacing} % (1)
+\newcommand{\smallspacing}{\setstretch{\setspace@singlespace}}  % (2)
 \renewcommand{\backmatter}{%
   \renewcommand{\defaultspacing}{\smallspacing}%
   \clearpage%
@@ -183,29 +198,17 @@
 %   you will have to adjust the spacing yourself.
 %
 
-\pretocmd{\@chapter}{\begingroup\smallspacing}{}{}
-\apptocmd{\@chapter}{%
-    \endgroup
-    \if@mainmatter
-        \addtocounter{chapter}{-1}%
-        \refstepcounter{chapter}%
-    \fi
-}{}{}
+\pretocmd{\@chapter}{\smallspacing}{}{}
+\apptocmd{\@chapter}{\defaultspacing}{}{}
 
-\pretocmd{\@schapter}{\begingroup\smallspacing}{}{}
-\apptocmd{\@schapter}{\endgroup}{}{}
+\pretocmd{\@schapter}{\smallspacing}{}{}
+\apptocmd{\@schapter}{\defaultspacing}{}{}
 
-\pretocmd{\@sect}{\begingroup\smallspacing}{}{}
-\apptocmd{\@sect}{%
-    \endgroup
-    \if@mainmatter
-        \addtocounter{section}{-1}%
-        \refstepcounter{section}%
-    \fi
-}{}{}
+\pretocmd{\@sect}{\smallspacing}{}{}
+\apptocmd{\@sect}{\defaultspacing}{}{}
 
-\pretocmd{\@ssect}{\begingroup\smallspacing}{}{}
-\apptocmd{\@ssect}{\endgroup}{}{}
+\pretocmd{\@ssect}{\smallspacing}{}{}
+\apptocmd{\@ssect}{\defaultspacing}{}{}
 
 
 %   FOOTNOTES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
