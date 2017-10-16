@@ -46,9 +46,9 @@ latexmk -pdf thesis.tex
 To get started writing your thesis, just follow the installation instructions above and replace the sample content in `template.tex` with your own!
 
 
-### Generating an approval page
+### Generating a signature page for your defence
 
-When you have finished your thesis, you will need to provide your department's graduate secretary with an approval page for your committee to sign at your defence.
+When you have finished your thesis, you will need to provide your department's graduate secretary with a loose-leaf signature page for your examining committee to sign at your defence.
 To generate this page, recompile your thesis after replacing the line
 
 ```latex
@@ -60,6 +60,9 @@ with
 ```latex
 \documentclass{sfuapproval}
 ```
+
+*Note: under previous versions of the thesis template, the signature page was identical to the approval page included in the thesis. However, the Library updated the preferred style of the approval page in 2017 to remove the signature lines, as committee signatures are not included in the published version of the thesis.*
+
 
 
 ### Undefended theses
