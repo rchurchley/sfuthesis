@@ -390,7 +390,7 @@
 
 \newcommand{\@approvallabel}[1]{%
     \noindent%
-    \begin{minipage}[t]{0.35\textwidth}%
+    \begin{minipage}[t]{0.34\textwidth}%
         \raggedright
         \textbf{#1}
     \end{minipage}%
