@@ -403,7 +403,7 @@
         \bfseries%
         #1
         \par\xdef\tpd{\the\prevdepth}
-    \end{minipage}
+    \end{minipage}%
     \bigskip\par\prevdepth\tpd
 }
 
