@@ -17,7 +17,7 @@
 %   Maintainer is Ross Churchley.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sfuapproval}[2018/09/09 v1.1.0 SFU Approval Signature Page]
+\ProvidesClass{sfuapproval}[2018/09/09 v2.2.2 SFU Approval Signature Page]
 
 %   BASE CLASS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
