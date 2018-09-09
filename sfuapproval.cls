@@ -17,7 +17,7 @@
 %   Maintainer is Ross Churchley.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sfuapproval}[2017/01/01 v1.0.0 SFU Approval Signature Page]
+\ProvidesClass{sfuapproval}[2018/09/09 v1.1.0 SFU Approval Signature Page]
 
 %   BASE CLASS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -28,12 +28,13 @@
 
 \LoadClass{sfuthesis}
 
-\patchcmd{\chapter}{plain}{empty}{}{}
+\pagenumbering{roman}
 
 \let\oldbegindocument\document
 \let\oldenddocument\enddocument
 \renewenvironment{document}{%
     \oldbegindocument
+    \setcounter{page}{2}
     \chapter*{Approval}%
     \smallspacing%
     \@approvallabel{Name:}          \@approvalvalue{\@author}
