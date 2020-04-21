@@ -418,7 +418,7 @@
     \textbf{Chair:}\quad
     \begin{minipage}[t]{0.8\textwidth}%
         \raggedright
-        #1 \newline
+        \textbf{#1} \newline
         #2
     \end{minipage}%
     \par%
