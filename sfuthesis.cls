@@ -1,4 +1,4 @@
-%   Copyright (C) 2014--2015 Ross Churchley
+%   Copyright (C) 2014--2022 Ross Churchley
 %
 %   License
 %   =======
@@ -84,7 +84,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sfuthesis}[2020/08/05 v2.3.0 SFU Thesis Template]
+\ProvidesClass{sfuthesis}[2022/09/12 v2.3.3 SFU Thesis Template]
 
 
 %   CLASS OPTIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -394,7 +394,7 @@
         \bfseries%
         #1
         \par\xdef\tpd{\the\prevdepth}
-    \end{minipage}
+    \end{minipage}%
     \bigskip\par\prevdepth\tpd
 }
 
