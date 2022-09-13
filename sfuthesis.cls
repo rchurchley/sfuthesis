@@ -316,7 +316,7 @@
 \newcommand{\@copyrightnotice}{%
     \begin{minipage}{\dimexpr\textwidth-1in\relax}
         \small\centering
-        Copyright in this work rests with the author. Please ensure that any reproduction or re-use is done in accordance with the relevant national copyright legislation.
+        Copyright in this work is held by the author. Please ensure that any reproduction or re-use is done in accordance with the relevant national copyright legislation.
     \end{minipage}
 }
 
