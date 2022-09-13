@@ -1,21 +1,11 @@
 %   DOCUMENT CLASS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Use the `sfuthesis` class to format your thesis. If your program does not
-%   require a thesis defence, use the class option `undefended` like so:
-%
-%     \documentclass[undefended]{sfuthesis}
-%
-%   To generate a signature page for your defence, use the `sfuapproval` class
-%   instead, by replacing the below line with
-%
-%     \documentclass{sfuapproval}
+%   Use the `sfuthesis` class to format your thesis.
 %
 %   For more information about thesis formatting requirements, go to
-%
-%     http://www.lib.sfu.ca/help/publish/thesis
-%
-%   or ask a thesis advisor at the SFU Research Commons.
-%
+%   http://www.lib.sfu.ca/help/publish/thesis or ask a thesis advisor at the
+%   SFU Research Commons.
+
 
 \documentclass{sfuthesis}
 
@@ -23,32 +13,46 @@
 
 %   DOCUMENT METADATA  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Fill in the following information for the title page and approval page.
-%
+%   Fill in the following information for the title page and declaration of
+%   committee page. Please review the Declaration of Committee page
+%   instructions on the library's thesis website before completing this page:
+%   https://www.lib.sfu.ca/help/publish/thesis/format/declaration-committee
 
-\title{An example of a thesis or dissertation on the subject of your degree}
+%   Choose the \faculty entry below from the following list:
+%
+%       - Faculty of Applied Sciences
+%       - Faculty of Arts and Social Sciences
+%       - Beedie School of Business
+%       - Faculty of Communication, Art and Technology
+%       - Faculty of Education
+%       - Faculty of Environment
+%       - Faculty of Health Sciences
+%       - Faculty of Science
+
+\title{An example of a thesis on the subject of your degree}
 \thesistype{Thesis}
 \author{Stuart Arthur Dent}
 \previousdegrees{%
-	M.Sc., Wossamotta University, 1963\\
-	B.Sc., Unseen University, 1836}
+    M.Sc., Wossamotta University, 1963\\
+    B.Sc., Unseen University, 1836}
 \degree{Doctor of Philosophy}
-\discipline{Mathematics}
 \department{Department of Inadvisably Applied Mathematics}
-\faculty{Faculty of Mad Science}
-\copyrightyear{2017}
-\semester{Spring 2017}
-\date{January 10, 2017}
+\faculty{Faculty of Example Names}
+\copyrightyear{2021}
+\semester{Fall 2021}
 
-\keywords{thesis template; Simon Fraser University; time travel paradoxes}
 
-\committee{%
-	\chair{Pamela Isely}{Professor}
-	\member{Emmett Brown}{Senior Supervisor\\Professor}
-	\member{Bonnibel Bubblegum}{Supervisor\\Associate Professor}
-	\member{James Moriarty}{Supervisor\\Adjunct Professor}
-	\member{Kaylee Frye}{Internal Examiner\\Assistant Professor\\School of Engineering Science}
-	\member{Hubert J.\ Farnsworth}{External Examiner\\Professor\\Department of Quantum Fields\\Mars University}
+%   You may include up to six keywords or phrases. Keywords should be separated
+%   with semicolons. No punctuation at the end.
+\keywords{thesis template; Simon Fraser University; \LaTeX; time travel paradoxes}
+
+\committee{
+    \chair{Pamela Isely}{Assistant Professor, Computing Science}
+    \member{Emmett Brown}{Supervisor \\ Professor, Computing Science}
+    \member{Bonnibel Bubblegum}{Committee Member \\ Associate Professor, Computing Science}
+    \member{James Moriarty}{Committee Member \\ Adjunct Professor, Computing Science}
+    \member{Kaylee Frye}{Examiner \\ Assistant Professor, Engineering Science}
+    \member{Hubert J.\ Farnsworth}{External Examiner \\ Professor \\ Department of Quantum Fields \\ Mars University}
 }
 
 
@@ -135,12 +139,12 @@
 
 %   FRONTMATTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Title page, committee page, copyright declaration, abstract,
-%   dedication, acknowledgements, table of contents, etc.
+%   Title page, committee page, abstract, dedication, acknowledgements, table
+%   of contents, etc.
 %
-%   If your research requires an Ethics Statement, download one from the
-%   SFU library website and uncomment the appropriate lines below.
-%
+%   If your research requires an Ethics Statement, download the pdf from
+%   https://www.lib.sfu.ca/help/publish/thesis/regulations#ethics-statement
+%   to your thesis folder, then uncomment the appropriate lines below.
 
 \begin{document}
 
@@ -149,31 +153,33 @@
 \makecommittee{}
 
 %\addtoToC{Ethics Statement}%
-%\includepdf[pagecommand={\thispagestyle{plain}}]{ethicsstatement.pdf}%
+%\includepdf[pagecommand={\thispagestyle{plain}}]{ethics_statement_piii.pdf}%
 %\clearpage
 
 \begin{abstract}
-	This is a blank document from which you can start writing your thesis.
+Abstract paragraphs should be unindented. Master's abstracts are limited to 150 words; the limit is 350 words for doctoral abstracts. Abstract text must fit on a single page.
 \end{abstract}
 
 
 \begin{dedication}
-	This is an optional page.
+This is an optional page. Use your choice of paragraph style for text on this page.
 \end{dedication}
 
 
 \begin{acknowledgements}
-	This is an optional page.
+This is an optional page. Use your choice of paragraph style for text on this page.
 \end{acknowledgements}
 
 \addtoToC{Table of Contents}%
 \tableofcontents%
 \clearpage
 
+%   This is an optional page. Remove the following lines if you don't have any tables.
 \addtoToC{List of Tables}%
 \listoftables%
 \clearpage
 
+%   This is an optional page. Remove the following lines if you don't have any figures.
 \addtoToC{List of Figures}%
 \listoffigures%
 \clearpage
@@ -191,7 +197,7 @@
 
 \chapter{Introduction}
 
-By default, only works cited in the text will be added to the bibliography~\cite{latexcompanion}.
+Start writing or pasting in your text here. By default, only works cited in the text will be added to the bibliography~\cite{latexcompanion}.
 
 
 
@@ -208,11 +214,14 @@ By default, only works cited in the text will be added to the bibliography~\cite
 %
 
 \backmatter%
-	\addtoToC{Bibliography}
-	\bibliographystyle{plain}
-	\bibliography{references}
+    \addtoToC{Bibliography}
+    \bibliographystyle{plain}
+    \bibliography{references}
 
 \begin{appendices} % optional
-	\chapter{Code}
+\chapter{Code}
+
+Appendices should be used for supplemental information that does not form part of the main research. Remember that figures and tables in appendices should not be listed in the List of Figures or List of Tables. 
+
 \end{appendices}
 \end{document}

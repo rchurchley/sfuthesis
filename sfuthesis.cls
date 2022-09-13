@@ -84,14 +84,10 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sfuthesis}[2018/09/09 v2.2.2 SFU Thesis/Dissertation Template]
+\ProvidesClass{sfuthesis}[2020/08/05 v2.3.0 SFU Thesis Template]
 
 
 %   CLASS OPTIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%   The library requires a slightly different approval page format if the
-%   thesis is accepted without a defence taking place. If this applies to you,
-%   use the `undefended` class option to format the approval page correctly.
 %
 %   The SFU Library has moved to digital-only thesis submission and no longer
 %   requires print copies of theses be submitted. However, if you do want to
@@ -100,10 +96,8 @@
 %
 
 \RequirePackage{etoolbox}
-\newtoggle{undefended}
 \newtoggle{bound}
 
-\DeclareOption{undefended}{\toggletrue{undefended}}
 \DeclareOption{bound}{\toggletrue{bound}}
 \DeclareOption{twoside}{\toggletrue{bound}}
 
@@ -263,7 +257,6 @@
 %   \previousdegrees{...}
 %   \thesistype{...}
 %   \degree{...}
-%   \discipline{...} (optional)
 %   \department{...}
 %   \faculty{...}
 %   \semester{...}
@@ -316,7 +309,6 @@
 \newcommand{\@thesistype}{THESIS \@MissingMetadata{thesistype}}
 \newcommand{\@previousdegrees}{PREVIOUS DEGREES \@MissingMetadata{previousdegrees}}
 \newcommand{\@degree}{DEGREE \@MissingMetadata{degree}}
-\newcommand{\@discipline}{} % optional
 \newcommand{\@department}{DEPARTMENT \@MissingMetadata{department}}
 \newcommand{\@faculty}{FACULTY \@MissingMetadata{faculty}}
 \newcommand{\@semester}{SEMESTER \@MissingMetadata{semester}}
@@ -335,7 +327,6 @@
 \newcommand{\previousdegrees}[1]{\renewcommand{\@previousdegrees}{#1}}
 \newcommand{\thesistype}[1]{\renewcommand{\@thesistype}{#1}}
 \newcommand{\degree}[1]{\renewcommand{\@degree}{#1}}
-\newcommand{\discipline}[1]{\renewcommand{\@discipline}{(#1)}}
 \newcommand{\department}[1]{\renewcommand{\@department}{#1}}
 \newcommand{\faculty}[1]{\renewcommand{\@faculty}{#1}}
 \newcommand{\semester}[1]{\renewcommand{\@semester}{#1}}
@@ -351,29 +342,29 @@
 
 
 
-%   APPROVAL PAGE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   DECLARATION OF COMMITTEE PAGE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Generates a correctly formatted approval page, provided a commitee is given
-%   in the preamble as follows:
+%   Generates a correctly formatted Declaration of Committee page, provided a
+%   committee is given in the preamble as follows:
 %
 %   \committee{
-%       \chair{Name}{Chair}
-%       \member{Name}{Senior Supervisor \\ Title}
-%       \member{Name}{Role on Committee \\ Title \\ Affiliation}
+%       \chair{Name}{Academic Role, Academic Unit}
+%       \member{Name}{Supervisor \\ Academic Role, Academic Unit}
+%       \member{Name}{Role on the committee \\ Academic Role, Academic Unit}
+%       \member{Name}{External Examiner \\ Role \\ Affiliation}
 %   }
 %
 %   To display the committee, invoke \makecommittee.
 %
 
 \newcommand{\makecommittee}{%
-    \addtoToC{Approval}%
-    \chapter*{Approval}%
+    \addtoToC{Declaration of Committee}%
+    \chapter*{Declaration of Committee}%
     \smallspacing%
     \@approvallabel{Name:}              \@approvalvalue{\@author}
-    \@approvallabel{Degree:}            \@approvalvalue{\@degree\ \@discipline}
-    \@approvallabel{Title:}             \@approvalvalue{\@title}
-    \@approvallabel{\@committeelabel:}  \@approvalvalue{\@committee}
-    \@approvallabel{\@datelabel:}       \@approvalvalue{\@date}
+    \@approvallabel{Degree:}            \@approvalvalue{\@degree}
+    \@approvallabel{Thesis title:}      \@approvalvalue{\@title}
+    \@approvallabel{Committee:}         \@approvalvalue{\@committee}
     \newpage
     \defaultspacing
 }
@@ -403,13 +394,12 @@
         \bfseries%
         #1
         \par\xdef\tpd{\the\prevdepth}
-    \end{minipage}%
+    \end{minipage}
     \bigskip\par\prevdepth\tpd
 }
 
 %   Implementation: Have \@committee store the committee, \committee set it,
-%   and \chair and \member format its contents. If the thesis is undefended
-%   (see class options), the committee and date is labeled differently.
+%   and \chair and \member format its contents.
 
 \newcommand{\@committee}{\@MissingMetadata{committee}}
 \newcommand{\committee}[1]{\renewcommand{\@committee}{\mdseries#1}}
@@ -433,26 +423,14 @@
     \vspace{\baselineskip}%
 }
 
-%   Theses in some degree programs do not require a defence. In these cases,
-%   the "Examining Committee" and "Date defended" labels need to be changed.
-
-\newcommand{\@committeelabel}{%
-    \iftoggle{undefended}{Supervisory Committee}{Examining Committee}%
-}
-
-\newcommand{\@datelabel}{%
-    \iftoggle{undefended}{Date Approved}{Date Defended}%
-}
-
-
 
 %   ABSTRACT AND KEYWORDS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Redefines the abstract environment to set it on its own page together with
 %   the keywords. While the abstract should appear in the main document after
-%   \makecopyrightdeclaration, keywords should be defined with \keyword{...}
-%   in the preamble.
-%
+%   the optional Ethics Statement (or after the \makecommittee{}), keywords
+%   should be defined with \keyword{...} in the preamble.
+
 
 \newcommand{\keywords}[1]{\renewcommand{\@keywords}{#1}}
 \newcommand{\@keywords}{KEYWORDS \@MissingMetadata{keywords}}

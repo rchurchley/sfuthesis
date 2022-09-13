@@ -1,9 +1,10 @@
 # sfuthesis
 
-The `sfuthesis` project provides a template from which graduate students at Simon Fraser University can start writing their thesis or dissertation.
+The `sfuthesis` project provides a template from which graduate students at Simon Fraser University can start writing their thesis.
+
 The LaTeX class file `sfuthesis.cls` sets your document to follow the SFU Library's style requirements, so you can focus on writing up your research instead of fiddling with formatting.
 
-As of Summer 2015, the SFU Library has approved the 2.0.0 release of `sfuthesis` to replace the old thesis templates used from 1989 through 2014.
+As of Fall 2020, the SFU Library has approved the 2.3.0 release of `sfuthesis` to replace any older thesis templates.
 
 Before you submit your thesis, please make sure to **double-check all style requirements** on the [SFU Library website](http://www.lib.sfu.ca/help/publish/thesis).
 There are several standards (e.g. abstract word limits) that LaTeX cannot automatically arrange for you, and you are ultimately responsible for making sure that your thesis conforms to the regulations set out by the library.
@@ -46,38 +47,9 @@ latexmk -pdf thesis.tex
 To get started writing your thesis, just follow the installation instructions above and replace the sample content in `template.tex` with your own!
 
 
-### Generating a signature page for your defence
-
-When you have finished your thesis, you will need to provide your department's graduate secretary with a loose-leaf signature page for your examining committee to sign at your defence.
-To generate this page, recompile your thesis after replacing the line
-
-```latex
-\documentclass{sfuthesis}
-```
-
-with
-
-```latex
-\documentclass{sfuapproval}
-```
-
-*Note: under previous versions of the thesis template, the signature page was identical to the approval page included in the thesis. However, the Library updated the preferred style of the approval page in 2017 to remove the signature lines, as committee signatures are not included in the published version of the thesis.*
-
-
-
-### Undefended theses
-
-The library requires a slightly different approval page format if the thesis is accepted without a defence taking place.
-If this applies to you, use the `undefended` class option to format the approval page correctly.
-
-```latex
-\documentclass[undefended]{sfuthesis}
-```
-
-
 ### Including an Ethics Statement
 
-If your research requires an Ethics Statement, you will need to [download a PDF copy of the statement][ethics] and include it immediately after the approval page.
+If your research requires an Ethics Statement, you will need to [download a PDF copy of the statement][ethics] and include it immediately after the Declaration of Committee page.
 
 ```latex
 \usepackage{pdfpages}
